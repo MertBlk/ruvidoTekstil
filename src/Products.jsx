@@ -1,30 +1,40 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Products.css';
 
 const Products = () => {
-    const navigate = useNavigate();
+    const [filter, setFilter] = useState('');
 
-    const productList = [
-        { id: 1, name: 'Ürün 1', description: 'Bu birinci ürün.', image: '/assets/product1.jpg' },
-        { id: 2, name: 'Ürün 2', description: 'Bu ikinci ürün.', image: '/assets/product2.jpg' },
-        { id: 3, name: 'Ürün 3', description: 'Bu üçüncü ürün.', image: '/assets/product3.jpg' },
-        { id: 4, name: 'Ürün 4', description: 'Bu dördüncü ürün.', image: '/assets/product4.jpg' },
+    const products = [
+        { id: 1, name: 'Ürün 1', category: 'Kategori A', image: '/r1.jpeg' },
+        { id: 2, name: 'Ürün 2', category: 'Kategori B',  image: '/r2.jpeg' },
+        { id: 3, name: 'Ürün 3', category: 'Kategori A', image: '/r3.jpeg' },
+        { id: 4, name: 'Ürün 4', category: 'Kategori C',     image: '/r2.jpeg' },
     ];
 
-    const handleCardClick = (id) => {
-        navigate(`/products/${id}`);
-    };
+    const filteredProducts = products.filter(product =>
+        filter === '' || product.category === filter
+    );
 
     return (
-        <div className="products">
-            <h1>Ürünlerimiz</h1>
-            <div className="product-grid">
-                {productList.map(product => (
-                    <div key={product.id} className="product-card" onClick={() => handleCardClick(product.id)}>
-                        <img src={product.image} alt={product.name} className="product-image" />
-                        <h2>{product.name}</h2>
-                        <p>{product.description}</p>
+        <div className="products-container">
+            <div className="filter-bar">
+                <select onChange={(e) => setFilter(e.target.value)} value={filter}>
+                    <option value="">Tüm Kategoriler</option>
+                    <option value="Kategori A">Kategori A</option>
+                    <option value="Kategori B">Kategori B</option>
+                    <option value="Kategori C">Kategori C</option>
+                </select>
+            </div>
+            <div className="products-grid">
+                {filteredProducts.map(product => (
+                    <div key={product.id} className="product-card">
+                        <Link to={`/products/${product.id}`} className="product-link">
+                            <img src={product.image} alt={product.name} className="product-image" />
+                            <h3>{product.name}</h3>
+                            <p>Kategori: {product.category}</p>
+                            <p>Fiyat: {product.price} TL</p>
+                        </Link>
                     </div>
                 ))}
             </div>

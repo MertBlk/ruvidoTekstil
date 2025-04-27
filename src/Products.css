@@ -1,43 +1,79 @@
-.products {
-    padding: 2rem;
+.products-container {
+    padding: 20px;
+}
+
+.filter-bar {
+    margin-bottom: 20px;
     text-align: center;
 }
 
-.product-grid {
+.filter-bar select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
 }
 
 .product-card {
+    background-color: #ffffff;
     border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    cursor: pointer;
+    border-radius: 10px;
+    padding: 30px; /* Kart içi boşluk artırılıyor */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
-.product-card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-}
-
-.product-card h2 {
+.product-card h3 {
     font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    color: #454545;
+    margin-bottom: 10px;
 }
 
 .product-card p {
-    margin: 0.5rem 0;
+    margin: 5px 0;
     color: #555;
+    line-height: 1.6;
+}
+
+.product-image {
+    width: 100%;
+    height: 25rem; /* Resim yüksekliği artırılıyor */
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: 1fr; /* Mobilde tek sütun düzeni */
+        gap: 15px; /* Kartlar arasındaki boşluk azaltıldı */
+    }
+
+    .product-card {
+        padding: 15px; /* Mobilde kart içi boşluk azaltıldı */
+    }
+
+    .product-card h3 {
+        font-size: 1.2rem; /* Mobilde başlık boyutu küçültüldü */
+    }
+
+    .product-card p {
+        font-size: 0.9rem; /* Mobilde paragraf boyutu küçültüldü */
+    }
+
+    .product-image {
+        height: 150px; /* Mobilde resim yüksekliği optimize edildi */
+    }
 }

@@ -6,7 +6,12 @@ body {
     color: #333;
 }
 
-h1, h2, h3 {
+h1 {
+    font-size: 4rem; /* Yazı boyutu büyütüldü */
+    font-family: 'Poppins', sans-serif; /* Yazı tipi değiştirildi */
+}
+
+h2, h3 {
     color: #222;
     font-weight: 700;
     margin-bottom: 1rem;
@@ -29,84 +34,42 @@ ul {
     padding: 0 1rem;
 }
 
-button {
-    font-family: inherit;
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 4px;
-    background-color: #1c823c;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #145a28;
-}
-
-.typing-container {
+.layer {
+    width: 100%;
+    height: 100vh;
     display: flex;
+    justify-content: center;
     align-items: center;
-    position: relative;
-}
-
-.needle {
-    position: absolute;
-    left: 0;
-    animation: move-needle 3s steps(20, end);
-}
-
-.typing-effect {
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 2px solid black;
-    animation:
-        typing 3s steps(20, end),
-        blink-caret 0.75s step-end infinite;
-    margin-left: 1.5rem; /* İğne ile yazı arasında boşluk */
-}
-
-@keyframes move-needle {
-    from {
-        left: 0;
-    }
-    to {
-        left: 100%;
-    }
-}
-
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-}
-
-@keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: black }
-}
-
-h1.fabric-text {
-    background: url('/assets/kumas-dokusu.jpg') repeat;
-    -webkit-background-clip: text;
-    color: transparent;
     font-size: 3rem;
     font-weight: bold;
-    text-align: center;
+    color: white;
+    background-size: cover;
+    background-position: center;
 }
 
-#ruvido-text {
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-    animation: drawText 5s ease forwards;
+.layer-1 {
+    background-image: url('/public/r1.jpeg'); /* RUVIDO TEKSTİL için görsel */
 }
 
-@keyframes drawText {
-    to {
-        stroke-dashoffset: 0;
+.layer-2 {
+    background-image: url('/public/r2.jpeg'); /* KALİTE için görsel */
+}
+
+.layer-3 {
+    background-image: url('/public/r3.jpeg'); /* TASARIM için görsel */
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Mobil cihazlar için daha küçük yazı boyutu */
+        padding: 0 10px; /* Kenar boşluklarını azalt */
     }
-}
 
-#needle {
-    transform: translate(-15px, -15px); /* iğnenin ortalanması için */
+    h1, h2, h3 {
+        font-size: 1.5rem; /* Başlık boyutlarını küçült */
+    }
+
+    .container {
+        padding: 0 1rem; /* Mobilde kenar boşluklarını optimize et */
+    }
 }
