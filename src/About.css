@@ -20,3 +20,22 @@
     line-height: 1.8;
     margin-bottom: 15px;
 }
+
+@media (max-width: 768px) {
+    .about-container {
+        margin: 80px auto 20px;
+        padding: 15px;
+        width: 90%;
+    }
+
+    .about-container h1 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    .about-container p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 12px;
+    }
+}

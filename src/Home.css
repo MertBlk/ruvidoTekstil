@@ -4,29 +4,32 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    /* Kartlar arasındaki boşluk */
-    min-height: 10rem; /* Ekranı tamamını kaplaması için */
+    min-height: 10rem;
 }
+
 .product-card {
+    position: relative;
+    left: 4.5%;
     background-color: #ffffff;
     border: 1px solid #ddd;
     border-radius: 10px;
-    padding: 20px; /* Kart içi boşluk artırılıyor */
+    padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 30rem; /* Kart genişliği %25 ve aralarındaki boşluk */
+    width: 30rem;
     margin: 10px;
     &:hover {
         transform: scale(1.05);
         box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
     }
 }
+
 .home-button {
     position: absolute;
     top: 75%;
-    left: 50%;
+    text-align: center;
     transform: translate(-50%, -50%);
-    padding: 12px 24px;
+    padding: 1.2rem 2.4rem;
     background-color: transparent;
     border: 2px solid #ff9a9a;
     color: #ffffff;
@@ -35,9 +38,34 @@
     font-size: 16px;
     font-weight: bold;
     transition: all 0.3s ease;
+    text-align: center;
+    padding: 1.2rem 2.4rem;
 }
 
 .home-button:hover {
     background-color: #ff9a9a;
     color: white;
+}
+
+@media (max-width: 768px) {
+    .products-grid {
+        margin-top: 3rem;
+    }
+
+    .product-card {
+        width: 90%;
+        left: 0;
+        margin: 10px auto;
+        padding: 15px;
+    }
+
+    .product-image {
+        height: 200px;
+    }
+
+    .home-button {
+        top: 70%;
+        padding: 10px 20px;
+        font-size: 14px;
+    }
 }

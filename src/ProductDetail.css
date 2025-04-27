@@ -4,9 +4,8 @@
     justify-content: space-between;
     padding: 50px;
     max-width: 1200px;
-    margin: 100px auto 0 auto; /* Navbar ile çakışmayı önlemek için üst boşluk artırıldı */
-  
-    gap: 30px; /* Görsel ve açıklama arasında boşluk */
+    margin: 100px auto 0 auto;
+    gap: 30px;
 }
 
 .product-detail-image {
@@ -34,4 +33,25 @@
     color: #555;
     line-height: 1.8;
     font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .product-detail-container {
+        flex-direction: column;
+        padding: 20px;
+        margin-top: 80px;
+    }
+
+    .product-detail-image {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .product-detail-info h1 {
+        font-size: 1.8rem;
+    }
+
+    .product-detail-info p {
+        font-size: 1rem;
+    }
 }

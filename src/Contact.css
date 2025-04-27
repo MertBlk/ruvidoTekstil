@@ -33,3 +33,24 @@
 .contact-details a:hover {
     text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+    .contact {
+        padding: 1rem;
+        margin-top: 60px;
+    }
+
+    .store-image {
+        max-height: 200px;
+    }
+
+    .contact-details {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+}

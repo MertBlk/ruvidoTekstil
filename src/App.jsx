@@ -6,20 +6,24 @@ import Contact from './Contact';
 import Navbar from './Navbar';
 import ProductDetail from './ProductDetail';
 import About from './About'; // Import the new About component
+import Footer from './Footer';
 
-const App = () => {
-    return (
-        <Router>
-            <Navbar />
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/products" element={<Products />} />
-                <Route path="/products/:id" element={<ProductDetail />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/about" element={<About />} /> {/* Add this line for the About page */}
-            </Routes>
-        </Router>
-    );
-};
+function App() {
+  return (
+    <>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/:id" element={<ProductDetail />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} /> {/* Add this line for the About page */}
+        </Routes>
+      </Router>
+      <Footer />
+    </>
+  );
+}
 
 export default App;

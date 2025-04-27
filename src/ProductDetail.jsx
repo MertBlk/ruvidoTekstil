@@ -20,6 +20,7 @@ const ProductDetail = () => {
 
     return (
         <div className="product-detail-container">
+            {/* Alt metni ürün adını içerecek şekilde güncellendi */}
             <img src={product.image} alt={product.name} className="product-detail-image" />
             <div className="product-detail-info">
                 <h1>{product.name}</h1>

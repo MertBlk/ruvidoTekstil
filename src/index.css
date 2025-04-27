@@ -1,4 +1,6 @@
-body {
+/* Temel stiller */
+html, body { /* html ekledim ve height: 100% ekledim */
+    height: 100%;
     margin: 0;
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
@@ -6,9 +8,15 @@ body {
     color: #333;
 }
 
+#root { /* Bu yeni kural eklendi */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 h1 {
-    font-size: 4rem; /* Yazı boyutu büyütüldü */
-    font-family: 'Poppins', sans-serif; /* Yazı tipi değiştirildi */
+    font-size: 4rem;
+    font-family: 'Poppins', sans-serif;
 }
 
 h2, h3 {
@@ -48,28 +56,61 @@ ul {
 }
 
 .layer-1 {
-    background-image: url('/public/r1.jpeg'); /* RUVIDO TEKSTİL için görsel */
+    background-image: url('/r1.jpeg');
 }
 
 .layer-2 {
-    background-image: url('/public/r2.jpeg'); /* KALİTE için görsel */
+    background-image: url('/r2.jpeg');
 }
 
 .layer-3 {
-    background-image: url('/public/r3.jpeg'); /* TASARIM için görsel */
+    background-image: url('/r3.jpeg');
 }
 
 @media (max-width: 768px) {
     body {
-        font-size: 14px; /* Mobil cihazlar için daha küçük yazı boyutu */
-        padding: 0 10px; /* Kenar boşluklarını azalt */
+        font-size: 14px;
+        padding: 0 10px;
     }
 
     h1, h2, h3 {
-        font-size: 1.5rem; /* Başlık boyutlarını küçült */
+        font-size: 1.5rem;
     }
 
     .container {
-        padding: 0 1rem; /* Mobilde kenar boşluklarını optimize et */
+        padding: 0 1rem;
     }
 }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0;
+}
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+.footer { /* Bu yeni kural eklendi */
+    margin-top: auto; /* İçerik kısa olduğunda footer'ı aşağı iter */
+    flex-shrink: 0; /* İçerik uzun olduğunda footer'ın küçülmesini engeller */
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+
