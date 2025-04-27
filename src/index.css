@@ -1,11 +1,23 @@
+:root {
+  --text-dark: #333;
+  --text-light: #ecf0f1;
+  --background-light: #f9f9f9;
+  --navbar-bg-transparent: rgba(255, 255, 255, 0.1);
+  --footer-bg: #333; /* Lacivertten koyu griye değiştirildi */
+  --link-hover-color: #3498db;
+  --border-color: #ddd;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --accent-color: #ff9a9a; /* Home buton rengi gibi */
+}
+
 /* Temel stiller */
 html, body { /* html ekledim ve height: 100% ekledim */
     height: 100%;
     margin: 0;
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: var(--background-light); /* Değişken kullanıldı */
+    color: var(--text-dark); /* Değişken kullanıldı */
 }
 
 #root { /* Bu yeni kural eklendi */
@@ -20,7 +32,7 @@ h1 {
 }
 
 h2, h3 {
-    color: #222;
+    color: #222; /* Bu renk değişken olarak eklenebilir veya kalabilir */
     font-weight: 700;
     margin-bottom: 1rem;
 }
@@ -107,8 +119,8 @@ ul {
 .footer { /* Bu yeni kural eklendi */
     margin-top: auto; /* İçerik kısa olduğunda footer'ı aşağı iter */
     flex-shrink: 0; /* İçerik uzun olduğunda footer'ın küçülmesini engeller */
-    background-color: #333;
-    color: #fff;
+    background-color: var(--footer-bg); /* Değişken kullanıldı */
+    color: var(--text-light); /* Değişken kullanıldı */
     text-align: center;
     padding: 1rem 0;
 }

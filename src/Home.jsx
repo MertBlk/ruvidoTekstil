@@ -15,15 +15,14 @@ const Home = () => {
 
     return (
         <div>
-            <div className="fade-in" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', backgroundColor: '#f5f5f5', position: 'relative' }}>
+            {/* Inline stil kaldırıldı ve className eklendi */}
+            <div className="home-hero-section fade-in">
                 <div className="layer layer-1 fade-in delay-100">RUVIDO TEKSTİL</div>
                 <div className="layer layer-2 fade-in delay-200">KALİTE</div>
                 <div className="layer layer-3 fade-in delay-300">TASARIM</div>
-                <button className='home-button fade-in delay-400'
-                    onClick={() => window.location.href = '/products'}
-                >
+                <Link to="/products" className='home-button fade-in delay-400'>
                     Ürünlere Git
-                </button>
+                </Link>
             </div>
             <div className="products-grid">
                 <div className="product-card card-1 fade-in delay-200">
