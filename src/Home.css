@@ -1,0 +1,43 @@
+.products-grid {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* Kartlar arasındaki boşluk */
+    min-height: 10rem; /* Ekranı tamamını kaplaması için */
+}
+.product-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px; /* Kart içi boşluk artırılıyor */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 30rem; /* Kart genişliği %25 ve aralarındaki boşluk */
+    margin: 10px;
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    }
+}
+.home-button {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 12px 24px;
+    background-color: transparent;
+    border: 2px solid #ff9a9a;
+    color: #ffffff;
+    border-radius: 5rem;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: #ff9a9a;
+    color: white;
+}
