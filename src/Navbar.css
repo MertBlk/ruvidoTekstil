@@ -39,13 +39,6 @@
     color: var(--text-dark); /* Değişken kullanıldı */
     text-decoration: none; /* Alt çizgi kaldırılıyor */
 }
-body.home .navbar {
-    color: var(--text-light); /* Değişken kullanıldı */
-    
-}
-body.home .navbar-links a {
-    color: var(--text-light); /* Değişken kullanıldı */
-}
 
 
 

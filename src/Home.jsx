@@ -2,6 +2,7 @@ import './Home.css';
 
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Slider from './Slider';
 
 const Home = () => {
     useEffect(() => {
@@ -15,13 +16,10 @@ const Home = () => {
 
     return (
         <div>
-            {/* fade-in sınıfı kaldırıldı */}
             <div className="home-hero-section">
-                {/* fade-in ve delay sınıfları kaldırıldı */}
-                <div className="layer layer-1">RUVIDO TEKSTİL</div>
-                <div className="layer layer-2">KALİTE</div>
-                <div className="layer layer-3">TASARIM</div>
-                {/* fade-in ve delay sınıfları kaldırıldı */}
+                
+                {/* Slider eklendi */}
+                <Slider />
                 <Link to="/products" className='home-button'>
                     Ürünlere Git
                 </Link>

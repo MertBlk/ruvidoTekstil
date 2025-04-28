@@ -1,19 +1,32 @@
 .home-hero-section {
+  position: relative;
+  width: 100%; /* 100vw yerine 100% yapıldı */
+  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: var(--background-light); /* Değişken kullanıldı */
-  position: relative;
 }
 
+
+
+.home-button {
+  position: relative;
+  z-index: 1;
+}
+
+
+
 .products-grid {
-    margin-top: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    min-height: 10rem;
+  position: relative;
+  z-index: 2;
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 10rem;
 }
 
 .product-card {
