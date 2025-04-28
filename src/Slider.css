@@ -37,7 +37,7 @@
   font-size: 3rem;
   font-weight: 800;
   color: #fff;
-  font-family: 'Playfair Display', 'Poppins', serif;
+  font-family: 'Poppins', 'Arial', sans-serif;
   letter-spacing: 1px;
   text-shadow: 0 2px 12px rgba(0,0,0,0.25);
 }
@@ -79,7 +79,7 @@
 }
 
 .slider-arrow:hover {
-  background: #ff9a9a;
+  background: #898989;
   color: #fff;
 }
 

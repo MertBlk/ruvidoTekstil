@@ -20,17 +20,15 @@ const Home = () => {
                 
                 {/* Slider eklendi */}
                 <Slider />
-                <Link to="/products" className='home-button'>
-                    Ürünlere Git
-                </Link>
+               
             </div>
             <div className="products-grid">
                 {/* fade-in ve delay sınıfları kaldırıldı */}
                 <div className="product-card card-1">
-                    <Link to="/about" className="product-link">
-                        <img src="/r1.jpeg" alt="Kalite" className="product-image" />
-                        <h3>Kalite</h3>
-                        <p>En yüksek standartlarda üretilmiş ürünler.</p>
+                    <Link to="/products" className="product-link">
+                        <img src="/r1.jpeg" alt="Ürünlerimiz" className="product-image" />
+                        <h3>Ürünlerimiz</h3>
+                        <p>Özel tasarımlar, özgün dokunuşlar ve sınırsız seçeneklerle fark yaratıyoruz.</p>
                     </Link>
                 </div>
                 {/* fade-in ve delay sınıfları kaldırıldı */}
@@ -38,15 +36,15 @@ const Home = () => {
                     <Link to="/about" className="product-link">
                         <img src="/r2.jpeg" alt="Tasarım" className="product-image" />
                         <h3>Tasarım</h3>
-                        <p>Modern ve yenilikçi tasarımlar.</p>
+                        <p>Her ayrıntıda markanıza sizin kadar özel bir imza. Ruvido ile her ürün, sizin benzersiz tarzınızı yansıtır.</p>
                     </Link>
                 </div>
                 {/* fade-in ve delay sınıfları kaldırıldı */}
                 <div className="product-card card-3">
-                    <Link to="/about" className="product-link">
+                    <Link to="/contact" className="product-link">
                         <img src="/r3.jpeg" alt="Güven" className="product-image" />
-                        <h3>Güven</h3>
-                        <p>Müşteri memnuniyetini ön planda tutan hizmet.</p>
+                        <h3>Bizimle İletişme Geç!</h3>
+                        <p> Sorularınız için bize ulaşın. Size en kısa sürede geri dönüş yapalım. </p>
                     </Link>
                 </div>
             </div>
