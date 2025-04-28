@@ -5,7 +5,9 @@
 
 .store-image {
     width: 100%;
-    max-height: 300px;
+    height: 30rem;
+    max-width: 100%;
+   
     object-fit: cover;
     margin-bottom: 1.5rem;
     border-radius: 8px;
@@ -42,6 +44,8 @@
 
     .store-image {
         max-height: 200px;
+        height: 30rem;
+        max-width: 100%;
     }
 
     .contact-details {

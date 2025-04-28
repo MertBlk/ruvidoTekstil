@@ -4,7 +4,7 @@ import './Contact.css';
 const Contact = () => {
     return (
         <div className="contact fade-in">
-            <img src="/r2.jpeg" alt="Mağaza" className="store-image fade-in delay-100" />
+            <img src="/magaza.jpeg" alt="Mağaza" className="store-image fade-in delay-100" />
             <div className="contact-details fade-in delay-200">
                 <h1>İletişim</h1>
                 <p><strong>Adres:</strong> Semerciler Çark Caddesi Adapazarı/Sakarya</p>

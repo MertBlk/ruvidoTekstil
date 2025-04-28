@@ -7,14 +7,14 @@
   --link-hover-color: #3498db;
   --border-color: #ddd;
   --shadow-color: rgba(0, 0, 0, 0.1);
-  --accent-color: #ff9a9a; /* Home buton rengi gibi */
+  --accent-color: #ffab3c; /* Home buton rengi gibi */
 }
 
 /* Temel stiller */
-html, body { /* html ekledim ve height: 100% ekledim */
+html, body {
     height: 100%;
     margin: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', 'Open Sans', Arial, sans-serif;
     line-height: 1.6;
     background-color: var(--background-light); /* Değişken kullanıldı */
     color: var(--text-dark); /* Değişken kullanıldı */
@@ -26,12 +26,8 @@ html, body { /* html ekledim ve height: 100% ekledim */
     min-height: 100vh;
 }
 
-h1 {
-    font-size: 4rem;
-    font-family: 'Poppins', sans-serif;
-}
-
-h2, h3 {
+h1, h2, h3 {
+    font-family: 'Open Sans', 'Roboto', Arial, sans-serif;
     color: #222; /* Bu renk değişken olarak eklenebilir veya kalabilir */
     font-weight: 700;
     margin-bottom: 1rem;
