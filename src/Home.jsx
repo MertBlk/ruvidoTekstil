@@ -15,31 +15,36 @@ const Home = () => {
 
     return (
         <div>
-            {/* Inline stil kaldırıldı ve className eklendi */}
-            <div className="home-hero-section fade-in">
-                <div className="layer layer-1 fade-in delay-100">RUVIDO TEKSTİL</div>
-                <div className="layer layer-2 fade-in delay-200">KALİTE</div>
-                <div className="layer layer-3 fade-in delay-300">TASARIM</div>
-                <Link to="/products" className='home-button fade-in delay-400'>
+            {/* fade-in sınıfı kaldırıldı */}
+            <div className="home-hero-section">
+                {/* fade-in ve delay sınıfları kaldırıldı */}
+                <div className="layer layer-1">RUVIDO TEKSTİL</div>
+                <div className="layer layer-2">KALİTE</div>
+                <div className="layer layer-3">TASARIM</div>
+                {/* fade-in ve delay sınıfları kaldırıldı */}
+                <Link to="/products" className='home-button'>
                     Ürünlere Git
                 </Link>
             </div>
             <div className="products-grid">
-                <div className="product-card card-1 fade-in delay-200">
+                {/* fade-in ve delay sınıfları kaldırıldı */}
+                <div className="product-card card-1">
                     <Link to="/about" className="product-link">
                         <img src="/r1.jpeg" alt="Kalite" className="product-image" />
                         <h3>Kalite</h3>
                         <p>En yüksek standartlarda üretilmiş ürünler.</p>
                     </Link>
                 </div>
-                <div className="product-card card-2 fade-in delay-300">
+                {/* fade-in ve delay sınıfları kaldırıldı */}
+                <div className="product-card card-2">
                     <Link to="/about" className="product-link">
                         <img src="/r2.jpeg" alt="Tasarım" className="product-image" />
                         <h3>Tasarım</h3>
                         <p>Modern ve yenilikçi tasarımlar.</p>
                     </Link>
                 </div>
-                <div className="product-card card-3 fade-in delay-400">
+                {/* fade-in ve delay sınıfları kaldırıldı */}
+                <div className="product-card card-3">
                     <Link to="/about" className="product-link">
                         <img src="/r3.jpeg" alt="Güven" className="product-image" />
                         <h3>Güven</h3>

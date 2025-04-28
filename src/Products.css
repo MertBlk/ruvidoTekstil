@@ -7,38 +7,68 @@
 }
 
 .filter-bar {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 4rem; /* Üst boşluk artırıldı */
+    margin-bottom: 3rem; /* Alt boşluk ayarlandı */
     text-align: center;
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem; /* Butonlar arası boşluk artırıldı */
     flex-wrap: wrap;
-    padding: 1rem;
+    padding: 1rem 0; /* Dikey padding kaldırıldı */
+    border-bottom: 1px solid var(--border-color); /* Altına ince bir çizgi eklendi */
 }
 
 .filter-button {
-    padding: 0.8rem 1.5rem;
+    padding: 0.5rem 0; /* Dikey padding ayarlandı, yatay kaldırıldı */
     border: none;
-    background-color: #f5f5f5;
-    color: #333;
-    border-radius: 25px;
+    background-color: transparent; /* Arka plan kaldırıldı */
+    color: var(--text-dark); /* Değişken kullanıldı */
+    border-radius: 0; /* Köşe yuvarlaklığı kaldırıldı */
     cursor: pointer;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1rem; /* Font boyutu biraz büyütüldü */
+    transition: color 0.3s ease, border-bottom-color 0.3s ease; /* Geçişler güncellendi */
+    border-bottom: 2px solid transparent; /* Aktif durum için yer tutucu */
+    /* box-shadow kaldırıldı */
 }
 
 .filter-button.active {
-    background-color: #ff9a9a;
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    background-color: transparent; /* Arka plan kaldırıldı */
+    color: var(--text-dark); /* Aktif renk text-dark oldu */
+    font-weight: 600; /* Kalın yazı */
+    border-bottom-color: var(--accent-color); /* Alt çizgi rengi */
+    /* transform kaldırıldı */
+    /* box-shadow kaldırıldı */
 }
 
 .filter-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    color: var(--accent-color); /* Hover rengi accent oldu */
+    /* transform kaldırıldı */
+    /* box-shadow kaldırıldı */
+}
+
+/* Arama input alanı için stiller */
+.search-input {
+    padding: 0.5rem 1rem; /* Butonlara benzer padding */
+    border: 1px solid var(--border-color); /* İnce kenarlık */
+    border-radius: 20px; /* Yuvarlak köşeler */
+    font-size: 0.9rem;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    margin-left: auto; /* Sağa yaslamak için (isteğe bağlı) */
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(255, 154, 154, 0.3); /* Odaklandığında hafif gölge */
+}
+
+/* Eşleşme olmadığında gösterilecek mesaj için stil */
+.no-results {
+    text-align: center;
+    margin-top: 2rem;
+    color: #777; /* Daha soluk bir renk */
 }
 
 .products-grid {

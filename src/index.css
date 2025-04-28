@@ -94,28 +94,6 @@ ul {
     }
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.fade-in {
-    animation: fadeIn 1s ease-out forwards;
-    opacity: 0;
-}
-
-.delay-100 { animation-delay: 100ms; }
-.delay-200 { animation-delay: 200ms; }
-.delay-300 { animation-delay: 300ms; }
-.delay-400 { animation-delay: 400ms; }
-.delay-500 { animation-delay: 500ms; }
-
 .footer { /* Bu yeni kural eklendi */
     margin-top: auto; /* İçerik kısa olduğunda footer'ı aşağı iter */
     flex-shrink: 0; /* İçerik uzun olduğunda footer'ın küçülmesini engeller */

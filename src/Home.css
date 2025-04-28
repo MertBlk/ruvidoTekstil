@@ -18,14 +18,14 @@
 
 .product-card {
     position: relative;
-    left: 4.5%;
+    left: 5%;
     background-color: #ffffff; /* Beyaz için değişken eklenebilir veya kalabilir */
     border: 1px solid var(--border-color); /* Değişken kullanıldı */
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 6px var(--shadow-color); /* Değişken kullanıldı */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 30rem;
+    width: 25rem !important; /* Genişlik değişkeni güncellenebilir */
     margin: 10px;
     &:hover {
         transform: scale(1.05);
@@ -36,9 +36,9 @@
 .home-button {
     position: absolute;
     top: 75%;
-    text-align: center;
+    left: 50%; /* Yatay ortalama için eklendi */
     transform: translate(-50%, -50%);
-    padding: 1.2rem 2.4rem;
+    padding: 1.2rem 2.4rem; /* Tekrarlanan padding kaldırıldı */
     background-color: transparent;
     border: 2px solid var(--accent-color); /* Değişken kullanıldı */
     color: var(--text-light); /* Değişken kullanıldı (Ana sayfada beyaz) */
@@ -47,8 +47,6 @@
     font-size: 16px;
     font-weight: bold;
     transition: all 0.3s ease;
-    text-align: center;
-    padding: 1.2rem 2.4rem;
 }
 
 .home-button:hover {
