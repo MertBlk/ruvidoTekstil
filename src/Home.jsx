@@ -22,6 +22,7 @@ const Home = () => {
                 <Slider />
                
             </div>
+           
             <div className="products-grid">
                 {/* fade-in ve delay sınıfları kaldırıldı */}
                 <div className="product-card card-1">
@@ -47,6 +48,12 @@ const Home = () => {
                         <p> Sorularınız için bize ulaşın. Size en kısa sürede geri dönüş yapalım. </p>
                     </Link>
                 </div>
+            </div>
+            <div className="neden-biz-section">
+                <h2>Neden Biz?</h2>
+                <p>
+                Ruvido Tekstil olarak, kaliteyi, güveni ve yenilikçi tasarımı bir araya getirerek sektörde standartları yeniden tanımlıyoruz. Müşteri odaklı yaklaşımımız, zengin ürün çeşitliliğimiz ve sürdürülebilir üretim anlayışımızla her zaman yanınızdayız.
+                </p>
             </div>
         </div>
         

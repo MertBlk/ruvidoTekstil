@@ -27,10 +27,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.contact-details a {
-    color: #1c823c;
-    text-decoration: none;
-}
+
 
 .contact-details a:hover {
     text-decoration: underline;

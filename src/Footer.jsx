@@ -13,7 +13,7 @@ const Footer = () => {
         <div className="footer-section links">
           <h3>Sosyal Medya</h3>
           <ul>
-            <li><a href="https://www.instagram.com/ruvido">Instagram</a></li>
+            <li><a href="https://www.instagram.com/ruvido.tr">Instagram</a></li>
           </ul>
         </div>
 
