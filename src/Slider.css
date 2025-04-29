@@ -57,17 +57,17 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255,255,255,0.7);
+  background: transparent;
   border: none;
   border-radius: 50%;
   width: 2.5rem;
   height: 2.5rem;
   font-size: 1.5rem;
-  color: #333;
+  color: #ffffff;
   cursor: pointer;
   z-index: 2;
   transition: background 0.2s, color 0.2s;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  ;
 }
 
 .slider-arrow.left {
@@ -85,10 +85,18 @@
 
 @media (max-width: 900px) {
   .slider {
+    width: 100vw;
+    min-width: 100vw;
+    margin: 0;
+    margin-left: calc(-50vw + 50%); /* Sayfa boyutundan bağımsız olarak tam ekran yap */
+    box-sizing: border-box;
     height: 50vh;
     min-height: 200px;
+    position: relative;
+    left: 0;
   }
   .slide {
+    width: 100vw;
     height: 50vh;
   }
   .slide-content {
@@ -103,10 +111,18 @@
 
 @media (max-width: 600px) {
   .slider {
+    width: 100vw;
+    min-width: 100vw;
+    position: relative;
+    margin: 0;
+    margin-left: calc(-50vw + 50%); /* Sayfa boyutundan bağımsız olarak tam ekran yap */
+    left: 0;
+    box-sizing: border-box;
     height: 30vh;
     min-height: 120px;
   }
   .slide {
+    width: 100vw;
     height: 30vh;
   }
   .slide-content {

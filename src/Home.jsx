@@ -52,7 +52,8 @@ const Home = () => {
             <div className="neden-biz-section">
                 <h2>Neden Biz?</h2>
                 <p>
-                Ruvido Tekstil olarak, kaliteyi, güveni ve yenilikçi tasarımı bir araya getirerek sektörde standartları yeniden tanımlıyoruz. Müşteri odaklı yaklaşımımız, zengin ürün çeşitliliğimiz ve sürdürülebilir üretim anlayışımızla her zaman yanınızdayız.
+                Ruvido Tekstil olarak, kaliteyi, güveni ve yenilikçi tasarımı bir araya getirerek sektörde standartları yeniden tanımlıyoruz. 
+                Müşteri odaklı yaklaşımımız, zengin ürün çeşitliliğimiz ve sürdürülebilir üretim anlayışımızla her zaman yanınızdayız.
                 </p>
             </div>
         </div>

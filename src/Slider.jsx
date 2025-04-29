@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Slider.css';
 
 const slides = [
@@ -22,23 +22,21 @@ const slides = [
 const Slider = () => {
   const [current, setCurrent] = useState(0);
 
-  const nextSlide = () => setCurrent((prev) => (prev + 1) % slides.length);
-  const prevSlide = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 3500); // 3.5 saniyede bir değişsin
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="slider">
-      <button className="slider-arrow left" onClick={prevSlide} aria-label="Önceki">
-        &#8592;
-      </button>
       <div className="slide" style={{ backgroundImage: `url(${slides[current].image})` }}>
         <div className="slide-content">
           <h2>{slides[current].title}</h2>
           <p>{slides[current].description}</p>
         </div>
       </div>
-      <button className="slider-arrow right" onClick={nextSlide} aria-label="Sonraki">
-        &#8594;
-      </button>
     </div>
   );
 };

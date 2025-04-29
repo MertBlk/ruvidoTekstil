@@ -7,12 +7,13 @@ import Navbar from './Navbar';
 import ProductDetail from './ProductDetail';
 import About from './About'; // Import the new About component
 import Footer from './Footer';
+import Navbar2 from './Navbar2'; // Import the new Navbar2 component
 
 function App() {
   return (
     <>
       <Router>
-        <Navbar />
+        <Navbar2 />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
