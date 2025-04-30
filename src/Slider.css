@@ -95,10 +95,10 @@
 
 @media (max-width: 600px) {
   .slider {
-    height: 50vh; /* Daha küçük ekranlar için yüksekliği artırdık */
+    height: 70vh; /* Daha küçük ekranlar için yüksekliği artırdık */
     min-height: 200px;
   }
   .slide {
-    height: 50vh;
+    height: 0vh;
   }
 }
