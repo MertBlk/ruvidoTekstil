@@ -1,6 +1,7 @@
 .contact {
     padding: 2rem;
     text-align: center;
+    margin-bottom: 2rem; /* Footer için küçük bir boşluk bırakıldı */
 }
 
 .store-image {
@@ -37,6 +38,7 @@
     .contact {
         padding: 1rem;
         margin-top: 60px;
+        margin-bottom: 2rem; /* Footer için mobilde de aynı boşluk */
     }
 
     .store-image {

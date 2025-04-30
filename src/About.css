@@ -4,12 +4,13 @@
 
 .about-container {
     max-width: 800px;
-    margin: 100px auto;
+    margin: 100px auto 0;
     padding: 20px;
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
+    min-height: calc(100vh - 180px); /* Footer için boşluk bırakıldı */
 }
 
 .about-container h1 {
@@ -27,9 +28,10 @@
 
 @media (max-width: 768px) {
     .about-container {
-        margin: 80px auto 20px;
+        margin: 80px auto 0;
         padding: 15px;
         width: 90%;
+        min-height: calc(100vh - 150px); /* Mobilde footer için boşluk ayarlandı */
     }
 
     .about-container h1 {

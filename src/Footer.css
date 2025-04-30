@@ -1,8 +1,8 @@
 .footer {
-  background-color: var(--footer-bg); /* Değişken kullanıldı */
-  color: var(--text-light); /* Değişken kullanıldı */
+  background-color: var(--footer-bg);
+  color: var(--text-light);
   text-align: center;
-  padding: 1.5rem 1rem; /* Padding artırıldı */
+  padding: 1.5rem 1rem;
 }
 
 .footer-content {
