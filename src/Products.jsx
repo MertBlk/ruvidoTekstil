@@ -7,17 +7,15 @@ const Products = () => {
     const [searchTerm, setSearchTerm] = useState(''); // Arama terimi için state eklendi
 
     const products = [
-        { id: 1, name: 'Ürün 1', category: 'Kategori A', image: '/r1.jpeg' },
-        { id: 2, name: 'Ürün 2', category: 'Kategori B',  image: '/r2.jpeg' },
-        { id: 3, name: 'Ürün 3', category: 'Kategori A', image: '/r3.jpeg' },
-        { id: 4, name: 'Ürün 4', category: 'Kategori C', image: '/vite.svg' },
-        { id: 5, name: 'Ürün 5', category: 'Kategori B', image: '/r1.jpeg' },
-        { id: 6, name: 'Ürün 6', category: 'Kategori C', image: '/r2.jpeg' },
-        { id: 7, name: 'Ürün 7', category: 'Kategori A', image: '/r3.jpeg' },
-        { id: 8, name: 'Ürün 8', category: 'Kategori B', image: '/vite.svg' },
+        { id: 1, name: 'Polo Yaka T-Shirt Siyah', category: 'Giyim', image: '/tsiyah.jpeg' },
+        { id: 2, name: 'Polo Yaka T-Shirt Beyaz', category: 'Giyim',  image: '/tbeyaz.jpeg' },
+        { id: 3, name: 'Polo Yaka T-Shirt Bej', category: 'Giyim', image: '/tbej.jpeg' },
+        { id: 4, name: 'Saç Bandı', category: 'Aksesuar', image: '/sac.jpeg' },
+        { id: 5, name: 'Boyun Yastığı', category: 'Ev Ürünleri', image: '/byastik.jpeg' },
+        
     ];
 
-    const categories = ['Kategori A', 'Kategori B', 'Kategori C'];
+    const categories = ['Giyim', 'Aksesuar', 'Boyun Yastığı', ];
 
     // Filtreleme mantığı güncellendi: Hem kategori hem de arama terimi
     const filteredProducts = products.filter(product => {
@@ -39,7 +37,7 @@ const Products = () => {
                     className={`filter-button ${filter === '' ? 'active' : ''}`}
                     onClick={() => setFilter('')}
                 >
-                    Tümü
+                    Tüm Ürünler
                 </button>
                 {categories.map((category, index) => (
                     <button

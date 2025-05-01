@@ -4,15 +4,52 @@ import './ProductDetail.css';
 
 // Ürün listesi component dışına taşındı
 const products = [
-    { id: 1, name: 'Ürün 1', category: 'Kategori A', price: 100, images: ['/r1.jpeg', '/r2.jpeg', '/r3.jpeg'], description: 'Bu, Ürün 1 için detaylı bir açıklamadır.' },
-    { id: 2, name: 'Ürün 2', category: 'Kategori B', price: 200, images: ['/r2.jpeg', '/r1.jpeg', '/r3.jpeg'], description: 'Bu, Ürün 2 için detaylı bir açıklamadır.' },
-    { id: 3, name: 'Ürün 3', category: 'Kategori A', price: 150, images: ['/r3.jpeg', '/r1.jpeg', '/r2.jpeg'], description: 'Bu, Ürün 3 için detaylı bir açıklamadır.' },
-    { id: 4, name: 'Ürün 4', category: 'Kategori C', price: 300, images: ['/vite.svg', '/r1.jpeg', '/r2.jpeg'], description: 'Bu, Ürün 4 için detaylı bir açıklamadır.' },
-    { id: 5, name: 'Ürün 5', category: 'Kategori B', price: 250, images: ['/r1.jpeg', '/r2.jpeg'], description: 'Bu, Ürün 5 için detaylı bir açıklamadır.' },
-    { id: 6, name: 'Ürün 6', category: 'Kategori C', price: 350, images: ['/r2.jpeg', '/r3.jpeg'], description: 'Bu, Ürün 6 için detaylı bir açıklamadır.' },
-    { id: 7, name: 'Ürün 7', category: 'Kategori A', price: 180, images: ['/r3.jpeg', '/r2.jpeg'], description: 'Bu, Ürün 7 için detaylı bir açıklamadır.' },
-    { id: 8, name: 'Ürün 8', category: 'Kategori B',  images: ['/vite.svg', '/r1.jpeg'], description: 'Bu, Ürün 8 için detaylı bir açıklamadır.' },
-];
+    {
+      id: 1,
+      name: 'Polo Yaka T-Shirt Siyah',
+      category: 'Giyim',
+      price: 450,
+      images: ['/tsiyah.jpeg', '/t1.jpeg'],
+      description:
+        'Kurumsal giyim koleksiyonları için tasarlanmış, %100 pamuklu siyah polo yaka t-shirt. Toptan alıma uygundur. Firma logonuza özel baskı veya nakış seçeneğiyle sunulabilir.'
+    },
+    {
+      id: 2,
+      name: 'Polo Yaka T-Shirt Beyaz',
+      category: 'Giyim',
+      price: 450,
+      images: ['/tbeyaz.jpeg'],
+      description:
+        'Beyaz renkli, dayanıklı ve klasik kesimli polo yaka t-shirt. Kurumsal kimliği yansıtmak isteyen firmalar için idealdir. Toptan siparişe ve özel logo uygulamasına uygundur.'
+    },
+    {
+      id: 3,
+      name: 'Polo Yaka T-Shirt Bej',
+      category: 'Giyim',
+      price: 450,
+      images: ['/tbej.jpeg', '/tbej2.jpeg'],
+      description:
+        'Modern bej rengiyle dikkat çeken polo yaka t-shirt, kurumsal kullanım için şık ve konforlu bir seçenektir. Toptan temin edilebilir, markanıza özel baskı hizmetiyle sunulur.'
+    },
+    {
+      id: 4,
+      name: 'Saç Bandı',
+      category: 'Aksesuar',
+      price: 150,
+      images: ['/sac.jpeg'],
+      description:
+        'Üretim, hizmet ve gıda sektörlerinde personel için pratik kullanım sağlar. Esnek yapısıyla her saç tipine uygundur. Toptan satışa uygundur, kurumsal renk ve logo seçenekleri mevcuttur.'
+    },
+    {
+      id: 5,
+      name: 'Boyun Yastığı',
+      category: 'Ev Ürünleri',
+      price: 250,
+      images: ['/byastik.jpeg', '/byastik2.jpeg'],
+      description:
+        'Seyahat ve ofis kullanımı için ergonomik destek sağlayan boyun yastığı. Hafızalı sünger yapısıyla üst düzey konfor sunar. Kurumsal promosyon ürünü olarak toptan sipariş edilebilir.'
+    }
+  ];
 
 const ProductDetail = () => {
     const { id } = useParams();
