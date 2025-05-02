@@ -11,7 +11,12 @@ const products = [
       price: 450,
       images: ['/tsiyah.jpeg', '/t1.jpeg'],
       description:
-        'Kurumsal giyim koleksiyonları için tasarlanmış, %100 pamuklu siyah polo yaka t-shirt. Toptan alıma uygundur. Firma logonuza özel baskı veya nakış seçeneğiyle sunulabilir.'
+        'Kurumsal giyim koleksiyonları için tasarlanmış, %100 pamuklu siyah polo yaka t-shirt. Toptan alıma uygundur. Firma logonuza özel baskı veya nakış seçeneğiyle sunulabilir.',
+      details: {
+        minOrder: '25 adet',
+        deliveryTime: '7-10 iş günü',
+        customization: 'Logo, slogan ve kurumsal renklere göre özelleştirme yapılabilir'
+      }
     },
     {
       id: 2,
@@ -20,7 +25,12 @@ const products = [
       price: 450,
       images: ['/tbeyaz.jpeg'],
       description:
-        'Beyaz renkli, dayanıklı ve klasik kesimli polo yaka t-shirt. Kurumsal kimliği yansıtmak isteyen firmalar için idealdir. Toptan siparişe ve özel logo uygulamasına uygundur.'
+        'Beyaz renkli, dayanıklı ve klasik kesimli polo yaka t-shirt. Kurumsal kimliği yansıtmak isteyen firmalar için idealdir. Toptan siparişe ve özel logo uygulamasına uygundur.',
+      details: {
+        minOrder: '25 adet',
+        deliveryTime: '7-10 iş günü',
+        customization: 'Firma logosu ve renkleriyle kişiselleştirilebilir'
+      }
     },
     {
       id: 3,
@@ -29,7 +39,12 @@ const products = [
       price: 450,
       images: ['/tbej.jpeg', '/tbej2.jpeg'],
       description:
-        'Modern bej rengiyle dikkat çeken polo yaka t-shirt, kurumsal kullanım için şık ve konforlu bir seçenektir. Toptan temin edilebilir, markanıza özel baskı hizmetiyle sunulur.'
+        'Modern bej rengiyle dikkat çeken polo yaka t-shirt, kurumsal kullanım için şık ve konforlu bir seçenektir. Toptan temin edilebilir, markanıza özel baskı hizmetiyle sunulur.',
+      details: {
+        minOrder: '25 adet',
+        deliveryTime: '7-10 iş günü',
+        customization: 'Baskı, nakış ve kurumsal renk uyarlamaları yapılabilir'
+      }
     },
     {
       id: 4,
@@ -38,7 +53,12 @@ const products = [
       price: 150,
       images: ['/sac.jpeg'],
       description:
-        'Üretim, hizmet ve gıda sektörlerinde personel için pratik kullanım sağlar. Esnek yapısıyla her saç tipine uygundur. Toptan satışa uygundur, kurumsal renk ve logo seçenekleri mevcuttur.'
+        'Üretim, hizmet ve gıda sektörlerinde personel için pratik kullanım sağlar. Esnek yapısıyla her saç tipine uygundur. Toptan satışa uygundur, kurumsal renk ve logo seçenekleri mevcuttur.',
+      details: {
+        minOrder: '50 adet',
+        deliveryTime: '5-7 iş günü',
+        customization: 'Renk ve logo özelleştirmesi yapılabilir'
+      }
     },
     {
       id: 5,
@@ -47,7 +67,12 @@ const products = [
       price: 250,
       images: ['/byastik.jpeg', '/byastik2.jpeg'],
       description:
-        'Seyahat ve ofis kullanımı için ergonomik destek sağlayan boyun yastığı. Hafızalı sünger yapısıyla üst düzey konfor sunar. Kurumsal promosyon ürünü olarak toptan sipariş edilebilir.'
+        'Seyahat ve ofis kullanımı için ergonomik destek sağlayan boyun yastığı. Hafızalı sünger yapısıyla üst düzey konfor sunar. Kurumsal promosyon ürünü olarak toptan sipariş edilebilir.',
+      details: {
+        minOrder: '30 adet',
+        deliveryTime: '7 iş günü',
+        customization: 'Logo baskısı ve renk seçimi ile özelleştirilebilir'
+      }
     }
   ];
 
