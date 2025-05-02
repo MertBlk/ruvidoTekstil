@@ -5,9 +5,9 @@ import Products from './Products';
 import Contact from './Contact';
 import Navbar from './Navbar';
 import ProductDetail from './ProductDetail';
-import About from './About'; // Import the new About component
+import About from './About';
 import Footer from './Footer';
-import Navbar2 from './Navbar2'; // Import the new Navbar2 component
+import Navbar2 from './navbar2'; // Düzeltildi: ./Navbar2 yerine ./navbar2
 
 function App() {
   return (
