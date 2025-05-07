@@ -2,79 +2,357 @@ import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import './ProductDetail.css';
 
-// Ürün listesi component dışına taşındı
+// Ürün listesinden price, minOrder ve deliveryTime özelliklerini kaldırıyorum
 const products = [
-    {
-      id: 1,
-      name: 'Polo Yaka T-Shirt Siyah',
-      category: 'Giyim',
-      price: 450,
-      images: ['/tsiyah.jpeg', '/t1.jpeg'],
-      description:
-        'Kurumsal giyim koleksiyonları için tasarlanmış, %100 pamuklu siyah polo yaka t-shirt. Toptan alıma uygundur. Firma logonuza özel baskı veya nakış seçeneğiyle sunulabilir.',
+    // T-Shirt Ürünleri
+    { id: 10, name: 'Siyah Polo T-Shirt', category: 'Giyim', images: ['/siyahPolo.jpeg', '/siyahPolo2.jpeg', '/t1.jpeg', '/tsiyah.jpeg'],
+      description: 'Kurumsal giyim koleksiyonları için tasarlanmış, %100 pamuklu siyah polo yaka t-shirt. Toptan alıma uygundur.',
       details: {
-        minOrder: '25 adet',
-        deliveryTime: '7-10 iş günü',
         customization: 'Logo, slogan ve kurumsal renklere göre özelleştirme yapılabilir'
       }
     },
-    {
-      id: 2,
-      name: 'Polo Yaka T-Shirt Beyaz',
-      category: 'Giyim',
-      price: 450,
-      images: ['/tbeyaz.jpeg'],
-      description:
-        'Beyaz renkli, dayanıklı ve klasik kesimli polo yaka t-shirt. Kurumsal kimliği yansıtmak isteyen firmalar için idealdir. Toptan siparişe ve özel logo uygulamasına uygundur.',
+    { id: 12, name: 'Gri Polo T-Shirt', category: 'Giyim', images: ['/griPolo.jpeg', '/griPolo2.jpeg'],
+      description: 'Profesyonel görünüm için tasarlanmış gri polo t-shirt. Kurumsal kimliğinizi tamamlayacak şık bir seçenek.',
       details: {
-        minOrder: '25 adet',
-        deliveryTime: '7-10 iş günü',
-        customization: 'Firma logosu ve renkleriyle kişiselleştirilebilir'
+        customization: 'Logo ve kurumsal renklere göre özelleştirme yapılabilir'
       }
     },
-    {
-      id: 3,
-      name: 'Polo Yaka T-Shirt Bej',
-      category: 'Giyim',
-      price: 450,
-      images: ['/tbej.jpeg', '/tbej2.jpeg'],
-      description:
-        'Modern bej rengiyle dikkat çeken polo yaka t-shirt, kurumsal kullanım için şık ve konforlu bir seçenektir. Toptan temin edilebilir, markanıza özel baskı hizmetiyle sunulur.',
+    { id: 14, name: 'Kahverengi Polo T-Shirt', category: 'Giyim', images: ['/kahvePolo.jpeg'],
+      description: 'Sıcak tonu ile dikkat çeken, kaliteli kumaştan üretilmiş kahverengi polo t-shirt.',
       details: {
-        minOrder: '25 adet',
-        deliveryTime: '7-10 iş günü',
-        customization: 'Baskı, nakış ve kurumsal renk uyarlamaları yapılabilir'
+        customization: 'Logo nakışı ve özelleştirme yapılabilir'
       }
     },
-    {
-      id: 4,
-      name: 'Saç Bandı',
-      category: 'Aksesuar',
-      price: 150,
-      images: ['/sac.jpeg'],
-      description:
-        'Üretim, hizmet ve gıda sektörlerinde personel için pratik kullanım sağlar. Esnek yapısıyla her saç tipine uygundur. Toptan satışa uygundur, kurumsal renk ve logo seçenekleri mevcuttur.',
+    { id: 15, name: 'Lacivert Polo T-Shirt', category: 'Giyim', images: ['/laciPolo.jpeg'], 
+      description: 'Klasik lacivert rengiyle her ortama uyum sağlayan, dayanıklı kumaştan üretilmiş polo t-shirt.',
       details: {
-        minOrder: '50 adet',
-        deliveryTime: '5-7 iş günü',
+        customization: 'Logo ve kurumsal kimlik uygulamaları yapılabilir'
+      }
+    },
+    { id: 16, name: 'Renkli Polo T-Shirt', category: 'Giyim', images: ['/renkliPolo.jpeg', '/renklipolo2.jpeg'], 
+      description: 'Canlı renk seçenekleriyle dikkat çeken, modern tasarımlı polo t-shirt modelleri.',
+      details: {
+        customization: 'İsteğe bağlı renk ve logo uygulamaları yapılabilir'
+      }
+    },
+    { id: 17, name: 'Renkli Polo T-Shirt Model 2', category: 'Giyim', images: ['/renklipolo2.jpeg', '/renkliPolo.jpeg'], 
+      description: 'Alternatif renk seçenekleriyle öne çıkan, kaliteli kumaştan üretilmiş polo t-shirt serisi.',
+      details: {
+        customization: 'Özel renk ve logo uygulamaları mümkündür'
+      }
+    },
+    { id: 20, name: 'Beyaz T-Shirt', category: 'Giyim', images: ['/tbeyaz.jpeg'], 
+      description: 'Temel beyaz t-shirt, her türlü kurumsal etkinlik ve promosyon için ideal bir seçenek.',
+      details: {
+        customization: 'Logo baskı ve nakış seçenekleri mevcuttur'
+      }
+    },
+    { id: 21, name: 'Bej T-Shirt', category: 'Giyim', images: ['/tbej.jpeg', '/tbej2.jpeg'], 
+      description: 'Zarif bej tonuyla öne çıkan, yumuşak dokusuyla konfor sunan t-shirt modeli.',
+      details: {
+        customization: 'Logo baskı ve kurumsal tasarım uygulamaları yapılabilir'
+      }
+    },
+    { id: 23, name: 'Spor T-Shirt', category: 'Giyim', images: ['/sTisort.jpeg'], 
+      description: 'Sportif aktiviteler için özel tasarlanmış, nefes alabilen kumaştan spor t-shirt.',
+      details: {
+        customization: 'Spor kulüpleri ve etkinlikler için özel tasarımlar yapılabilir'
+      }
+    },
+    { id: 24, name: 'Tişört Koleksiyonu', category: 'Giyim', images: ['/tısortler.jpeg'], 
+      description: 'Farklı renk ve model seçenekleriyle komple bir t-shirt koleksiyonu.',
+      details: {
+        customization: 'Tüm koleksiyon için tutarlı logo ve tasarım uygulamaları'
+      }
+    },
+    
+    // Düz Ürünler
+    { id: 26, name: 'Beyaz Düz', category: 'Tekstil', images: ['/bDuz.jpeg', '/bDuz2.jpeg', '/bduz3.jpeg'], 
+      description: 'Çeşitli tekstil uygulamaları için ideal beyaz kumaş. Dayanıklı ve kaliteli.',
+      details: {
+        customization: 'Özel baskı ve desen uygulamaları yapılabilir'
+      }
+    },
+    { id: 29, name: 'Gri Düz', category: 'Tekstil', images: ['/griDuz.jpeg'], 
+      description: 'Modern gri tonuyla şık mekanlara uyumlu, kaliteli düz kumaş.',
+      details: {
+        customization: 'Kurumsal desenler ekleme imkanı'
+      }
+    },
+    { id: 30, name: 'Kırmızı Düz', category: 'Tekstil', images: ['/kırmızıDuz.jpeg'], 
+      description: 'Canlı kırmızı rengiyle dikkat çeken, özel mekanlar için ideal kumaş.',
+      details: {
+        customization: 'Logo ve özel desenler eklenebilir'
+      }
+    },
+    { id: 31, name: 'Siyah Düz', category: 'Tekstil', images: ['/siyahDuz.jpeg', '/siyahDuz2.jpeg'], 
+      description: 'Klasik siyah renkli düz kumaş, her türlü dekoratif amaçla kullanılabilir.',
+      details: {
+        customization: 'Kurumsal kimliğe uygun özelleştirmeler yapılabilir'
+      }
+    },
+    
+    // Çanta Ürünleri
+    { id: 33, name: 'Siyah Çanta', category: 'Aksesuar', images: ['/siyahCanta.jpeg', '/siyahCanta2.jpeg'], 
+      description: 'Dayanıklı ve şık tasarımlı siyah çanta, kurumsal hediye ve promosyon amaçlı kullanım için ideal.',
+      details: {
+        customization: 'Logo baskısı ve kurumsal renklerle üretilebilir'
+      }
+    },
+    { id: 35, name: 'Çanta Baskı', category: 'Aksesuar', images: ['/cantaBaski.jpeg'], 
+      description: 'Özel baskı teknikleriyle kişiselleştirilebilen promosyon çantası.',
+      details: {
+        customization: 'Tam renkli baskı ve logo uygulamaları yapılabilir'
+      }
+    },
+    { id: 36, name: 'İpli Çanta', category: 'Aksesuar', images: ['/ipliCanta.jpeg'], 
+      description: 'Pratik ipli kapama sistemiyle kullanım kolaylığı sağlayan çanta modeli.',
+      details: {
+        customization: 'Logo ve kurumsal kimlik uygulamaları'
+      }
+    },
+    
+    // Şapka Ürünleri
+    { id: 37, name: 'Siyah Şapka', category: 'Aksesuar', images: ['/siyahSapka.jpeg', '/duzSiyahSapka.jpeg'], 
+      description: 'Şık ve dayanıklı siyah şapka, kurumsal etkinlik ve promosyon amaçlı kullanım için uygundur.',
+      details: {
+        customization: 'Logo nakışı ve özel etiketleme yapılabilir'
+      }
+    },
+    { id: 38, name: 'Düz Beyaz Şapka', category: 'Aksesuar', images: ['/duzBeyazSpka.jpeg'], 
+      description: 'Klasik beyaz şapka, promosyon ve etkinlikler için ideal bir seçenek.',
+      details: {
+        customization: 'Logo nakışı ve baskı seçenekleri mevcuttur'
+      }
+    },
+    { id: 39, name: 'Düz Siyah Şapka', category: 'Aksesuar', images: ['/duzSiyahSapka.jpeg', '/siyahSapka.jpeg'], 
+      description: 'Standart siyah şapka, her ortama uyum sağlayan tasarımıyla dikkat çeker.',
+      details: {
+        customization: 'Özel logo ve tasarım uygulamaları yapılabilir'
+      }
+    },
+    
+    // Yastık Ürünleri
+    { id: 40, name: 'Boyun Yastığı', category: 'Ev Ürünleri', images: ['/byastik.jpeg', '/byastik2.jpeg'], 
+      description: 'Seyahat ve ofis kullanımı için ergonomik destek sağlayan boyun yastığı. Kurumsal promosyon ürünü olarak ideal.',
+      details: {
+        customization: 'Logo baskısı ve renk seçimi ile özelleştirilebilir'
+      }
+    },
+    { id: 41, name: 'Boyun Yastığı Model 2', category: 'Ev Ürünleri', images: ['/byastik2.jpeg', '/byastik.jpeg'], 
+      description: 'Alternatif ergonomik tasarımıyla uzun süreli kullanımda konfor sağlayan boyun yastığı.',
+      details: {
+        customization: 'Firma logosu ve özel renk seçenekleri'
+      }
+    },
+    { id: 42, name: 'Boyun Yastığı Model 3', category: 'Ev Ürünleri', images: ['/bYastik3.jpeg'], 
+      description: 'Premium malzemelerden üretilmiş, özel tasarım boyun yastığı.',
+      details: {
+        customization: 'Logo baskısı ve özel ambalaj seçenekleri'
+      }
+    },
+    { id: 43, name: 'Boyun Yastığı Özel', category: 'Ev Ürünleri', images: ['/bYastık.jpeg'], 
+      description: 'Özel tasarlanmış, anatomik yapıya uygun premium boyun yastığı.',
+      details: {
+        customization: 'Özel logo ve kılıf seçenekleri sunulmaktadır'
+      }
+    },
+    { id: 44, name: 'Boyun Yastığı Mavi', category: 'Ev Ürünleri', images: ['/bYastıkMavi.jpeg'], 
+      description: 'Ferahlatıcı mavi rengiyle dinlendirici bir etki yaratan konforlu boyun yastığı.',
+      details: {
+        customization: 'Logo ve kurumsal renk uygulamaları yapılabilir'
+      }
+    },
+    { id: 45, name: 'Boyun Yastığı Yeni Model', category: 'Ev Ürünleri', images: ['/bYastikY.jpeg'], 
+      description: 'En son teknoloji ile geliştirilen, maksimum konfor sağlayan yeni nesil boyun yastığı.',
+      details: {
+        customization: 'Özel tasarım ve logo uygulamaları mümkündür'
+      }
+    },
+    
+    // Havlu Ürünleri
+    { id: 1, name: 'Beyaz Havlu', category: 'Havlu', images: ['/havluBeyaz.jpeg', '/havluBeyaz2.jpeg', '/HavluBeyaz3.jpeg'], 
+      description: 'Yüksek kaliteli beyaz havlu, yumuşak dokusu ve emici özelliği ile otel ve tesisler için idealdir.',
+      details: {
+        customization: 'Kurumsal logo nakışı eklenebilir'
+      }
+    },
+    { id: 2, name: 'Beyaz Havlu Model 2', category: 'Havlu', images: ['/havluBeyaz2.jpeg', '/havluBeyaz.jpeg'], 
+      description: 'Özel dokuma tekniği ile üretilmiş, dayanıklı beyaz havlu. Otel, spa ve sağlık tesisleri için uygundur.',
+      details: {
+        customization: 'Renk ve logo özelleştirmeleri yapılabilir'
+      }
+    },
+    { id: 3, name: 'Beyaz Havlu Model 3', category: 'Havlu', images: ['/HavluBeyaz3.jpeg', '/havluBeyaz.jpeg'], 
+      description: 'Premium kalitede beyaz havlu, uzun ömürlü ve yumuşak dokusu ile profesyonel kullanım için tasarlanmıştır.',
+      details: {
+        customization: 'Logo baskısı ve özel etiketleme yapılabilir'
+      }
+    },
+    { id: 4, name: 'Mor Havlu', category: 'Havlu', images: ['/havluMor.jpeg'], 
+      description: 'Şık mor rengi ile dikkat çeken, yüksek emici özelliğe sahip kaliteli havlu.',
+      details: {
+        customization: 'Logo ve kurumsal renklere uygun tasarım yapılabilir'
+      }
+    },
+    { id: 5, name: 'Sarı Havlu', category: 'Havlu', images: ['/havluSari.jpeg'], 
+      description: 'Canlı sarı rengiyle enerjik bir atmosfer yaratan, yumuşak dokulu havlu.',
+      details: {
+        customization: 'Logo nakışı ve özel paketleme seçenekleri sunulur'
+      }
+    },
+    { id: 6, name: 'Klasik Havlu', category: 'Havlu', images: ['/havlu.jpeg', '/havlu2.jpeg', '/havlu3.jpeg'], 
+      description: 'Çok amaçlı kullanıma uygun, standart ebatlarda klasik havlu modeli.',
+      details: {
+        customization: 'Logo ve kurumsal kimlik uygulamaları yapılabilir'
+      }
+    },
+    { id: 7, name: 'Klasik Havlu Model 2', category: 'Havlu', images: ['/havlu2.jpeg', '/havlu.jpeg'], 
+      description: 'Farklı dokuma tekniği ile üretilmiş, standart boyutlu kaliteli havlu.',
+      details: {
+        customization: 'Logo baskısı ve nakış seçenekleri'
+      }
+    },
+    { id: 8, name: 'Klasik Havlu Model 3', category: 'Havlu', images: ['/havlu3.jpeg', '/havlu.jpeg'], 
+      description: 'Alternatif desen ve dokuma detaylarıyla öne çıkan klasik havlu çeşidi.',
+      details: {
+        customization: 'Özel desen ve logo uygulamaları'
+      }
+    },
+    { id: 9, name: 'Renkli Havlu', category: 'Havlu', images: ['/renkliHavlu.jpeg'], 
+      description: 'Çeşitli renk seçenekleriyle canlı mekanlar için ideal havlu çeşidi.',
+      details: {
+        customization: 'Renklere uyumlu logo ve tasarım uygulamaları'
+      }
+    },
+    
+    // İpli Ürünler
+    { id: 46, name: 'İpli Model 2', category: 'Tekstil', images: ['/ipli2.jpeg'], 
+      description: 'İpli detaylarla zenginleştirilmiş özel tekstil ürünü.',
+      details: {
+        customization: 'Özel tasarım ve renk seçenekleri'
+      }
+    },
+    { id: 47, name: 'İpli Model 3', category: 'Tekstil', images: ['/ipli3.jpeg'], 
+      description: 'Premium kalitede, dikkat çekici ipli detaylara sahip tekstil ürünü.',
+      details: {
+        customization: 'Logo ve kurumsal kimlik uygulamaları'
+      }
+    },
+    { id: 48, name: 'İpli Baskı', category: 'Tekstil', images: ['/ipliBaski.jpeg'], 
+      description: 'Özel baskı tekniği ile üretilmiş, ipli detaylara sahip tekstil ürünü.',
+      details: {
+        customization: 'Tam renk baskı ve özel tasarım imkanı'
+      }
+    },
+    { id: 49, name: 'İpli Mavi', category: 'Tekstil', images: ['/ipliMavi.jpeg'], 
+      description: 'Mavi tonlarında, modern tasarımlı ipli tekstil ürünü.',
+      details: {
+        customization: 'Logo ve kurumsal renk uygulamaları'
+      }
+    },
+    { id: 50, name: 'İpli Renkli', category: 'Tekstil', images: ['/ipliRenkli.jpeg'], 
+      description: 'Farklı renk seçeneklerine sahip, modern ipli tekstil ürünü.',
+      details: {
+        customization: 'Özel renk ve logo uygulamaları yapılabilir'
+      }
+    },
+    
+    // Diğer Ürünler
+    { id: 51, name: 'Saç Bandı', category: 'Aksesuar', images: ['/sac.jpeg', '/sacBandi.jpeg'], 
+      description: 'Üretim, hizmet ve gıda sektörlerinde personel için pratik kullanım sağlar. Esnek yapısıyla her saç tipine uygundur.',
+      details: {
         customization: 'Renk ve logo özelleştirmesi yapılabilir'
       }
     },
-    {
-      id: 5,
-      name: 'Boyun Yastığı',
-      category: 'Ev Ürünleri',
-      price: 250,
-      images: ['/byastik.jpeg', '/byastik2.jpeg'],
-      description:
-        'Seyahat ve ofis kullanımı için ergonomik destek sağlayan boyun yastığı. Hafızalı sünger yapısıyla üst düzey konfor sunar. Kurumsal promosyon ürünü olarak toptan sipariş edilebilir.',
+    { id: 52, name: 'Özel Saç Bandı', category: 'Aksesuar', images: ['/sacBandi.jpeg', '/sac.jpeg'], 
+      description: 'Premium kalitede, özel tasarımlı saç bandı. Profesyonel kullanım için idealdir.',
       details: {
-        minOrder: '30 adet',
-        deliveryTime: '7 iş günü',
-        customization: 'Logo baskısı ve renk seçimi ile özelleştirilebilir'
+        customization: 'Logo ve kurumsal renklere uygun tasarım yapılabilir'
       }
-    }
-  ];
+    },
+    { id: 53, name: 'Mağaza Görünümü', category: 'Referans', images: ['/magaza.jpeg'], 
+      description: 'Ürünlerimizin mağaza içi sergilenmesi için referans görsel.',
+      details: {
+        customization: 'Mağaza içi özel tasarım danışmanlığı verilir'
+      }
+    },
+    { id: 54, name: 'Kumaş', category: 'Tekstil', images: ['/fabric.png'], 
+      description: 'Çeşitli tekstil projeleri için kullanılabilecek yüksek kaliteli kumaş.',
+      details: {
+        customization: 'Özel desen ve renk uygulamaları yapılabilir'
+      }
+    },
+        
+    { id: 9, name: 'Renkli Havlu', category: 'Havlu', images: ['/renkliHavlu.jpeg'], 
+      description: 'Çeşitli renk seçenekleriyle canlı mekanlar için ideal havlu çeşidi.',
+      details: {
+        
+        customization: 'Renklere uyumlu logo ve tasarım uygulamaları'
+      }
+    },
+    
+    // İpli Ürünler
+    { id: 46, name: 'İpli Model 2', category: 'Tekstil', images: ['/ipli2.jpeg'], 
+      description: 'İpli detaylarla zenginleştirilmiş özel tekstil ürünü.',
+      details: {
+       
+        customization: 'Özel tasarım ve renk seçenekleri'
+      }
+    },
+    { id: 47, name: 'İpli Model 3', category: 'Tekstil', images: ['/ipli3.jpeg'], 
+      description: 'Premium kalitede, dikkat çekici ipli detaylara sahip tekstil ürünü.',
+      details: {
+       
+        customization: 'Logo ve kurumsal kimlik uygulamaları'
+      }
+    },
+    { id: 48, name: 'İpli Baskı', category: 'Tekstil', images: ['/ipliBaski.jpeg'], 
+      description: 'Özel baskı tekniği ile üretilmiş, ipli detaylara sahip tekstil ürünü.',
+      details: {
+        minOrder: '50 adet',
+        deliveryTime: '10 iş günü',
+        customization: 'Tam renk baskı ve özel tasarım imkanı'
+      }
+    },
+    { id: 49, name: 'İpli Mavi', category: 'Tekstil', images: ['/ipliMavi.jpeg'], 
+      description: 'Mavi tonlarında, modern tasarımlı ipli tekstil ürünü.',
+      details: {
+       
+        customization: 'Logo ve kurumsal renk uygulamaları'
+      }
+    },
+    { id: 50, name: 'İpli Renkli', category: 'Tekstil', images: ['/ipliRenkli.jpeg'], 
+      description: 'Farklı renk seçeneklerine sahip, modern ipli tekstil ürünü.',
+      details: {
+        minOrder: '50 adet',
+        deliveryTime: '7-10 iş günü',
+        customization: 'Özel renk ve logo uygulamaları yapılabilir'
+      }
+    },
+    
+    // Diğer Ürünler
+    { id: 51, name: 'Saç Bandı', category: 'Aksesuar', price: 130, images: ['/sac.jpeg', '/sacBandi.jpeg'], 
+      description: 'Üretim, hizmet ve gıda sektörlerinde personel için pratik kullanım sağlar. Esnek yapısıyla her saç tipine uygundur.',
+      details: {
+      
+        customization: 'Renk ve logo özelleştirmesi yapılabilir'
+      }
+    },
+    { id: 52, name: 'Özel Saç Bandı', category: 'Aksesuar', price: 140, images: ['/sacBandi.jpeg', '/sac.jpeg'], 
+      description: 'Premium kalitede, özel tasarımlı saç bandı. Profesyonel kullanım için idealdir.',
+      details: {
+     
+        customization: 'Logo ve kurumsal renklere uygun tasarım yapılabilir'
+      }
+    },
+    
+    
+ 
+    
+   
+   
+];
 
 const ProductDetail = () => {
     const { id } = useParams();
@@ -83,7 +361,13 @@ const ProductDetail = () => {
     const product = useMemo(() => products.find(p => p.id === parseInt(id)), [id]);
 
     if (!product) {
-        return <div>Ürün bulunamadı!</div>;
+        return (
+            <div className="product-not-found">
+                <h2>Ürün bulunamadı!</h2>
+                <p>Aradığınız ürün sistemimizde mevcut değil.</p>
+                <Link to="/products" className="back-to-products">Tüm Ürünlere Dön</Link>
+            </div>
+        );
     }
 
     // Ana görsel değiştirme fonksiyonu
@@ -97,22 +381,33 @@ const ProductDetail = () => {
 
     // Önerilen ürünler hesaplaması
     const suggested = useMemo(() => {
-        const relatedProducts = products.filter(p => p.id !== product.id);
-        return [...relatedProducts]
-            .sort(() => 0.5 - Math.random())
-            .slice(0, 3);
-    }, [product.id]);
+        // Aynı kategorideki ürünleri öncelikle seçelim
+        const sameCategoryProducts = products.filter(p => p.category === product.category && p.id !== product.id);
+        
+        if (sameCategoryProducts.length >= 3) {
+            return [...sameCategoryProducts]
+                .sort(() => 0.5 - Math.random())
+                .slice(0, 3);
+        } else {
+            // Aynı kategoride yeterli ürün yoksa, diğer ürünlerden de ekleyelim
+            const otherProducts = products.filter(p => p.category !== product.category && p.id !== product.id);
+            return [
+                ...sameCategoryProducts,
+                ...otherProducts.sort(() => 0.5 - Math.random()).slice(0, 3 - sameCategoryProducts.length)
+            ];
+        }
+    }, [product.id, product.category]);
 
     // Önerilen ürünler için ana görsel
     const getSuggestedImage = useCallback((item) => {
-        return item.images && item.images.length > 0 ? item.images[0] : '/vite.svg';
+        return item.images && item.images.length > 0 ? item.images[0] : '/fabric.png';
     }, []);
 
     return (
         <>
             <div className="product-detail-gallery-layout">
                 <div className="gallery-thumbnails-vertical">
-                    {product.images.map((img, idx) => (
+                    {product.images && product.images.map((img, idx) => (
                         <div
                             key={idx}
                             className={`gallery-thumb-box${mainImageIndex === idx ? ' active' : ''}`}
@@ -127,19 +422,38 @@ const ProductDetail = () => {
                     ))}
                 </div>
                 <div className="gallery-main-image-block-vertical">
-                    <img 
-                        key={`${product.id}-${mainImageIndex}`}
-                        src={product.images[mainImageIndex]} 
-                        alt={product.name} 
-                        className="gallery-main-image-vertical" 
-                    />
+                    {product.images && product.images.length > 0 ? (
+                        <img 
+                            key={`${product.id}-${mainImageIndex}`}
+                            src={product.images[mainImageIndex]} 
+                            alt={product.name} 
+                            className="gallery-main-image-vertical" 
+                        />
+                    ) : (
+                        <div className="no-image">Görsel Mevcut Değil</div>
+                    )}
                 </div>
                 <div className="gallery-product-info">
                     <h1>{product.name}</h1>
-                    
                     <div className="gallery-product-category">{product.category}</div>
-                    <div className="gallery-product-desc">{product.description}</div>
-                
+                    {product.price && <div className="gallery-product-price">{product.price} TL'den başlayan fiyatlarla</div>}
+                    <div className="gallery-product-desc">{product.description || 'Ürün açıklaması mevcut değil.'}</div>
+                    
+                    {product.details && (
+                        <div className="product-details">
+                            <h2>Ürün Detayları</h2>
+                            <ul>
+                                {product.details.minOrder && <li><strong>Minimum Sipariş:</strong> {product.details.minOrder}</li>}
+                                {product.details.deliveryTime && <li><strong>Teslimat Süresi:</strong> {product.details.deliveryTime}</li>}
+                                {product.details.customization && <li><strong>Kişiselleştirme:</strong> {product.details.customization}</li>}
+                            </ul>
+                        </div>
+                    )}
+                    
+                    <div className="contact-for-order">
+                        <p>Sipariş ve fiyat bilgisi için lütfen bizimle iletişime geçin</p>
+                        <Link to="/contact" className="contact-button">İletişime Geç</Link>
+                    </div>
                 </div>
             </div>
             <div className="suggested-products-section">

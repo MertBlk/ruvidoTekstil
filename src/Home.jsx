@@ -27,7 +27,7 @@ const Home = () => {
                 {/* fade-in ve delay sınıfları kaldırıldı */}
                 <div className="product-card card-1">
                     <Link to="/products" className="product-link">
-                        <img src="/r1.jpeg" alt="Ürünlerimiz" className="product-image" />
+                        <img src="/tisortler.jpeg" alt="Ürünlerimiz" className="product-image" />
                         <h3>Ürünlerimiz</h3>
                         <p>Özel tasarımlar, özgün dokunuşlar ve sınırsız seçeneklerle fark yaratıyoruz.</p>
                     </Link>
@@ -35,7 +35,7 @@ const Home = () => {
                 {/* fade-in ve delay sınıfları kaldırıldı */}
                 <div className="product-card card-2">
                     <Link to="/about" className="product-link">
-                        <img src="/r2.jpeg" alt="Tasarım" className="product-image" />
+                        <img src="/cantaBaski.jpeg" alt="Tasarım" className="product-image" />
                         <h3>Tasarım</h3>
                         <p>Her ayrıntıda markanıza sizin kadar özel bir imza. Ruvido ile her ürün, sizin benzersiz tarzınızı yansıtır.</p>
                     </Link>
@@ -49,13 +49,7 @@ const Home = () => {
                     </Link>
                 </div>
             </div>
-            <div className="neden-biz-section">
-                <h2>Neden Biz?</h2>
-                <p>
-                Ruvido Tekstil olarak, kaliteyi, güveni ve yenilikçi tasarımı bir araya getirerek sektörde standartları yeniden tanımlıyoruz. 
-                Müşteri odaklı yaklaşımımız, zengin ürün çeşitliliğimiz ve sürdürülebilir üretim anlayışımızla her zaman yanınızdayız.
-                </p>
-            </div>
+            
         </div>
         
     );
