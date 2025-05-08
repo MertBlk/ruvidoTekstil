@@ -3,26 +3,57 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Home';
 import Products from './Products';
 import Contact from './Contact';
-
 import ProductDetail from './ProductDetail';
 import About from './About';
 import Footer from './Footer';
-import Navbar2 from './navbar2'; // Düzeltildi: ./Navbar2 yerine ./navbar2
+import Navbar2 from './navbar2'; 
+
 
 function App() {
   return (
     <>
       <Router>
-        <Navbar2 />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/products/:id" element={<ProductDetail />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<About />} /> {/* Add this line for the About page */}
+         
+          
+          {/* Diğer sayfalar için Navbar ve Footer içeren yapı */}
+          <Route path="/" element={
+            <>
+              <Navbar2 />
+              <Home />
+              <Footer />
+            </>
+          } />
+          <Route path="/products" element={
+            <>
+              <Navbar2 />
+              <Products />
+              <Footer />
+            </>
+          } />
+          <Route path="/products/:id" element={
+            <>
+              <Navbar2 />
+              <ProductDetail />
+              <Footer />
+            </>
+          } />
+          <Route path="/contact" element={
+            <>
+              <Navbar2 />
+              <Contact />
+              <Footer />
+            </>
+          } />
+          <Route path="/about" element={
+            <>
+              <Navbar2 />
+              <About />
+              <Footer />
+            </>
+          } />
         </Routes>
       </Router>
-      <Footer />
     </>
   );
 }

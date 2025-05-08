@@ -19,8 +19,10 @@ const Footer = () => {
 
         <div className="footer-section contact">
           <h3>İletişim</h3>
-          <p>info@ruvido.com</p>
-          <p>+90 555 555 55 55</p>
+          <p>ruvidotekstil@gmail.com</p>
+          <p>+90 545 615 18 75</p>
+          <p>+90 545 833 49 25</p>
+          <p>+90 538 895 96 61</p>
         </div>
       </div>
 

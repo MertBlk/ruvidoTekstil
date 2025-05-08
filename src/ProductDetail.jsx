@@ -5,90 +5,92 @@ import './ProductDetail.css';
 // Ürün listesinden price, minOrder ve deliveryTime özelliklerini kaldırıyorum
 const products = [
     // T-Shirt Ürünleri
-    { id: 10, name: 'Siyah Polo T-Shirt', category: 'Giyim', images: ['/siyahPolo.jpeg', '/siyahPolo2.jpeg', '/t1.jpeg', '/tsiyah.jpeg'],
-      description: 'Kurumsal giyim koleksiyonları için tasarlanmış, %100 pamuklu siyah polo yaka t-shirt. Toptan alıma uygundur.',
+    { id: 10, name: 'Polo T-Shirt Model-1', category: 'Giyim', images: ['/siyahPolo.jpeg', '/siyahPolo2.jpeg', '/t1.jpeg', '/tsiyah.jpeg'],
+      description: 'Kurumsal giyim koleksiyonları için tasarlanmış, %100 pamuklu  ,Polo Yaka T-shirt. Toptan alıma uygundur ',
       details: {
-        customization: 'Logo, slogan ve kurumsal renklere göre özelleştirme yapılabilir'
+        customization: 'İşletmenizin kimliğini yansıtan havlularla fark yaratın. Logo, slogan ve kurumsal renklerinize uyumlu tasarımlar sayesinde, markanız her detayda ön plana çıkar. Geniş materyal seçenekleri ve kişiselleştirilebilir üretim anlayışımızla, ihtiyaçlarınıza özel çözümler sunuyoruz. %100 Pamuk'
       }
     },
-    { id: 12, name: 'Gri Polo T-Shirt', category: 'Giyim', images: ['/griPolo.jpeg', '/griPolo2.jpeg'],
-      description: 'Profesyonel görünüm için tasarlanmış gri polo t-shirt. Kurumsal kimliğinizi tamamlayacak şık bir seçenek.',
+    { id: 12, name: 'Gri Polo T-Shirt Model-2', category: 'Giyim', images: ['/griPolo.jpeg', '/griPolo2.jpeg'],
+      description: 'Profesyonel görünüm için tasarlanmış %50 Pamuk / %50 Viskon Polo T-shirt. Kurumsal kimliğinizi tamamlayacak şık bir seçenek. ',
       details: {
-        customization: 'Logo ve kurumsal renklere göre özelleştirme yapılabilir'
+        customization: 'İşletmenizin kimliğini yansıtan havlularla fark yaratın. Logo, slogan ve kurumsal  istediğiniz renk seçenekleri ve uyumlu tasarımlar sayesinde, markanız her detayda ön plana çıkar. Geniş materyal seçenekleri ve kişiselleştirilebilir üretim anlayışımızla, ihtiyaçlarınıza özel çözümler sunuyoruz.'
       }
     },
-    { id: 14, name: 'Kahverengi Polo T-Shirt', category: 'Giyim', images: ['/kahvePolo.jpeg'],
-      description: 'Sıcak tonu ile dikkat çeken, kaliteli kumaştan üretilmiş kahverengi polo t-shirt.',
+    { id: 14, name: 'Kahverengi Polo T-Shirt Model-3', category: 'Giyim', images: ['/kahvePolo.jpeg'],
+      description: 'Profesyonel görünüm için tasarlanmış  %70 Pamuk / %30 Polyester\'den üretilmiş  Polo T-shirt. ',
       details: {
-        customization: 'Logo nakışı ve özelleştirme yapılabilir'
+        customization: 'İşletmenizin kimliğini yansıtan havlularla fark yaratın. Logo, slogan ve kurumsal renklerinize uyumlu tasarımlar sayesinde, markanız her detayda ön plana çıkar. Geniş materyal seçenekleri ve kişiselleştirilebilir üretim anlayışımızla, ihtiyaçlarınıza özel çözümler sunuyoruz.'
       }
     },
-    { id: 15, name: 'Lacivert Polo T-Shirt', category: 'Giyim', images: ['/laciPolo.jpeg'], 
-      description: 'Klasik lacivert rengiyle her ortama uyum sağlayan, dayanıklı kumaştan üretilmiş polo t-shirt.',
+    { id: 15, name: 'Polo T-Shirt Model-1', category: 'Giyim', images: ['/laciPolo.jpeg'], 
+     description: 'Kurumsal giyim koleksiyonları için tasarlanmış, %100 pamuklu Polo Yaka T-shirt. Toptan alıma uygundur',
       details: {
-        customization: 'Logo ve kurumsal kimlik uygulamaları yapılabilir'
+        customization: 'İşletmenizin kimliğini yansıtan havlularla fark yaratın. Logo, slogan ve kurumsal renklerinize uyumlu tasarımlar sayesinde, markanız her detayda ön plana çıkar. Geniş materyal seçenekleri ve kişiselleştirilebilir üretim anlayışımızla, ihtiyaçlarınıza özel çözümler sunuyoruz.'
       }
     },
-    { id: 16, name: 'Renkli Polo T-Shirt', category: 'Giyim', images: ['/renkliPolo.jpeg', '/renklipolo2.jpeg'], 
-      description: 'Canlı renk seçenekleriyle dikkat çeken, modern tasarımlı polo t-shirt modelleri.',
+    { id: 16, name: 'Renkli Polo T-Shirt Model-2', category: 'Giyim', images: ['/renkliPolo.jpeg', '/renklipolo2.jpeg'], 
+      description: 'Profesyonel görünüm için tasarlanmış %50 Pamuk / %50 Viskon Polo T-shirt. Kurumsal kimliğinizi tamamlayacak şık bir seçenek.',
       details: {
-        customization: 'İsteğe bağlı renk ve logo uygulamaları yapılabilir'
+        customization: 'İşletmenizin kimliğini yansıtan havlularla fark yaratın. Logo, slogan ve kurumsal renklerinize uyumlu tasarımlar sayesinde, markanız her detayda ön plana çıkar. Geniş materyal seçenekleri ve kişiselleştirilebilir üretim anlayışımızla, ihtiyaçlarınıza özel çözümler sunuyoruz.'
       }
     },
-    { id: 17, name: 'Renkli Polo T-Shirt Model 2', category: 'Giyim', images: ['/renklipolo2.jpeg', '/renkliPolo.jpeg'], 
-      description: 'Alternatif renk seçenekleriyle öne çıkan, kaliteli kumaştan üretilmiş polo t-shirt serisi.',
+    { id: 17, name: 'Renkli Polo T-Shirt Model-3', category: 'Giyim', images: ['/renklipolo2.jpeg', '/renkliPolo.jpeg'], 
+      description: 'Profesyonel görünüm için tasarlanmış  %70 Pamuk / %30 Polyester\'den üretilmiş  Polo T-shirt. ',
       details: {
-        customization: 'Özel renk ve logo uygulamaları mümkündür'
+        
+        customization: 'İşletmenizin kimliğini yansıtan havlularla fark yaratın. Logo, slogan ve kurumsal renklerinize uyumlu tasarımlar sayesinde, markanız her detayda ön plana çıkar. Geniş materyal seçenekleri ve kişiselleştirilebilir üretim anlayışımızla, ihtiyaçlarınıza özel çözümler sunuyoruz.'
       }
     },
-    { id: 20, name: 'Beyaz T-Shirt', category: 'Giyim', images: ['/tbeyaz.jpeg'], 
-      description: 'Temel beyaz t-shirt, her türlü kurumsal etkinlik ve promosyon için ideal bir seçenek.',
+    { id: 20, name: 'Polo T-Shirt Model-1', category: 'Giyim', images: ['/tbeyaz.jpeg'], 
+      description: 'Kurumsal giyim koleksiyonları için tasarlanmış, %100 pamuklu Polo Yaka T-shirt. Toptan alıma uygundur',
       details: {
-        customization: 'Logo baskı ve nakış seçenekleri mevcuttur'
+        customization: 'İşletmenizin kimliğini yansıtan havlularla fark yaratın. Logo, slogan ve kurumsal renklerinize uyumlu tasarımlar sayesinde, markanız her detayda ön plana çıkar. Geniş materyal seçenekleri ve kişiselleştirilebilir üretim anlayışımızla, ihtiyaçlarınıza özel çözümler sunuyoruz.'
       }
     },
-    { id: 21, name: 'Bej T-Shirt', category: 'Giyim', images: ['/tbej.jpeg', '/tbej2.jpeg'], 
-      description: 'Zarif bej tonuyla öne çıkan, yumuşak dokusuyla konfor sunan t-shirt modeli.',
+    { id: 21, name: 'Polo T-Shirt Model-2', category: 'Giyim', images: ['/tbej.jpeg', '/tbej2.jpeg'], 
+      description: 'Profesyonel görünüm için tasarlanmış %50 Pamuk / %50 Viskon Polo T-shirt. Kurumsal kimliğinizi tamamlayacak şık bir seçenek.',
       details: {
-        customization: 'Logo baskı ve kurumsal tasarım uygulamaları yapılabilir'
+        customization: 'İşletmenizin kimliğini yansıtan havlularla fark yaratın. Logo, slogan ve kurumsal renklerinize uyumlu tasarımlar sayesinde, markanız her detayda ön plana çıkar. Geniş materyal seçenekleri ve kişiselleştirilebilir üretim anlayışımızla, ihtiyaçlarınıza özel çözümler sunuyoruz.'
       }
     },
-    { id: 23, name: 'Spor T-Shirt', category: 'Giyim', images: ['/sTisort.jpeg'], 
-      description: 'Sportif aktiviteler için özel tasarlanmış, nefes alabilen kumaştan spor t-shirt.',
+    { id: 23, name: 'Polo T-Shirt Model-3', category: 'Giyim', images: ['/sTisort.jpeg'], 
+      description: 'Profesyonel görünüm için tasarlanmış  %70 Pamuk / %30 Polyester\'den üretilmiş  Polo T-shirt.',
       details: {
-        customization: 'Spor kulüpleri ve etkinlikler için özel tasarımlar yapılabilir'
+        customization: 'İşletmenizin kimliğini yansıtan havlularla fark yaratın. Logo, slogan ve kurumsal renklerinize uyumlu tasarımlar sayesinde, markanız her detayda ön plana çıkar. Geniş materyal seçenekleri ve kişiselleştirilebilir üretim anlayışımızla, ihtiyaçlarınıza özel çözümler sunuyoruz.'
       }
     },
-    { id: 24, name: 'Tişört Koleksiyonu', category: 'Giyim', images: ['/tısortler.jpeg'], 
-      description: 'Farklı renk ve model seçenekleriyle komple bir t-shirt koleksiyonu.',
+    { id: 24, name: ' Polo T-Shirt Model-1', category: 'Giyim', images: ['/tısortler.jpeg'], 
+      description: 'Kurumsal giyim koleksiyonları için tasarlanmış, %100 pamuklu  Polo Yaka T-shirt. Toptan alıma uygundur',
       details: {
-        customization: 'Tüm koleksiyon için tutarlı logo ve tasarım uygulamaları'
+        customization: 'İşletmenizin kimliğini yansıtan havlularla fark yaratın. Logo, slogan ve kurumsal renklerinize uyumlu tasarımlar sayesinde, markanız her detayda ön plana çıkar. Geniş materyal seçenekleri ve kişiselleştirilebilir üretim anlayışımızla, ihtiyaçlarınıza özel çözümler sunuyoruz.'
       }
     },
     
-    // Düz Ürünler
-    { id: 26, name: 'Beyaz Düz', category: 'Tekstil', images: ['/bDuz.jpeg', '/bDuz2.jpeg', '/bduz3.jpeg'], 
-      description: 'Çeşitli tekstil uygulamaları için ideal beyaz kumaş. Dayanıklı ve kaliteli.',
-      details: {
-        customization: 'Özel baskı ve desen uygulamaları yapılabilir'
-      }
-    },
-    { id: 29, name: 'Gri Düz', category: 'Tekstil', images: ['/griDuz.jpeg'], 
-      description: 'Modern gri tonuyla şık mekanlara uyumlu, kaliteli düz kumaş.',
-      details: {
-        customization: 'Kurumsal desenler ekleme imkanı'
-      }
-    },
-    { id: 30, name: 'Kırmızı Düz', category: 'Tekstil', images: ['/kırmızıDuz.jpeg'], 
-      description: 'Canlı kırmızı rengiyle dikkat çeken, özel mekanlar için ideal kumaş.',
+    // Düz Ürünler,
+    { id: 30, name: 'T-Shirt Model-1', category: 'Tekstil', images: ['/kırmızıDuz.jpeg'], 
+      description: 'Kurumsal giyim koleksiyonları için tasarlanmış, %100 pamuklu T-shirt. Toptan alıma uygundur',
       details: {
         customization: 'Logo ve özel desenler eklenebilir'
       }
     },
-    { id: 31, name: 'Siyah Düz', category: 'Tekstil', images: ['/siyahDuz.jpeg', '/siyahDuz2.jpeg'], 
-      description: 'Klasik siyah renkli düz kumaş, her türlü dekoratif amaçla kullanılabilir.',
+    { id: 26, name: 'T-Shirt Model-2', category: 'Tekstil', images: ['/bDuz.jpeg', '/bDuz2.jpeg', '/bduz3.jpeg'], 
+      description: 'Profesyonel görünüm için tasarlanmış %50 Pamuk / %50 Viskon  T-shirt. Kurumsal kimliğinizi tamamlayacak şık bir seçenek.',
       details: {
-        customization: 'Kurumsal kimliğe uygun özelleştirmeler yapılabilir'
+        customization: 'Özel baskı ve desen uygulamaları yapılabilir'
+      }
+    },
+    { id: 29, name: 'T-Shirt Model-3', category: 'Tekstil', images: ['/griDuz.jpeg'], 
+      description: 'Profesyonel görünüm için tasarlanmış  %70 Pamuk / %30 Polyester\'den üretilmiş T-shirt.',
+      details: {
+        customization: 'Kurumsal desenler ekleme imkanı'
+      }
+    },
+    
+    { id: 31, name: 'T-Shirt Model-1', category: 'Tekstil', images: ['/siyahDuz.jpeg', '/siyahDuz2.jpeg'], 
+      description: 'Klasik renkli düz kumaş, her türlü dekoratif amaçla kullanılabilir.',
+      details: {
+        customization: 'Kurumsal giyim koleksiyonları için tasarlanmış, %100 pamuklu  T-shirt. Toptan alıma uygundur'
       }
     },
     
@@ -242,6 +244,8 @@ const products = [
     { id: 48, name: 'İpli Baskı', category: 'Tekstil', images: ['/ipliBaski.jpeg'], 
       description: 'Özel baskı tekniği ile üretilmiş, ipli detaylara sahip tekstil ürünü.',
       details: {
+        minOrder: '50 adet',
+        deliveryTime: '10 iş günü',
         customization: 'Tam renk baskı ve özel tasarım imkanı'
       }
     },
@@ -254,36 +258,42 @@ const products = [
     { id: 50, name: 'İpli Renkli', category: 'Tekstil', images: ['/ipliRenkli.jpeg'], 
       description: 'Farklı renk seçeneklerine sahip, modern ipli tekstil ürünü.',
       details: {
+        minOrder: '50 adet',
+        deliveryTime: '7-10 iş günü',
         customization: 'Özel renk ve logo uygulamaları yapılabilir'
       }
     },
     
     // Diğer Ürünler
-    { id: 51, name: 'Saç Bandı', category: 'Aksesuar', images: ['/sac.jpeg', '/sacBandi.jpeg'], 
+    { id: 51, name: 'Saç Bandı', category: 'Aksesuar', price: 130, images: ['/sac.jpeg', '/sacBandi.jpeg'], 
       description: 'Üretim, hizmet ve gıda sektörlerinde personel için pratik kullanım sağlar. Esnek yapısıyla her saç tipine uygundur.',
       details: {
         customization: 'Renk ve logo özelleştirmesi yapılabilir'
       }
     },
-    { id: 52, name: 'Özel Saç Bandı', category: 'Aksesuar', images: ['/sacBandi.jpeg', '/sac.jpeg'], 
+    { id: 52, name: 'Özel Saç Bandı', category: 'Aksesuar', price: 140, images: ['/sacBandi.jpeg', '/sac.jpeg'], 
       description: 'Premium kalitede, özel tasarımlı saç bandı. Profesyonel kullanım için idealdir.',
       details: {
         customization: 'Logo ve kurumsal renklere uygun tasarım yapılabilir'
       }
     },
-    { id: 53, name: 'Mağaza Görünümü', category: 'Referans', images: ['/magaza.jpeg'], 
-      description: 'Ürünlerimizin mağaza içi sergilenmesi için referans görsel.',
+    
+    // Şal Ürünleri
+    { id: 53, name: ' Şal', category: 'Şal', images: ['/sal.jpeg'], 
+      description: '%100 ipek dokuma, zarif desen ve yumuşak dokusuyla her mevsim kullanılabilir özellikte lüks şal.',
       details: {
-        customization: 'Mağaza içi özel tasarım danışmanlığı verilir'
-      }
-    },
-    { id: 54, name: 'Kumaş', category: 'Tekstil', images: ['/fabric.png'], 
-      description: 'Çeşitli tekstil projeleri için kullanılabilecek yüksek kaliteli kumaş.',
-      details: {
-        customization: 'Özel desen ve renk uygulamaları yapılabilir'
-      }
-    },
         
+        customization: 'Kurumsal kimliğinize özel renk ve desenlerle tasarlanabilir. Logo ve marka işlemesi yapılabilir. Premium ipek dokusu ve zarif tasarımıyla özel günlerde hediye olarak da tercih edilebilir.'
+      }
+    },
+    { id: 54, name: 'Şal Model-2', category: 'Şal', images: ['/sal2.jpeg'], 
+      description: 'Modern geometrik desenli, yumuşak malzemeden üretilen hafif ve nefes alabilen şık şal modeli.',
+      details: {
+        
+        customization: 'İşletmenizin kurumsal renklerine uygun tasarımlar yapılabilir. Logo baskısı ve özel paketleme seçenekleri mevcuttur. Etkinlikler ve organizasyonlar için toplu sipariş verilebilir.'
+      }
+    },
+    
     { id: 9, name: 'Renkli Havlu', category: 'Havlu', images: ['/renkliHavlu.jpeg'], 
       description: 'Çeşitli renk seçenekleriyle canlı mekanlar için ideal havlu çeşidi.',
       details: {
@@ -346,6 +356,7 @@ const products = [
         customization: 'Logo ve kurumsal renklere uygun tasarım yapılabilir'
       }
     },
+   
     
     
  

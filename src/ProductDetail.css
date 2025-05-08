@@ -118,8 +118,8 @@
   flex-direction: column;
   
   width: 100%;
-  min-height: 400px; /* Artırıldı */
-  max-height: 500px; /* Artırıldı */
+  min-height: auto; /* min-height değeri değiştirildi */
+  max-height: none; /* max-height sınırı kaldırıldı */
   margin: 3rem auto 2.5rem auto; /* Artırıldı */
   padding: 2.5rem 2rem; /* Artırıldı */
   background: #fff;
@@ -136,12 +136,12 @@
 
 .suggested-products {
   display: flex;
-  gap: 10rem; /* 2.5rem'den 4rem'e çıkarıldı */
+  gap: 2rem; /* 10rem'den 2rem'e düşürüldü */
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: space-around; /* flex-start yerine space-around yapıldı */
   width: 100%;
-  min-height: 400px; /* Artırıldı */
-  max-height: 500px; /* Artırıldı */
+  min-height: auto; /* min-height değeri değiştirildi */
+  max-height: none; /* max-height sınırı kaldırıldı */
 }
 
 .suggested-product-card {
@@ -155,6 +155,7 @@
   padding: 1.5rem; /* Artırıldı */
   width: 280px; /* Artırıldı */
   min-width: 240px; /* Artırıldı */
+  margin-bottom: 2rem; /* Kartlar arasında alt boşluk eklendi */
   text-decoration: none;
   color: var(--text-dark);
   transition: box-shadow 0.2s, transform 0.2s;

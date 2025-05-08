@@ -7,11 +7,15 @@ const About = () => {
             <h1 className="fade-in delay-100">Hakkımızda</h1>
             <div className="about-content">
                 <p className="fade-in delay-200">
-                    Ruvido Tekstil, 2023 yılında Sakarya'da kurulmuş bir tekstil firmasıdır. Kendinden eminlerin tercihi olan markamız, kaliteli kumaş üretimi ve geniş ürün yelpazesi ile sektördeki yerini almıştır. Müşteri memnuniyetini ön planda tutarak, her zaman en iyi hizmeti sunmayı hedefliyoruz
+                Hakkımızda
+                Ruvido Tekstil, 2023 yılında yenilikçi ve kaliteli üretim anlayışıyla kurulmuştur. Vizyoner bakış açımız, hızlı teslimat ilkemiz ve yüksek üretim standartlarımız ile hem yurt içi hem yurt dışındaki müşterilerimize hizmet vermekteyiz. Kurumsal ve bireysel ihtiyaçlara özel çözümler sunarak ürünleri kişiselleştiriyor, markalara kurumsal bir kimlik kazandırıyoruz. Toptan tekstil hizmetlerimizle müşterilerimizin beklentilerini karşılamanın ötesine geçerek, ihtiyaçlarına değer katan çözümler sunuyoruz.
+
+
                 </p>
                 <p className="fade-in delay-300">
-                Vizyonumuz, Sürdürülebilir ve yenilikçi tasarımlarla global tekstil dünyasında fark yaratmak.
-                Misyonumuz, Müşteri odaklı yaklaşımımızla, yüksek kalite standartlarında ürünler sunarak sektörde güvenin ve şıklığın adresi olmak.
+                <h1>Vizyonumuz</h1>
+
+Global tekstil pazarında yenilikçi, güvenilir ve tercih edilen bir marka olmak.
                 </p>
             </div>
         </div>

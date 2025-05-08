@@ -25,12 +25,12 @@ const Products = () => {
           description: 'Dışı polar, içi yün dolgu ile konforlu ve kaliteli tasarım.' },
 
         // HAvlu Ürünleri
-        { id: 1, name: 'Beyaz Havlu', category: 'Havlu', images: ['/havluBeyaz.jpeg', '/havluBeyaz2.jpeg', '/HavluBeyaz3.jpeg'],
-          description: 'Yumuşak dokusu ile kaliteli beyaz havlu.' },
-        { id: 4, name: 'Mor Havlu', category: 'Havlu', images: ['/havluMor.jpeg'],
-          description: 'Şık mor rengiyle dikkat çeken havlu.' },
-        { id: 5, name: 'Sarı Havlu', category: 'Havlu', images: ['/havluSari.jpeg'],
-          description: 'Canlı sarı renkte enerjik havlu modeli.' },
+        { id: 1, name: 'Havlu Model-1', category: 'Havlu', images: ['/havluBeyaz.jpeg', '/havluBeyaz2.jpeg', '/HavluBeyaz3.jpeg'],
+          description: '%100 Pamuk Yumuşak dokusu ve yüksek emiciliği ile doğal pamuk konforu.' },
+        { id: 4, name: 'Havlu Model-2', category: 'Havlu', images: ['/havluMor.jpeg'],
+          description: '%50 Pamuk / %50 Viskon: Pamuk doğallığı ile viskonun hafifliği ve parlaklığı bir arada.' },
+        { id: 5, name: 'Havlu Model-3', category: 'Havlu', images: ['/havluSari.jpeg'],
+          description: '%100 Bambu: Doğal antibakteriyel özellik ve ekstra yumuşaklık.' },
         { id: 6, name: 'Klasik Havlu', category: 'Havlu', images: ['/havlu.jpeg', '/havlu2.jpeg', '/havlu3.jpeg'],
           description: 'Her mekana uyumlu klasik havlu tasarımı.' },
         { id: 9, name: 'Renkli Havlu', category: 'Havlu', images: ['/renkliHavlu.jpeg'],
@@ -85,10 +85,14 @@ const Products = () => {
           description: 'Sade tasarımlı beyaz şapka modeli.' },
         { id: 39, name: 'Düz Siyah Şapka', category: 'Şapka', images: ['/duzSiyahSapka.jpeg', '/siyahSapka.jpeg'],
           description: 'Klasik siyah şapka, günlük kullanıma uygun.' },
-        
+        //Şal
+        { id: 53, name: 'Şal', category: 'Şal', images: ['/sal.jpeg', ],
+          description: 'Klasik siyah şapka, günlük kullanıma uygun.' },
+        { id: 54, name: 'Şal Model-2', category: 'Şal', images: ['/sal2.jpeg'],
+          description: 'Klasik siyah şapka, günlük kullanıma uygun.' },
     ];
 
-    const categories = ['Giyim', 'Saç Bandı', 'Boyun Yastığı', 'Havlu', 'Çanta', 'Şapka'];
+    const categories = ['Boyun Yastığı', 'Saç Bandı', 'Havlu','Şal', 'Giyim', 'Çanta', 'Şapka',];
 
     // Filtreleme mantığı güncellendi: Hem kategori hem de arama terimi
     const filteredProducts = products.filter(product => {
