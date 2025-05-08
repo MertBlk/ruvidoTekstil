@@ -7,6 +7,34 @@ const Products = () => {
     const [searchTerm, setSearchTerm] = useState(''); // Arama terimi için state eklendi
 
     const products = [
+        { id: 51, name: 'Saç Bandı', category: 'Saç Bandı', images: ['/sac.jpeg', '/sacBandi.jpeg'],
+          description: 'Pratik ve kullanışlı saç bandı, Cırtsız.' },
+        { id: 52, name: 'Spa ve Güzellik Merkezi İçin Saç Bandı', category: 'Saç Bandı', images: ['/sacBandi.jpeg'],
+        description: 'Özel tasarım saç bandı.' },
+
+        //Boyun Yastığı Ürünleri
+        { id: 40, name: 'Boyun Yastığı', category: 'Boyun Yastığı', images: ['/byastik.jpeg', '/byastik2.jpeg'],
+          description: 'Gabardin dış yüzey, elyaf dolgulu iç yapı ile premium konfor.' },
+        { id: 42, name: 'Boyun Yastığı Model-2', category: 'Boyun Yastığı', images: ['/bYastik3.jpeg'],
+          description: 'Dışı polar, içi yün dolgu ile konforlu ve kaliteli tasarım.' },
+        { id: 43, name: 'Boyun Yastığı Model-2 ', category: 'Boyun Yastığı', images: ['/bYastık.jpeg'],
+          description: 'Dışı polar, içi yün dolgu ile konforlu ve kaliteli tasarım.' },
+        { id: 44, name: 'Boyun Yastığı Model-2', category: 'Boyun Yastığı', images: ['/bYastıkMavi.jpeg'],
+          description: 'Dışı polar, içi yün dolgu ile konforlu ve kaliteli tasarım.' },
+        { id: 45, name: 'Boyun Yastığı Model-2', category: 'Boyun Yastığı', images: ['/bYastikY.jpeg'],
+          description: 'Dışı polar, içi yün dolgu ile konforlu ve kaliteli tasarım.' },
+
+        // HAvlu Ürünleri
+        { id: 1, name: 'Beyaz Havlu', category: 'Havlu', images: ['/havluBeyaz.jpeg', '/havluBeyaz2.jpeg', '/HavluBeyaz3.jpeg'],
+          description: 'Yumuşak dokusu ile kaliteli beyaz havlu.' },
+        { id: 4, name: 'Mor Havlu', category: 'Havlu', images: ['/havluMor.jpeg'],
+          description: 'Şık mor rengiyle dikkat çeken havlu.' },
+        { id: 5, name: 'Sarı Havlu', category: 'Havlu', images: ['/havluSari.jpeg'],
+          description: 'Canlı sarı renkte enerjik havlu modeli.' },
+        { id: 6, name: 'Klasik Havlu', category: 'Havlu', images: ['/havlu.jpeg', '/havlu2.jpeg', '/havlu3.jpeg'],
+          description: 'Her mekana uyumlu klasik havlu tasarımı.' },
+        { id: 9, name: 'Renkli Havlu', category: 'Havlu', images: ['/renkliHavlu.jpeg'],
+          description: 'Çeşitli renk seçenekleriyle havlu modeli.' },
         // T-Shirt Ürünleri
         { id: 10, name: 'Siyah Polo T-Shirt', category: 'Giyim', images: ['/siyahPolo.jpeg', '/siyahPolo2.jpeg', '/t1.jpeg', '/tsiyah.jpeg'], 
           description: 'Kaliteli kumaştan üretilmiş şık siyah polo t-shirt.' },
@@ -18,19 +46,17 @@ const Products = () => {
           description: 'Klasik lacivert renkte dayanıklı polo t-shirt.' },
         { id: 16, name: 'Renkli Polo T-Shirt', category: 'Giyim', images: ['/renkliPolo.jpeg', '/renklipolo2.jpeg'],
           description: 'Canlı renk seçenekleriyle şık polo t-shirt modeli.' },
-        
         { id: 20, name: 'Beyaz Polo T-Shirt', category: 'Giyim', images: ['/tbeyaz.jpeg'],
           description: 'Temiz ve şık görünümlü beyaz polo t-shirt.' },
         { id: 21, name: 'Bej  Polo T-Shirt', category: 'Giyim', images: ['/tbej.jpeg', '/tbej2.jpeg'],
           description: 'Zarif bej tonunda kaliteli polo t-shirt.' },
-        // Düz Ürünler
-        { id: 26, name: 'Beyaz Düz T-Shirt', category: 'Tekstil', images: ['/bDuz.jpeg', '/bDuz2.jpeg', '/bduz3.jpeg'],
+        { id: 26, name: 'Beyaz Düz T-Shirt', category: 'Giyim', images: ['/bDuz.jpeg', '/bDuz2.jpeg', '/bduz3.jpeg'],
           description: 'Sade ve rahat beyaz düz t-shirt.' },
-        { id: 29, name: 'Gri Düz T-Shirt', category: 'Tekstil', images: ['/griDuz.jpeg'],
+        { id: 29, name: 'Gri Düz T-Shirt', category: 'Giyim', images: ['/griDuz.jpeg'],
           description: 'Her kombine uyum sağlayan gri düz t-shirt.' },
-        { id: 30, name: 'Kırmızı Düz T-Shirt', category: 'Tekstil', images: ['/kırmızıDuz.jpeg'],
+        { id: 30, name: 'Kırmızı Düz T-Shirt', category: 'Giyim', images: ['/kırmızıDuz.jpeg'],
           description: 'Canlı kırmızı renkte göz alıcı düz t-shirt.' },
-        { id: 31, name: 'Siyah Düz T-Shirt', category: 'Tekstil', images: ['/siyahDuz.jpeg', '/siyahDuz2.jpeg','/sTisort.jpeg'],
+        { id: 31, name: 'Siyah Düz T-Shirt', category: 'Giyim', images: ['/siyahDuz.jpeg', '/siyahDuz2.jpeg','/sTisort.jpeg'],
           description: 'Şık ve zamansız tasarım siyah düz t-shirt.' },
    
         // Çanta Ürünleri
@@ -40,41 +66,6 @@ const Products = () => {
           description: 'Özel baskı teknikleriyle tasarlanmış çanta.' },
         { id: 36, name: 'İpli Çanta', category: 'Aksesuar', images: ['/ipliCanta.jpeg'],
           description: 'Pratik ipli tasarıma sahip kullanışlı çanta.' },
-        
-        // Şapka Ürünleri
-        { id: 37, name: 'Siyah Şapka', category: 'Aksesuar', images: ['/siyahSapka.jpeg', '/duzSiyahSapka.jpeg'],
-          description: 'Şık siyah şapka, her stile uyum sağlar.' },
-        { id: 38, name: 'Düz Beyaz Şapka', category: 'Aksesuar', images: ['/duzBeyazSpka.jpeg'],
-          description: 'Sade tasarımlı beyaz şapka modeli.' },
-        { id: 39, name: 'Düz Siyah Şapka', category: 'Aksesuar', images: ['/duzSiyahSapka.jpeg', '/siyahSapka.jpeg'],
-          description: 'Klasik siyah şapka, günlük kullanıma uygun.' },
-        
-        // Yastık Ürünleri
-        { id: 40, name: 'Boyun Yastığı', category: 'Boyun Yastığı', images: ['/byastik.jpeg', '/byastik2.jpeg'],
-          description: 'Ergonomik tasarımlı konforlu boyun yastığı.' },
-        { id: 42, name: 'Boyun Yastığı Bej', category: 'Boyun Yastığı', images: ['/bYastik3.jpeg'],
-          description: 'Şık bej renginde boyun yastığı.' },
-        { id: 43, name: 'Boyun Yastığı Beyaz', category: 'Boyun Yastığı', images: ['/bYastık.jpeg'],
-          description: 'Temiz görünümlü beyaz boyun yastığı.' },
-        { id: 44, name: 'Boyun Yastığı Mavi', category: 'Boyun Yastığı', images: ['/bYastıkMavi.jpeg'],
-          description: 'Ferahlatıcı mavi tonunda boyun yastığı.' },
-        { id: 45, name: 'Boyun Yastığı Yeşil', category: 'Boyun Yastığı', images: ['/bYastikY.jpeg'],
-          description: 'Doğal yeşil renkte rahatlatıcı boyun yastığı.' },
-        
-        // Havlu Ürünleri
-        { id: 1, name: 'Beyaz Havlu', category: 'Havlu', images: ['/havluBeyaz.jpeg', '/havluBeyaz2.jpeg', '/HavluBeyaz3.jpeg'],
-          description: 'Yumuşak dokusu ile kaliteli beyaz havlu.' },
-        
-        { id: 4, name: 'Mor Havlu', category: 'Havlu', images: ['/havluMor.jpeg'],
-          description: 'Şık mor rengiyle dikkat çeken havlu.' },
-        { id: 5, name: 'Sarı Havlu', category: 'Havlu', images: ['/havluSari.jpeg'],
-          description: 'Canlı sarı renkte enerjik havlu modeli.' },
-        { id: 6, name: 'Klasik Havlu', category: 'Havlu', images: ['/havlu.jpeg', '/havlu2.jpeg', '/havlu3.jpeg'],
-          description: 'Her mekana uyumlu klasik havlu tasarımı.' },
-        
-        { id: 9, name: 'Renkli Havlu', category: 'Havlu', images: ['/renkliHavlu.jpeg'],
-          description: 'Çeşitli renk seçenekleriyle havlu modeli.' },
-        
         // İpli Ürünler
         { id: 46, name: 'İpli Model 2', category: 'Çanta', images: ['/ipli2.jpeg'],
           description: 'Kullanışlı ipli çanta tasarımı.' },
@@ -87,17 +78,17 @@ const Products = () => {
         { id: 50, name: 'İpli Renkli', category: 'Çanta', images: ['/ipliRenkli.jpeg'],
           description: 'Renkli detaylarla zenginleştirilmiş ipli çanta.' },
         
-        // Diğer Ürünler
-        { id: 51, name: 'Saç Bandı', category: 'Saç Bandı', images: ['/sac.jpeg', '/sacBandi.jpeg'],
-          description: 'Pratik ve kullanışlı saç bandı.' },
-        { id: 52, name: 'Özel Saç Bandı', category: 'Saç Bandı', images: ['/sacBandi.jpeg'],
-          description: 'Özel tasarımlı premium kalite saç bandı.' },
+        // Şapka Ürünleri
+        { id: 37, name: 'Siyah Şapka', category: 'Şapka', images: ['/siyahSapka.jpeg', '/duzSiyahSapka.jpeg'],
+          description: 'Şık siyah şapka, her stile uyum sağlar.' },
+        { id: 38, name: 'Düz Beyaz Şapka', category: 'Şapka', images: ['/duzBeyazSpka.jpeg'],
+          description: 'Sade tasarımlı beyaz şapka modeli.' },
+        { id: 39, name: 'Düz Siyah Şapka', category: 'Şapka', images: ['/duzSiyahSapka.jpeg', '/siyahSapka.jpeg'],
+          description: 'Klasik siyah şapka, günlük kullanıma uygun.' },
         
-        
-   
     ];
 
-    const categories = ['Giyim', 'Saç Bandı', 'Boyun Yastığı', 'Havlu', 'Çanta', ];
+    const categories = ['Giyim', 'Saç Bandı', 'Boyun Yastığı', 'Havlu', 'Çanta', 'Şapka'];
 
     // Filtreleme mantığı güncellendi: Hem kategori hem de arama terimi
     const filteredProducts = products.filter(product => {
