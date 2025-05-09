@@ -38,10 +38,10 @@
 .slide-content h2 {
   margin: 0 0 0.5rem 0;
   font-size: 3rem;
-  font-weight: 800;
+  font-weight: 200; /* Inter için daha ince stil */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  letter-spacing: -0.04em; /* Modern görünüm için harfler arası mesafe */
   color: #fff;
-  font-family: 'Poppins', 'Arial', sans-serif;
-  letter-spacing: 1px;
   text-shadow: 0 2px 12px rgba(0,0,0,0.25);
 }
 
@@ -49,8 +49,9 @@
   margin: 0;
   font-size: 1.5rem;
   color: #fff;
-  font-family: 'Poppins', 'Arial', sans-serif;
-  font-weight: 400;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 200; /* Daha ince metin */
+  letter-spacing: -0.01em; /* Hafif negatif izleme */
   text-shadow: 0 1px 8px rgba(0,0,0,0.18);
 }
 

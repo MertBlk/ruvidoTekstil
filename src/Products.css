@@ -26,6 +26,9 @@
     border-radius: 0; /* Köşe yuvarlaklığı kaldırıldı */
     cursor: pointer;
     font-size: 1rem; /* Font boyutu biraz büyütüldü */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 300; /* İnce yazı tipi */
+    letter-spacing: -0.01em; /* Modern görünüm */
     transition: color 0.3s ease, border-bottom-color 0.3s ease; /* Geçişler güncellendi */
     border-bottom: 2px solid transparent; /* Aktif durum için yer tutucu */
     /* box-shadow kaldırıldı */
@@ -34,7 +37,7 @@
 .filter-button.active {
     background-color: transparent; /* Arka plan kaldırıldı */
     color: var(--text-dark); /* Aktif renk text-dark oldu */
-    font-weight: 600; /* Kalın yazı */
+    font-weight: 400; /* Inter için daha zarif bir ağırlık */
     border-bottom-color: var(--accent-color); /* Alt çizgi rengi */
     /* transform kaldırıldı */
     /* box-shadow kaldırıldı */
@@ -100,6 +103,12 @@
 
 .product-card h3, .product-card p {
     text-align: left;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.product-card h3 {
+    font-weight: 400; /* Orta kalınlıkta başlık */
+    letter-spacing: -0.02em; /* Hafif negatif izleme */
 }
 
 .product-description {
@@ -109,6 +118,8 @@
     margin-bottom: 1rem;
     line-height: 1.4;
     font-style: italic;
+    font-weight: 300; /* İnce yazı */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
 }
 
 .product-image {

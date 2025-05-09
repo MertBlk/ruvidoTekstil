@@ -5,7 +5,7 @@
   padding: 1.2rem 1.2rem 0.8rem 1.2rem; /* Daha dar padding */
   background: rgba(255, 255, 255, 0);     
   min-height: 100px;
-  font-family: 'Montserrat', 'Riviera Nights', 'Gill Alt One MT', Helvetica, Arial, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
   position: fixed;                       
   top: 0;
   left: 0;
@@ -86,10 +86,11 @@
 }
 .search-area span {
   font-size: 1rem;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   color: #222;
   margin-bottom: 2px;
-  font-family: 'Montserrat', 'Riviera Nights', 'Gill Alt One MT', Helvetica, Arial, sans-serif;
+  font-weight: 300; /* Zarif bir görünüm için */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
 }
 .search-area input {
   border: none;
@@ -100,7 +101,7 @@
   font-size: 1rem;
   margin-bottom: 0;
   padding: 2px 0 2px 0;
-  font-family: 'Montserrat', 'Riviera Nights', 'Gill Alt One MT', Helvetica, Arial, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
 }
 .search-underline {
   width: 100%;
@@ -123,11 +124,11 @@
 .menu-links a {
   font-size: 1rem;
   color: #222;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   text-decoration: none;
-  font-weight: 400;
+  font-weight: 300; /* Daha ince görünüm için 300 */
   transition: color 0.2s;
-  font-family: 'Montserrat', 'Riviera Nights', 'Gill Alt One MT', Helvetica, Arial, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
 }
 .menu-links a:hover {
   color: #888;
@@ -174,12 +175,12 @@
   font-size: 1.1rem;
   color: #222;
   text-decoration: none;
-  font-weight: 500;
-  letter-spacing: 1px;
+  font-weight: 300; /* Daha zarif bir görünüm için daha ince */
+  letter-spacing: 0.5px;
   padding: 0.5rem 0;
   border-bottom: 1px solid #eee;
   margin-top: 1.2rem; /* Üst boşluk eklendi */
-  font-family: 'Montserrat', 'Riviera Nights', 'Gill Alt One MT', Helvetica, Arial, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
 }
 .mobile-menu a:first-child {
   margin-top: 3.7rem;

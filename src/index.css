@@ -1,8 +1,8 @@
 
 
 
-/* Montserrat font import */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
+/* Inter font import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap');
 
 :root {
   --text-dark: #333;
@@ -39,23 +39,31 @@ body, #root {
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
-  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
   display: flex;
   flex-direction: column;
 }
 
-/* Başlıklar için Montserrat fontunu kullan */
+/* Başlıklar için Inter fontunu kullan */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-  color: #222; /* Bu renk değişken olarak eklenebilir veya kalabilir */
-  font-weight: 700;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  color: #151515; /* Bu renk değişken olarak eklenebilir veya kalabilir */
+  font-weight: 300; /* Daha ince görünüm için 300 değerini kullanıyoruz */
   margin-bottom: 1rem;
+  letter-spacing: -0.03em; /* İnce ve modern görünüm için harfler arası mesafeyi azaltıyoruz */
+}
+
+/* Özel olarak ana başlıkları daha ince yapıyoruz */
+h1, h2 {
+  font-weight: 200; /* Ana başlıklar için ekstra ince */
+  letter-spacing: -0.04em; /* Biraz daha fazla negatif izleme */
 }
 
 /* p etiketleri için yeni font ailesini ayarla */
 p {
-  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;
+  font-weight: 200; /* Normal metin için standart ağırlık */
 }
 
 a {
