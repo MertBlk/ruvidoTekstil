@@ -1,5 +1,8 @@
-/* DECO Font import */
-@import url('https://fonts.cdnfonts.com/css/deco');
+
+
+
+/* Montserrat font import */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
 
 :root {
   --text-dark: #333;
@@ -11,6 +14,7 @@
   --border-color: #ddd;
   --shadow-color: rgba(0, 0, 0, 0.1);
   --accent-color: #ffab3c; /* Home buton rengi gibi */
+ 
 }
 
 /* Temel stiller */
@@ -27,7 +31,7 @@ html {
   padding: 0;
 }
 
-/* Body ve root için Helvetica Neue'yu varsayılan font olarak ayarla */
+/* Body ve root için yeni font ailesini varsayılan olarak ayarla */
 body, #root {
   width: 100%;
   min-height: 100vh;
@@ -35,22 +39,22 @@ body, #root {
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
   display: flex;
   flex-direction: column;
 }
 
-/* Başlıklar için DECO fontunu koru */
+/* Başlıklar için Montserrat fontunu kullan */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'DECO', 'Open Sans', 'Roboto', Arial, sans-serif;
-    color: #222; /* Bu renk değişken olarak eklenebilir veya kalabilir */
-    font-weight: 700;
-    margin-bottom: 1rem;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  color: #222; /* Bu renk değişken olarak eklenebilir veya kalabilir */
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
 
-/* p etiketleri için Helvetica Neue */
+/* p etiketleri için yeni font ailesini ayarla */
 p {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;
 }
 

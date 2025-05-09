@@ -266,13 +266,13 @@ const products = [
     
     // Diğer Ürünler
     { id: 51, name: 'Saç Bandı', category: 'Aksesuar', images: ['/sac.jpeg'], 
-      description: 'Üretim, hizmet ve gıda sektörlerinde personel için pratik kullanım sağlar. Esnek yapısıyla her saç tipine uygundur.',
+      description: 'Esnek yapısıyla her saç tipine uygundur.',
       details: {
         customization: 'Renk ve logo özelleştirmesi yapılabilir'
       }
     },
-    { id: 52, name: 'Özel Saç Bandı', category: 'Aksesuar', images: ['/sacBandi.jpeg',],
-      description: 'Premium kalitede, özel tasarımlı saç bandı. Profesyonel kullanım için idealdir.',
+    { id: 52, name: 'Spa ve Güzellik Merkezi Saç Bandı', category: 'Aksesuar', images: ['/sacBandi.jpeg'],
+      description: 'Profesyonel kullanım için idealdir.',
       details: {
         customization: 'Logo ve kurumsal renklere uygun tasarım yapılabilir'
       }
