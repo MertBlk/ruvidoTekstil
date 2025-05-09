@@ -3,6 +3,8 @@
   color: var(--text-light);
   text-align: center;
   padding: 1.5rem 1rem;
+  margin-bottom: 0;
+  width: 100%;
 }
 
 .footer-content {
@@ -61,4 +63,10 @@ margin: 0; /* Dikey margin kaldırıldı, hizalamayı iyileştirmek için */
   .footer-links a {
     margin: 0 0.5rem; /* Bağlantı boşluklarını ayarla */
   }
+}
+
+.footer-bottom {
+  padding: 0.5rem 0;
+  margin-bottom: 0;
+  font-size: 0.9rem;
 }

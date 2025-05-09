@@ -43,8 +43,8 @@ const Home = () => {
                 {/* fade-in ve delay sınıfları kaldırıldı */}
                 <div className="product-card card-3">
                     <Link to="/contact" className="product-link">
-                        <img src="/r3.jpeg" alt="Güven" className="product-image" />
-                        <h3>Bizimle İletişme Geç!</h3>
+                        <img src="/iletisim.png" alt="Güven" className="product-image" />
+                        <h3>Bizimle İletişime Geç!</h3>
                         <p> Sorularınız için bize ulaşın. Size en kısa sürede geri dönüş yapalım. </p>
                     </Link>
                 </div>

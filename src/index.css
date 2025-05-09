@@ -20,14 +20,24 @@
     padding: 0;
 }
 
+/* Body ve html için temel stil ayarları */
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 /* Body ve root için Helvetica Neue'yu varsayılan font olarak ayarla */
 body, #root {
   width: 100%;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
   font-family: 'Helvetica Neue', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Başlıklar için DECO fontunu koru */
@@ -99,7 +109,9 @@ ul {
     background-color: var(--footer-bg); /* Değişken kullanıldı */
     color: var(--text-light); /* Değişken kullanıldı */
     text-align: center;
-    padding: 1rem 0;
+    padding: 1rem 0 0 0; /* Üst padding bırakıldı, alt padding kaldırıldı */
+    width: 100%; /* Tam genişlikte olmasını sağlar */
+    bottom: 0; /* Sayfa sonunda olmasını sağlar */
 }
 
 
