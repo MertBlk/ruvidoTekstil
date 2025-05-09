@@ -265,13 +265,13 @@ const products = [
     },
     
     // Diğer Ürünler
-    { id: 51, name: 'Saç Bandı', category: 'Aksesuar', price: 130, images: ['/sac.jpeg', '/sacBandi.jpeg'], 
+    { id: 51, name: 'Saç Bandı', category: 'Aksesuar', images: ['/sac.jpeg'], 
       description: 'Üretim, hizmet ve gıda sektörlerinde personel için pratik kullanım sağlar. Esnek yapısıyla her saç tipine uygundur.',
       details: {
         customization: 'Renk ve logo özelleştirmesi yapılabilir'
       }
     },
-    { id: 52, name: 'Özel Saç Bandı', category: 'Aksesuar', price: 140, images: ['/sacBandi.jpeg', '/sac.jpeg'], 
+    { id: 52, name: 'Özel Saç Bandı', category: 'Aksesuar', images: ['/sacBandi.jpeg',],
       description: 'Premium kalitede, özel tasarımlı saç bandı. Profesyonel kullanım için idealdir.',
       details: {
         customization: 'Logo ve kurumsal renklere uygun tasarım yapılabilir'
@@ -341,22 +341,7 @@ const products = [
       }
     },
     
-    // Diğer Ürünler
-    { id: 51, name: 'Saç Bandı', category: 'Aksesuar', price: 130, images: ['/sac.jpeg', '/sacBandi.jpeg'], 
-      description: 'Üretim, hizmet ve gıda sektörlerinde personel için pratik kullanım sağlar. Esnek yapısıyla her saç tipine uygundur.',
-      details: {
-      
-        customization: 'Renk ve logo özelleştirmesi yapılabilir'
-      }
-    },
-    { id: 52, name: 'Özel Saç Bandı', category: 'Aksesuar', price: 140, images: ['/sacBandi.jpeg', '/sac.jpeg'], 
-      description: 'Premium kalitede, özel tasarımlı saç bandı. Profesyonel kullanım için idealdir.',
-      details: {
-     
-        customization: 'Logo ve kurumsal renklere uygun tasarım yapılabilir'
-      }
-    },
-   
+  
     
     
  
