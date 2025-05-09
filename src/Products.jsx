@@ -60,11 +60,11 @@ const Products = () => {
           description: 'Şık ve zamansız tasarım siyah düz t-shirt.' },
    
         // Çanta Ürünleri
-        { id: 33, name: 'Siyah Çanta', category: 'Aksesuar', images: ['/siyahCanta.jpeg', '/siyahCanta2.jpeg'],
+        { id: 33, name: 'Siyah Çanta', category: 'Çanta', images: ['/siyahCanta.jpeg', '/siyahCanta2.jpeg'],
           description: 'Dayanıklı ve şık tasarımlı siyah çanta.' },
-        { id: 35, name: 'Baskılı Çanta', category: 'Aksesuar', images: ['/cantaBaski.jpeg'],
+        { id: 35, name: 'Baskılı Çanta', category: 'Çanta', images: ['/cantaBaski.jpeg'],
           description: 'Özel baskı teknikleriyle tasarlanmış çanta.' },
-        { id: 36, name: 'İpli Çanta', category: 'Aksesuar', images: ['/ipliCanta.jpeg'],
+        { id: 36, name: 'İpli Çanta', category: 'Çanta', images: ['/ipliCanta.jpeg'],
           description: 'Pratik ipli tasarıma sahip kullanışlı çanta.' },
         // İpli Ürünler
         { id: 46, name: 'İpli Model 2', category: 'Çanta', images: ['/ipli2.jpeg'],
@@ -87,9 +87,9 @@ const Products = () => {
           description: 'Klasik siyah şapka, günlük kullanıma uygun.' },
         //Şal
         { id: 53, name: 'Şal', category: 'Şal', images: ['/sal.jpeg', ],
-          description: 'Klasik siyah şapka, günlük kullanıma uygun.' },
+          description: 'Polar Şal.' },
         { id: 54, name: 'Şal Model-2', category: 'Şal', images: ['/sal2.jpeg'],
-          description: 'Klasik siyah şapka, günlük kullanıma uygun.' },
+          description: 'Yumuşak dokulu TV şalı.' },
     ];
 
     const categories = ['Boyun Yastığı', 'Saç Bandı', 'Havlu','Şal', 'Giyim', 'Çanta', 'Şapka',];
