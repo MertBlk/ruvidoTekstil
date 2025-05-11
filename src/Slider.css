@@ -124,7 +124,7 @@
 }
 @media (max-width: 480px) {
   .slide {
-    height: 40vh; /* Çok küçük ekranlar için daha da azaltabiliriz */
+    height: 10vh; /* Çok küçük ekranlar için daha da azaltabiliriz */
   }
 }
 @media (max-width: 600px) {
