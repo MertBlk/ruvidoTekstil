@@ -12,7 +12,7 @@ const initialSlidesData = [
   },
   {
     image: '/slider2.png',
-    mobileImage: '/sliderMobil.png',
+    mobileImage: '/sliderMobil2.jpeg',
     // buttonText: 'Hakkımızda',
     // buttonLink: '/about'
   },
