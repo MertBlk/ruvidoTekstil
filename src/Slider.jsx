@@ -3,20 +3,16 @@ import './Slider.css';
 
 const slides = [
   {
-    image: '/tısortler.jpeg',
+    image: '/slider.png',
     title: 'Kalite',
     description: 'En yüksek standartlarda üretilmiş kumaşlar.'
   },
   {
-    image: '/renkliHavlu.jpeg',
+    image: '/slider2.png',
     title: 'Tasarım',
     description: 'Modern ve yenilikçi tasarımlar.'
   },
-  {
-    image: '/bDuz2.jpeg',
-    title: 'Güven',
-    description: 'Müşteri memnuniyetini ön planda tutan hizmet.'
-  }
+ 
 ];
 
 const Slider = () => {

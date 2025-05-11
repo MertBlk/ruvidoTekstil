@@ -41,14 +41,14 @@
   font-weight: 200; /* Inter için daha ince stil */
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
   letter-spacing: -0.04em; /* Modern görünüm için harfler arası mesafe */
-  color: #fff;
+  color: #000000;
   text-shadow: 0 2px 12px rgba(0,0,0,0.25);
 }
 
 .slide-content p {
   margin: 0;
   font-size: 1.5rem;
-  color: #fff;
+  color: #000000;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
   font-weight: 200; /* Daha ince metin */
   letter-spacing: -0.01em; /* Hafif negatif izleme */
