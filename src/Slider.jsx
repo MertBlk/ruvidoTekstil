@@ -5,14 +5,14 @@ const slides = [
   {
     image: '/slider.png',
     title: 'Kalite',
-    description: 'En yüksek standartlarda üretilmiş kumaşlar.'
+    description: 'İşinize göre özel tasarımlar ve kaliteli ürünler sunuyoruz.'
   },
   {
     image: '/slider2.png',
     title: 'Tasarım',
-    description: 'Modern ve yenilikçi tasarımlar.'
+    description: 'Firmanız için özel tasarımlar ve kaliteli ürünler sunuyoruz.'
   },
- 
+
 ];
 
 const Slider = () => {

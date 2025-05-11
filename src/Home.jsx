@@ -35,7 +35,7 @@ const Home = () => {
                 {/* fade-in ve delay sınıfları kaldırıldı */}
                 <div className="product-card card-2">
                     <Link to="/about" className="product-link">
-                        <img src="/cantaBaski.jpeg" alt="Tasarım" className="product-image" />
+                        <img src="/ipliBaski.jpeg" alt="Tasarım" className="product-image" />
                         <h3>Tasarım</h3>
                         <p>Her ayrıntıda markanıza sizin kadar özel bir imza. Ruvido ile her ürün, sizin benzersiz tarzınızı yansıtır.</p>
                     </Link>
@@ -43,7 +43,7 @@ const Home = () => {
                 {/* fade-in ve delay sınıfları kaldırıldı */}
                 <div className="product-card card-3">
                     <Link to="/contact" className="product-link">
-                        <img src="/iletisim.png" alt="Güven" className="product-image" />
+                        <img src="/iletisim.jpg" alt="Güven" className="product-image" />
                         <h3>Bizimle İletişime Geç!</h3>
                         <p> Sorularınız için bize ulaşın. Size en kısa sürede geri dönüş yapalım. </p>
                     </Link>
