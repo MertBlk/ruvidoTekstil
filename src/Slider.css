@@ -104,10 +104,32 @@
     padding-top: 0;
   }
 }
+@media (max-width: 768px) {
+  .slide {
+    height: 50vh; /* Mobil için yüksekliği biraz daha azaltabiliriz */
+  }
 
+  .slide-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .slide-content p {
+    font-size: 0.9rem;
+  }
+
+  .slide-content {
+    padding: 15px 25px;
+    max-width: 90%;
+  }
+}
+@media (max-width: 480px) {
+  .slide {
+    height: 40vh; /* Çok küçük ekranlar için daha da azaltabiliriz */
+  }
+}
 @media (max-width: 600px) {
   .slider {
-    height: 100vh !important; /* Mobilde tam ekran */
+    height: 50vh !important; /* Mobilde tam ekran */
     min-height: 100vh !important;
     width: 100%;
     margin-top: 0;
