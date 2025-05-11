@@ -19,20 +19,24 @@
   background-size: cover;
   background-position: center;
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
+  align-items: center; /* Dikeyde ortalamak için flex-end yerine center */
+  justify-content: center; /* Yatayda ortalamak için flex-start yerine center */
   position: relative;
   transition: background-image 0.5s;
 }
 
 .slide-content {
-  background: transparent;
-  color: #fff;
-  padding: 2rem 2.5rem;
-  border-radius: 0 1.5rem 0 0;
-  margin: 2rem;
-  max-width: 400px;
-  
+  background: transparent; /* Veya rgba(0,0,0,0.3) gibi hafif bir arka plan */
+  color: #fff; /* Yazı rengi, eğer başlık/açıklama eklerseniz */
+  padding: 2rem; /* Buton etrafında boşluk için padding */
+  border-radius: 10px; /* Kenar yuvarlaklığı, isteğe bağlı */
+  margin: 0; /* Dış boşluğu sıfırla, çünkü .slide ortalayacak */
+  max-width: 400px; /* İsteğe bağlı, içeriğin maksimum genişliği */
+  display: flex; /* İçindeki butonu ortalamak için */
+  flex-direction: column; /* İçeriklerin alt alta sıralanması için (eğer metin de varsa) */
+  align-items: center; /* Butonu yatayda ortala */
+  justify-content: center; /* Butonu dikeyde ortala */
+  text-align: center; /* Metinlerin (varsa) ortalanması için */
 }
 
 .slide-content h2 {
@@ -41,14 +45,14 @@
   font-weight: 200; /* Inter için daha ince stil */
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
   letter-spacing: -0.04em; /* Modern görünüm için harfler arası mesafe */
-  color: #000000;
+  color: #000000; /* Eğer slide-content arka planı açıksa, koyu renk daha iyi okunur */
   text-shadow: 0 2px 12px rgba(0,0,0,0.25);
 }
 
 .slide-content p {
-  margin: 0;
+  margin: 0 0 1rem 0; /* Butondan önce biraz boşluk bırakmak için */
   font-size: 1.5rem;
-  color: #000000;
+  color: #000000; /* Eğer slide-content arka planı açıksa, koyu renk daha iyi okunur */
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
   font-weight: 200; /* Daha ince metin */
   letter-spacing: -0.01em; /* Hafif negatif izleme */
@@ -57,36 +61,35 @@
 
 
 
-.slider-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: transparent;
-  border: none;
-  border-radius: 50%;
-  width: 2.5rem;
-  height: 2.5rem;
-  font-size: 1.5rem;
-  color: #ffffff;
-  cursor: pointer;
-  z-index: 2;
-  transition: background 0.2s, color 0.2s;
-  ;
-}
-
-.slider-arrow.left {
-  left: .5rem;
-}
-
-.slider-arrow.right {
-  right: .5rem;
-}
-
 .slider-arrow:hover {
   background: #898989;
   color: #fff;
 }
+.slider-button-link {
+  background-color: transparent; /* index.css'teki accent-color veya varsayılan */
+  background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Buton arka plan rengi */
+  color: var( #ffffff); /* Buton yazı rengi */
+  padding: 12px 28px;
+  border: none;
+  border-radius: 25px; /* Yuvarlak kenarlar */
+  font-family: 'Inter', sans-serif; /* Font ailesini Inter olarak ayarla */
+  font-size: 1rem;
+  font-weight: 500; /* Orta kalınlıkta */
+  text-transform: uppercase; /* Harfleri büyük yap (isteğe bağlı) */
+  letter-spacing: 0.5px; /* Harf aralığı (isteğe bağlı) */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  margin-top: 35rem; 
+               
+}
 
+
+
+.slide-content button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 @media (max-width: 900px) {
   .slider {
     height: 100vh !important; /* Mobilde tam ekran */
@@ -106,22 +109,28 @@
 }
 @media (max-width: 768px) {
   .slide {
-    height: 50vh; 
-    background-size: auto 120%; 
-
-  }
-
-  .slide-content h2 {
-    font-size: 1.8rem;
-  }
-
-  .slide-content p {
-    font-size: 0.9rem;
+    /* height: 50vh; Bu satır, .slide yüksekliğini 100vh'den değiştireceği için tam ortalamayı etkileyebilir. */
+                 /* Eğer mobil için farklı bir yükseklik isteniyorsa, bu ayar kalabilir. */
+    background-size: auto 120%;
   }
 
   .slide-content {
-    padding: 15px 25px;
+    padding: 1.5rem; /* Mobil için padding */
     max-width: 90%;
+  }
+
+  .slide-content h2 {
+    font-size: 1.8rem; /* Mobil için başlık boyutu */
+  }
+
+  .slide-content p {
+    font-size: 0.9rem; /* Mobil için paragraf boyutu */
+    margin-bottom: 0.8rem; /* Mobil için buton öncesi boşluk */
+  }
+  
+  .slider-button-link {
+    padding: 10px 22px; /* Mobil için buton padding'i */
+    font-size: 0.9rem; /* Mobil için buton font boyutu */
   }
 }
 
