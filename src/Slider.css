@@ -106,7 +106,9 @@
 }
 @media (max-width: 768px) {
   .slide {
-    height: 50vh; /* Mobil için yüksekliği biraz daha azaltabiliriz */
+    height: 50vh; 
+    background-size: auto 120%; 
+
   }
 
   .slide-content h2 {
@@ -122,24 +124,5 @@
     max-width: 90%;
   }
 }
-@media (max-width: 480px) {
-  .slide {
-    height: 1vh; /* Çok küçük ekranlar için daha da azaltabiliriz */
-  }
-}
-@media (max-width: 600px) {
-  .slider {
-    height: 50vh !important; /* Mobilde tam ekran */
-    min-height: 100vh !important;
-    width: 100%;
-    margin-top: 0;
-    padding-top: 0;
-  }
-  .slide {
-    height: 100vh !important;
-    min-height: 100vh !important;
-    width: 100%;
-    margin-top: 0;
-    padding-top: 0;
-  }
-}
+
+
