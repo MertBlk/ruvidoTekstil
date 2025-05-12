@@ -1,73 +1,113 @@
 .footer {
   background-color: var(--footer-bg);
   color: var(--text-light);
-  text-align: center;
-  padding: 1.5rem 1rem;
-  margin-bottom: 0;
   width: 100%;
-  flex-shrink: 0; /* Footer'ın küçülmemesini sağlar */
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-inner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .footer-content {
   display: flex;
-  justify-content: space-between; /* İçeriği iki yana yasla */
-  align-items: center;
-  max-width: 1200px; /* İçeriği sınırla */
-  margin: 0 auto; /* Ortala */
-  flex-wrap: wrap; /* Küçük ekranlarda alt alta gelmesini sağla */
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1rem 0;
+  flex-wrap: wrap;
 }
 
 .footer-content h2 {
-  color: var(--text-light); /* Değişken kullanıldı */
-  font-size: 1.5rem; /* Başlık boyutu */
-  margin: 0; /* Başlık için varsayılan boşluğu kaldır */
-  font-weight: 600; /* Kalın yazı tipi */
-  text-transform: uppercase; /* Büyük harf yap */
-  letter-spacing: 1px; /* Harfler arası boşluk */
-  margin-bottom: 0.5rem; /* Başlık ile paragraf arasında boşluk */
+  color: var(--text-light);
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
-  .footer-content h3 {
-      color: var(--text-light); /* Değişken kullanıldı */
-      font-size: 1.2rem; /* Başlık boyutu */
-      margin: 0; /* Başlık için varsayılan boşluğu kaldır */
-      font-weight: 600; /* Kalın yazı tipi */
-      text-transform: uppercase; /* Büyük harf yap */
-      letter-spacing: 1px; /* Harfler arası boşluk */
-      margin-bottom: 0.5rem; /* Başlık ile paragraf arasında boşluk */
-    }
+
+.footer-content h3 {
+  color: var(--text-light);
+  font-size: 1.2rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 .footer-content p {
-margin: 0; /* Dikey margin kaldırıldı, hizalamayı iyileştirmek için */
+  margin: 0;
 }
 
 .footer-links a {
-  color: var(--text-light); /* Değişken kullanıldı */
+  color: var(--text-light);
   text-decoration: none;
-  margin-left: 1rem; /* Bağlantılar arasına boşluk ekle */
-  transition: color 0.3s ease; /* Renk geçişi efekti */
+  margin-left: 1rem;
+  transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-  color: var(--link-hover-color); /* Değişken kullanıldı */
+  color: var(--link-hover-color);
 }
 
-/* Küçük ekranlar için ek düzenlemeler */
-@media (max-width: 768px) {
-  .footer-content {
-    flex-direction: column; /* İçeriği dikey hizala */
-    text-align: center;
-  }
+.footer-section {
+  margin-bottom: 1.5rem;
+  min-width: 200px;
+  flex: 1;
+}
 
-  .footer-links {
-    margin-top: 0.5rem;
-  }
+.footer-section h2,
+.footer-section h3 {
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+}
 
-  .footer-links a {
-    margin: 0 0.5rem; /* Bağlantı boşluklarını ayarla */
-  }
+.footer-section p {
+  margin: 0.3rem 0;
+}
+
+.footer-section a {
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section a:hover {
+  color: var(--link-hover-color);
 }
 
 .footer-bottom {
-  padding: 0.5rem 0;
-  margin-bottom: 0;
+  width: 100%;
+  margin: 1.5rem 0 0 0;
+  padding: 0.8rem 0;
   font-size: 0.9rem;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.footer-bottom p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Küçük ekranlar için responsive tasarım */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem 1rem 0;
+  }
+  
+  .footer-section {
+    width: 100%;
+    margin-bottom: 1.2rem;
+  }
 }
