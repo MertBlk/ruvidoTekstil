@@ -3,13 +3,7 @@ import './Slider.css';
 import { Link } from 'react-router-dom'; // Link bileşenini import et
 
 const initialSlidesData = [
-  {
-    image: '/slider.png',
-    mobileImage: '/slider.png',
-    // İsteğe bağlı: Her slayt için farklı link ve buton metni
-    // buttonText: 'Ürünler',
-    // buttonLink: '/products'
-  },
+
   {
     image: '/slider2.png',
     mobileImage: '/sliderMobil2.jpeg',

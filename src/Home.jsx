@@ -16,15 +16,17 @@ const Home = () => {
 
     return (
         <div>
-            <div className="home-hero-section">
-                
-                {/* Slider eklendi */}
-                <Slider />
-               
+            <div className="front-page">
+                <div className="front-page-left">
+                    <span className="front-text">RUVIDO</span>
+                    <span className="front-text-sub">TEKSTİL</span>
+                </div>
+                <div className="front-page-right">
+                    <Slider />
+                </div>
             </div>
            
             <div className="products-grid">
-                {/* fade-in ve delay sınıfları kaldırıldı */}
                 <div className="product-card card-1">
                     <Link to="/products" className="product-link">
                         <img src="/tisortler.jpeg" alt="Ürünlerimiz" className="product-image" />
@@ -32,7 +34,6 @@ const Home = () => {
                         <p>Özel tasarımlar, özgün dokunuşlar ve sınırsız seçeneklerle fark yaratıyoruz.</p>
                     </Link>
                 </div>
-                {/* fade-in ve delay sınıfları kaldırıldı */}
                 <div className="product-card card-2">
                     <Link to="/about" className="product-link">
                         <img src="/ipliBaski.jpeg" alt="Tasarım" className="product-image" />
@@ -40,7 +41,6 @@ const Home = () => {
                         <p>Her ayrıntıda markanıza sizin kadar özel bir imza. Ruvido ile her ürün, sizin benzersiz tarzınızı yansıtır.</p>
                     </Link>
                 </div>
-                {/* fade-in ve delay sınıfları kaldırıldı */}
                 <div className="product-card card-3">
                     <Link to="/contact" className="product-link">
                         <img src="/" alt="Güven" className="product-image" />

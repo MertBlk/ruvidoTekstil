@@ -42,6 +42,53 @@
     }
 }
 
+.front-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: relative;
+}
+
+.front-page-left {
+  flex: 0.5;
+  background-color: #EFFFE2;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+}
+
+.front-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 6rem;
+  font-weight: 800;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  color: #333;
+  letter-spacing: -2px;
+  margin: 0;
+  position: absolute;
+  left: 2rem;
+}
+
+.front-text-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  color: #333;
+  letter-spacing: 2px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  position: absolute;
+  left: 9rem; /* RUVIDO'nun sağında konumlandır */
+  top: 54%; /* Dikeyde merkezde konumlandır */
+}
+
+.front-page-right {
+  flex: 2.5;
+  position: relative;
+  overflow: hidden;
+}
 
 @media (max-width: 768px) {
     .home-hero-section {
@@ -69,7 +116,38 @@
         height: 200px;
     }
 
-   
+    .front-page {
+      flex-direction: column;
+    }
+
+    .front-page-left {
+      flex: 0.3;
+      padding-left: 1rem;
+    }
+
+    .front-text {
+      font-size: 4rem;
+      left: 1rem;
+    }
+
+    .front-text-sub {
+      font-size: 1.5rem;
+      left: 6rem; /* Mobilde RUVIDO'nun sağında */
+      top: 54%; /* Dikeyde aynı hizalama korundu */
+      margin-left: 0;
+    }
+
+    .front-page-right {
+      flex: 2.7;
+    }
+
+    .front-page-left {
+      padding: 1rem;
+    }
+
+    .front-text {
+      font-size: 4rem;
+    }
 }
 @media (max-width: 600px) {
   .home-hero-section {

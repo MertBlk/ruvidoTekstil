@@ -10,6 +10,8 @@
   background: rgba(151, 124, 124, 0.1);
   top: 0;
   left: 0;
+   backdrop-filter: blur(3px); /* Slider içindeki her şeyi biraz bulanıklaştırır */
+  filter: blur(2px); 
 }
 
 .slide {
@@ -23,6 +25,23 @@
   justify-content: center; /* Yatayda ortalamak için flex-start yerine center */
   position: relative;
   transition: background-image 0.5s;
+  overflow: hidden; /* Blur taşmasını önlemek için */
+}
+
+/* Blur efekti için pseudo element */
+.slide::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: inherit; /* Slider'ın arka plan görselini alır */
+  background-position: center;
+  background-size: cover;
+  filter: blur(6px); /* Bulanıklık miktarı */
+  z-index: -1; /* Görselin arkaplanda kalması için */
+  opacity: 0.7; /* Bulanıklığın yoğunluğu */
 }
 
 .slide-content {

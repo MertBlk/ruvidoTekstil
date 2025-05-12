@@ -44,7 +44,7 @@ const Navbar2 = () => {
           <span />
           <span />
         </button>
-        <p className="navbar-title">Ruvido</p>
+        <p className="navbar-title"></p>
       </div>
       <div className="navbar-right">
         <div 
