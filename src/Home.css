@@ -21,31 +21,31 @@
 .products-grid {
   position: relative;
   z-index: 2;
-  margin-top: 5rem; /* 500rem olan değer düzeltildi, kahraman bölümünden sonra boşluk */
-  margin-bottom: 5rem; /* Altbilgiden önce boşluk için 15rem'den 5rem'e düşürüldü */
+  margin-top: 8rem !important; /* 500rem olan değer düzeltildi, kahraman bölümünden sonra boşluk */
+  margin-bottom: 12rem !important; /* Altbilgiden önce boşluk için 15rem'den 5rem'e düşürüldü */
   display: flex;
   justify-content: center;
   align-items: flex-start; /* Üstten hizalama için center'dan değiştirildi */
   flex-wrap: wrap;
   min-height: 10rem;
-  gap: 2rem; /* Kartlar arası boşluk için ayarlandı */
+  gap: 9.5rem !important; /* Kartlar arası boşluk biraz artırıldı */
+  padding: 0 2rem; /* Izgaranın kenarlara olan boşluğu ayarlandı */
 }
 
 .product-card {
   /* background-color: #fff; KALDIRILDI */
-  border: 1px solid var(--border-color);
-  border-radius: 10px;
+  /* border: 1px solid var(--border-color); KALDIRILDI */
+  border-radius: 12px; /* Köşe yuvarlaklığı biraz artırıldı */
   /* padding: 24px; KALDIRILDI */
-  box-shadow: 0 4px 6px var(--shadow-color);
-  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.08); /* Daha yumuşak ve katmanlı gölge */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Geçiş yumuşatıldı */
   width: 25rem;
   max-width: 95vw;
-  min-height: 320px !important; /* min-height değeri sabitlendi */
+  min-height: 350px !important; /* min-height değeri biraz artırıldı */
   display: flex;
   flex-direction: column;
-  /* margin: 25px 10px; Izgara boşluğuna (gap) güvenmek için KALDIRILDI */
-  /* margin-bottom: 40px; Izgara boşluğuna (gap) güvenmek için KALDIRILDI */
-  position: relative; /* İçeriğin konumlandırılması için */
+  position: relative;
+  overflow: hidden; /* Resmin kart sınırlarını aşmaması için eklendi */
 }
 
 .product-card .product-link {
@@ -57,8 +57,8 @@
 }
 
 .product-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+  transform: translateY(-5px) scale(1.03); /* Hover efekti güncellendi */
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15), 0 6px 12px rgba(0,0,0,0.1); /* Hover gölgesi güncellendi */
 }
 
 .product-image-container {
@@ -66,18 +66,19 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
+  border-radius: 12px; /* Ana kart ile aynı köşe yuvarlaklığı */
 }
 
 .product-image {
   width: 100%;
   height: 100%; /* 200px'den 100%'e değiştirildi */
   object-fit: cover;
-  /* border-radius: 6px; KALDIRILDI */
-  transition: transform 0.5s ease;
+  /* border-radius: 6px; KALDIRILDI, container yönetecek */
+  transition: transform 0.4s ease; /* Geçiş süresi biraz artırıldı */
 }
 
 .product-card:hover .product-image {
-  transform: scale(1.05);
+  transform: scale(1.1); /* Hover'da resim büyüme efekti artırıldı */
 }
 
 .product-overlay {
@@ -85,19 +86,24 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%);
-  padding: 20px;
+  background: linear-gradient(to top, 
+    rgba(0,0,0,0.85) 0%,  /* Daha koyu başlangıç */
+    rgba(0,0,0,0.7) 25%, /* Orta geçiş */
+    rgba(0,0,0,0.3) 60%, /* Daha yumuşak üst kısım */
+    rgba(0,0,0,0) 100%
+  );
+  padding: 25px; /* Padding biraz artırıldı */
   color: white;
-  border-radius: 0 0 10px 10px; /* Kartın köşe yuvarlaklığı ile eşleşmesi için güncellendi */
+  border-radius: 0 0 12px 12px; /* Kartın köşe yuvarlaklığı ile eşleşmesi için güncellendi */
 }
 
 .product-card h3 {
   margin-top: 0;
   margin-bottom: 5px;
-  font-size: 1.5rem;
+  font-size: 1.6rem; /* Font boyutu biraz artırıldı */
   font-weight: 700;
   color: white;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Metin gölgesi daha belirgin */
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -109,17 +115,17 @@
 }
 
 .product-category {
-  font-size: 1rem;
-  color: #ffffff;
-  margin: 5px 0;
-  font-weight: 400;
+  font-size: 1.05rem; /* Font boyutu biraz artırıldı */
+  color: rgba(255,255,255,0.9); /* Biraz daha opak */
+  margin: 8px 0; /* Dikey boşluk artırıldı */
+  font-weight: 500; /* Biraz daha kalın */
 }
 
 .product-description {
   margin: 0;
   line-height: 1.5;
-  font-size: 1.05rem;
-  color: rgba(255,255,255,0.9);
+  font-size: 1.1rem; /* Font boyutu biraz artırıldı */
+  color: rgba(255,255,255,0.85); /* Biraz daha opak */
   overflow: hidden;
   display: -webkit-box;
   display: box;
@@ -128,8 +134,7 @@
   -webkit-box-orient: vertical;
   box-orient: vertical;
   text-overflow: ellipsis;
-  opacity: 0.9;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 1; /* Başlangıçta görünür olması için 0.9'dan 1'e */
 }
 
 .front-page {
@@ -220,15 +225,27 @@
     gap: 2rem; /* Tutarlı boşluk, 3rem idi */
     margin-top: 3rem; /* Ayarlandı, 4rem idi */
     margin-bottom: 3rem; /* Ayarlandı, 4rem idi */
-    padding: 1.5rem 1rem; /* Ayarlandı, 2rem 1rem idi */
+    padding: 0 1rem; /* Yan boşluklar güncellendi */
   }
   .product-card {
-    width: 95vw;
-    max-width: 450px;
-    min-height: 250px;
-    padding: 14px;
-    /* margin: 15px 5px; KALDIRILDI */
-    /* margin-bottom: 30px; KALDIRILDI */
+    width: 90vw; /* Genişlik biraz ayarlandı */
+    max-width: 400px; /* Maksimum genişlik ayarlandı */
+    min-height: 300px !important; /* Yükseklik ayarlandı */
+    /* padding: 14px; KALDIRILDI */
+  }
+  .product-overlay {
+    padding: 15px; /* Mobil için padding ayarlandı */
+  }
+  .product-card h3 {
+    font-size: 1.4rem; /* Mobil için font boyutu */
+  }
+  .product-category {
+    font-size: 1rem; /* Mobil için font boyutu */
+  }
+  .product-description {
+    font-size: 1rem; /* Mobil için font boyutu */
+    -webkit-line-clamp: 2; /* Mobilde açıklama için satır sayısı azaltıldı */
+    line-clamp: 2;
   }
 }
 
@@ -250,10 +267,20 @@
     height: 140px;
   }
   .product-card {
-    min-height: 180px;
-    padding: 8px;
-    /* margin: 12px 5px; KALDIRILDI */
-    /* margin-bottom: 25px; KALDIRILDI */
+    min-height: 280px !important; /* En küçük ekranlar için yükseklik */
+    /* padding: 8px; KALDIRILDI */
+  }
+   .product-overlay {
+    padding: 12px; /* En küçük ekranlar için padding */
+  }
+  .product-card h3 {
+    font-size: 1.2rem; /* En küçük ekranlar için font boyutu */
+  }
+  .product-category {
+    font-size: 0.9rem; /* En küçük ekranlar için font boyutu */
+  }
+  .product-description {
+    font-size: 0.9rem; /* En küçük ekranlar için font boyutu */
   }
 }
 
