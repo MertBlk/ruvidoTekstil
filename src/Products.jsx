@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Products.css';
 
@@ -6,9 +6,6 @@ const Products = () => {
     const [filter, setFilter] = useState('');
     const [searchTerm, setSearchTerm] = useState('');
     
-    // visibleProductIndex'i takip etmek için bir ref oluşturuyoruz
-    const visibleProductIndexRef = useRef(0);
-
     const products = [
         { id: 51, name: 'Saç Bandı', category: 'Saç Bandı', images: ['/sac.jpeg'],
           description: 'Pratik ve kullanışlı saç bandı, Cırtsız.' },
@@ -105,9 +102,6 @@ const Products = () => {
         setSearchTerm(event.target.value);
     };
 
-    // Render öncesi sayacı sıfırlıyoruz
-    visibleProductIndexRef.current = 0;
-
     return (
         <div className="products-container">
             <div className="filter-bar">
@@ -140,19 +134,8 @@ const Products = () => {
 
                 {filteredProducts.length > 0 ? (
                     filteredProducts.map((product) => {
-                        // Her bir ürün için visibleProductIndexRef'in değerini kullanıp sonra artırıyoruz
-                        const patternIndex = visibleProductIndexRef.current % 3;
-                        let cardClassName = "product-card card";
-
-                        if (patternIndex === 0 || patternIndex === 2) { // Sol ve sağ kartlar uzun
-                            cardClassName += " tall";
-                        }
-                        
-                        // Sonraki ürün için sayacı artır
-                        visibleProductIndexRef.current++;
-
                         return (
-                            <div key={product.id} className={cardClassName}>
+                            <div key={product.id} className="product-card card">
                                 <Link to={`/products/${product.id}`} className="product-link">
                                     <div className="product-image-container">
                                         <img 

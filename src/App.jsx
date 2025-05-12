@@ -14,43 +14,51 @@ function App() {
     <>
       <Router>
         <Routes>
-         
-          
-          {/* Diğer sayfalar için Navbar ve Footer içeren yapı */}
+          {/* Ana sayfa ve diğer sayfalar için sayfa düzeni */}
           <Route path="/" element={
-            <>
+            <div className="page-layout">
               <Navbar2 />
-              <Home />
+              <main className="main-content">
+                <Home />
+              </main>
               <Footer />
-            </>
+            </div>
           } />
           <Route path="/products" element={
-            <>
+            <div className="page-layout">
               <Navbar2 />
-              <Products />
+              <main className="main-content">
+                <Products />
+              </main>
               <Footer />
-            </>
+            </div>
           } />
           <Route path="/products/:id" element={
-            <>
+            <div className="page-layout">
               <Navbar2 />
-              <ProductDetail />
+              <main className="main-content">
+                <ProductDetail />
+              </main>
               <Footer />
-            </>
+            </div>
           } />
           <Route path="/contact" element={
-            <>
+            <div className="page-layout">
               <Navbar2 />
-              <Contact />
+              <main className="main-content">
+                <Contact />
+              </main>
               <Footer />
-            </>
+            </div>
           } />
           <Route path="/about" element={
-            <>
+            <div className="page-layout">
               <Navbar2 />
-              <About />
+              <main className="main-content">
+                <About />
+              </main>
               <Footer />
-            </>
+            </div>
           } />
         </Routes>
       </Router>

@@ -1,3 +1,10 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: 100%;
+}
+
 .home-hero-section {
   position: relative;
   width: 100%;
@@ -14,29 +21,39 @@
 .products-grid {
   position: relative;
   z-index: 2;
-  margin-top: 5rem;
+  margin-top: 5rem; /* 500rem olan değer düzeltildi, kahraman bölümünden sonra boşluk */
+  margin-bottom: 5rem; /* Altbilgiden önce boşluk için 15rem'den 5rem'e düşürüldü */
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* Üstten hizalama için center'dan değiştirildi */
   flex-wrap: wrap;
   min-height: 10rem;
-  gap: 2rem;
-  padding-bottom: 5rem; /* Footer ile çakışmayı önlemek için alt boşluk eklendi */
+  gap: 2rem; /* Kartlar arası boşluk için ayarlandı */
 }
 
 .product-card {
-  background-color: #fff;
+  /* background-color: #fff; KALDIRILDI */
   border: 1px solid var(--border-color);
   border-radius: 10px;
-  padding: 24px;
+  /* padding: 24px; KALDIRILDI */
   box-shadow: 0 4px 6px var(--shadow-color);
   transition: transform 0.3s, box-shadow 0.3s;
   width: 25rem;
   max-width: 95vw;
-  min-height: 320px;
+  min-height: 320px !important; /* min-height değeri sabitlendi */
   display: flex;
   flex-direction: column;
-  margin: 10px;
+  /* margin: 25px 10px; Izgara boşluğuna (gap) güvenmek için KALDIRILDI */
+  /* margin-bottom: 40px; Izgara boşluğuna (gap) güvenmek için KALDIRILDI */
+  position: relative; /* İçeriğin konumlandırılması için */
+}
+
+.product-card .product-link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
 }
 
 .product-card:hover {
@@ -44,18 +61,43 @@
   box-shadow: 0 8px 12px rgba(0,0,0,0.2);
 }
 
+.product-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
 .product-image {
   width: 100%;
-  height: 200px;
+  height: 100%; /* 200px'den 100%'e değiştirildi */
   object-fit: cover;
-  border-radius: 6px;
+  /* border-radius: 6px; KALDIRILDI */
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+.product-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%);
+  padding: 20px;
+  color: white;
+  border-radius: 0 0 10px 10px; /* Kartın köşe yuvarlaklığı ile eşleşmesi için güncellendi */
 }
 
 .product-card h3 {
-  margin-top: 15px;
-  margin-bottom: 10px;
+  margin-top: 0;
+  margin-bottom: 5px;
   font-size: 1.5rem;
   font-weight: 700;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -66,19 +108,28 @@
   box-orient: vertical;
 }
 
-.product-card p {
+.product-category {
+  font-size: 1rem;
+  color: #ffffff;
+  margin: 5px 0;
+  font-weight: 400;
+}
+
+.product-description {
   margin: 0;
   line-height: 1.5;
-  flex-grow: 1;
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.9);
   overflow: hidden;
   display: -webkit-box;
   display: box;
-  -webkit-line-clamp: 4;
-  line-clamp: 4;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   box-orient: vertical;
   text-overflow: ellipsis;
-  font-size: 1.05rem;
+  opacity: 0.9;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .front-page {
@@ -165,29 +216,19 @@
   }
   .products-grid {
     flex-direction: column;
-    align-items: center;
-    gap: 1.2rem;
-    margin-top: 2rem;
-    padding: 1rem;
+    align-items: center; /* Sütun düzeni için center uygundur */
+    gap: 2rem; /* Tutarlı boşluk, 3rem idi */
+    margin-top: 3rem; /* Ayarlandı, 4rem idi */
+    margin-bottom: 3rem; /* Ayarlandı, 4rem idi */
+    padding: 1.5rem 1rem; /* Ayarlandı, 2rem 1rem idi */
   }
   .product-card {
     width: 95vw;
     max-width: 450px;
     min-height: 250px;
     padding: 14px;
-  }
-  .product-image {
-    height: 150px;
-  }
-  .product-card h3 {
-    font-size: 1.2rem;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
-  }
-  .product-card p {
-    font-size: 0.95rem;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
+    /* margin: 15px 5px; KALDIRILDI */
+    /* margin-bottom: 30px; KALDIRILDI */
   }
 }
 
@@ -211,19 +252,8 @@
   .product-card {
     min-height: 180px;
     padding: 8px;
-  }
-  .product-image {
-    height: 90px;
-  }
-  .product-card h3 {
-    font-size: 1rem;
-    -webkit-line-clamp: 1;
-    line-clamp: 1;
-  }
-  .product-card p {
-    font-size: 0.85rem;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
+    /* margin: 12px 5px; KALDIRILDI */
+    /* margin-bottom: 25px; KALDIRILDI */
   }
 }
 

@@ -90,14 +90,22 @@
   position: relative;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   display: block;
-  grid-row: span 1; /* Varsayılan olarak kısa kart (1 satır kaplar) */
-  background-color: #f9f9f9; /* Resim yüklenene kadar geçici arka plan */
+  /* background-color: #f9f9f9; KALDIRILDI */
+  /* grid-row: span 1; Kaldırıldı, nth-child ile yönetilecek */
 }
 
 /* Eski .card.wide ve .card.large kaldırıldı */
+/* .card.tall kaldırıldı */
 
-.card.tall {
-  grid-row: span 2; /* Uzun kartlar 2 satır kaplar */
+/* Varsayılan (Masaüstü - 3 sütun) */
+.products-grid .card:nth-child(3n+1) { /* Sıranın ilk kartı */
+  grid-row: span 2; /* Uzun */
+}
+.products-grid .card:nth-child(3n+2) { /* Sıranın ikinci kartı */
+  grid-row: span 1; /* Kısa */
+}
+.products-grid .card:nth-child(3n+3) { /* Sıranın üçüncü kartı */
+  grid-row: span 2; /* Uzun */
 }
 
 .product-card {
@@ -185,29 +193,41 @@
 @media (max-width: 1024px) {
     .products-grid {
         grid-template-columns: repeat(2, 1fr); /* Orta ekranlarda 2 sütun */
-        grid-auto-rows: 180px; /* Satır yüksekliğini ayarla */
+        grid-auto-rows: 200px; /* Satır yüksekliğini ayarla, 180px'den 200px'e */
         gap: 12px;
     }
     
-    /* Orta ekranlarda tall-short-tall deseni doğrudan uygulanamaz, */
-    /* bu nedenle tüm kartlar varsayılan veya belirli bir yüksekliğe sahip olabilir. */
-    /* Şimdilik .card.tall etkisini koruyalım, ancak görünüm farklı olabilir. */
-    .card.tall {
-        grid-row: span 2; /* Veya span 1.5 gibi bir değerle ayarlanabilir */
+    /* .card.tall kaldırıldı */
+    /* Tablet (2 sütun) için nth-child desenleri */
+    .products-grid .card:nth-child(3n+1),
+    .products-grid .card:nth-child(3n+2),
+    .products-grid .card:nth-child(3n+3) {
+        grid-row: auto; /* Önceki 3'lü deseni sıfırla */
+    }
+
+    .products-grid .card:nth-child(2n+1) { /* Sıranın ilk kartı */
+        grid-row: span 2; /* Uzun */
+    }
+    .products-grid .card:nth-child(2n+2) { /* Sıranın ikinci kartı */
+        grid-row: span 1; /* Kısa */
     }
 }
 
 @media (max-width: 768px) {
     .products-grid {
         grid-template-columns: 1fr; /* Küçük ekranlarda tek sütun */
-        grid-auto-rows: 220px; /* Satır yüksekliğini ayarla */
+        grid-auto-rows: 250px; /* Satır yüksekliğini ayarla, 220px'den 250px'e */
         gap: 10px;
     }
     
-    .card.tall {
-        grid-row: span 1; /* Tek sütunda tüm kartlar aynı yükseklikte olabilir */
-                         /* veya bazıları daha uzun olabilir, örn: span 1.5 */
-                         /* Şimdilik tutarlılık için span 1 yapalım */
+    /* .card.tall kaldırıldı */
+    /* Mobil (1 sütun) için tüm kartlar aynı yükseklikte */
+    .products-grid .card:nth-child(3n+1),
+    .products-grid .card:nth-child(3n+2),
+    .products-grid .card:nth-child(3n+3),
+    .products-grid .card:nth-child(2n+1),
+    .products-grid .card:nth-child(2n+2) {
+        grid-row: span 1; /* Önceki desenleri sıfırla ve tümünü kısa yap */
     }
     
     .filter-bar {
@@ -254,14 +274,13 @@
     
     .products-grid {
         grid-template-columns: 1fr; /* En küçük ekranlarda tek sütun */
-        grid-auto-rows: 200px; /* Satır yüksekliğini ayarla */
+        grid-auto-rows: 220px; /* Satır yüksekliğini ayarla, 200px'den 220px'e */
         gap: 8px;
         padding: 0 0.5rem;
     }
     
-    .card.tall {
-        grid-row: span 1; /* Tek sütunda tüm kartlar aynı yükseklikte */
-    }
+    /* .card.tall kaldırıldı, mobil için zaten span 1 ayarlı */
+    /* Üstteki 768px medya sorgusu zaten .card için grid-row: span 1 ayarlıyor. */
 
     .card {
         border-radius: 6px;

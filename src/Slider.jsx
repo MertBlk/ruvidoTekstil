@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom'; // Link bileşenini import et
 const initialSlidesData = [
 
   {
-    image: '/slider2.png',
-    mobileImage: '/sliderMobil2.jpeg',
+    image: '/slider.png',
+    mobileImage: '/sliderMobil.jpeg',
     // buttonText: 'Hakkımızda',
     // buttonLink: '/about'
   },
