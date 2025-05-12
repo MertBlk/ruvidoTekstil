@@ -67,7 +67,7 @@
 }
 .slider-button-link {
   background-color: transparent; /* index.css'teki accent-color veya varsayılan */
-  background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Buton arka plan rengi */
+  background: linear-gradient(90deg, #333, #858585); /* Buton arka plan rengi */
   color: var( #ffffff); /* Buton yazı rengi */
   padding: 12px 28px;
   border: none;
