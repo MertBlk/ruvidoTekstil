@@ -141,16 +141,11 @@ const products = [
         customization: 'Logo baskısı ve renk seçimi ile özelleştirilebilir'
       }
     },
-    { id: 41, name: 'Boyun Yastığı Model 2', category: 'Ev Ürünleri', images: ['/byastik2.jpeg', '/byastik.jpeg'], 
-      description: 'Alternatif ergonomik tasarımıyla uzun süreli kullanımda konfor sağlayan boyun yastığı.',
+    
+    { id: 42, name: 'Boyun Yastığı Model 2', category: 'Ev Ürünleri', images: ['/bYastik3.jpeg', '/bYastık.jpeg', '/bYastıkMavi.jpeg','/bYastikY.jpeg'],
+      description: 'Dışı polar, içi yün dolgu ile konforlu ve kaliteli tasarım.',
       details: {
-        customization: 'Firma logosu ve özel renk seçenekleri'
-      }
-    },
-    { id: 42, name: 'Boyun Yastığı Model 3', category: 'Ev Ürünleri', images: ['/bYastik3.jpeg'], 
-      description: 'Premium malzemelerden üretilmiş, özel tasarım boyun yastığı.',
-      details: {
-        customization: 'Logo baskısı ve özel ambalaj seçenekleri'
+        customization: 'Logo baskısı ve özel renk  seçenekleri'
       }
     },
     { id: 43, name: 'Boyun Yastığı Özel', category: 'Ev Ürünleri', images: ['/bYastık.jpeg'], 

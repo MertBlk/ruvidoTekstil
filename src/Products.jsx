@@ -15,14 +15,9 @@ const Products = () => {
         //Boyun Yastığı Ürünleri
         { id: 40, name: 'Boyun Yastığı', category: 'Boyun Yastığı', images: ['/byastik.jpeg', '/byastik2.jpeg'],
           description: 'Gabardin dış yüzey, elyaf dolgulu iç yapı ile premium konfor.' },
-        { id: 42, name: 'Boyun Yastığı Model-2', category: 'Boyun Yastığı', images: ['/bYastik3.jpeg'],
+        { id: 42, name: 'Boyun Yastığı Model-2', category: 'Boyun Yastığı', images: ['/bYastik3.jpeg', '/bYastık.jpeg', '/bYastıkMavi.jpeg','/bYastikY.jpeg'],
           description: 'Dışı polar, içi yün dolgu ile konforlu ve kaliteli tasarım.' },
-        { id: 43, name: 'Boyun Yastığı Model-2 ', category: 'Boyun Yastığı', images: ['/bYastık.jpeg'],
-          description: 'Dışı polar, içi yün dolgu ile konforlu ve kaliteli tasarım.' },
-        { id: 44, name: 'Boyun Yastığı Model-2', category: 'Boyun Yastığı', images: ['/bYastıkMavi.jpeg'],
-          description: 'Dışı polar, içi yün dolgu ile konforlu ve kaliteli tasarım.' },
-        { id: 45, name: 'Boyun Yastığı Model-2', category: 'Boyun Yastığı', images: ['/bYastikY.jpeg'],
-          description: 'Dışı polar, içi yün dolgu ile konforlu ve kaliteli tasarım.' },
+       
 
         // HAvlu Ürünleri
         { id: 1, name: 'Havlu Model-1', category: 'Havlu', images: ['/havluBeyaz.jpeg', '/havluBeyaz2.jpeg', '/HavluBeyaz3.jpeg'],

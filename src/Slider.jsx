@@ -45,21 +45,13 @@ const Slider = () => {
     ? currentSlideData.mobileImage
     : currentSlideData.image;
 
-  // Eğer her slayt için farklı buton metni ve linki olacaksa:
-  // const buttonText = currentSlideData.buttonText || "Keşfetmeye Başla!";
-  // const buttonLink = currentSlideData.buttonLink || "/default-link"; // Varsayılan bir link
 
-  // Eğer tek bir sabit link ve metin olacaksa:
-  const buttonText = "Keşfetmeye Başla!";
-  const buttonLink = "/products"; // Yönlendirilecek sayfanın yolu (örneğin ürünler sayfası)
 
   return (
     <div className="slider">
       <div className="slide" style={{ backgroundImage: `url(${imageUrl})` }}>
         <div className="slide-content">
-          <Link to={buttonLink} className="slider-button-link">
-            {buttonText}
-          </Link>
+          
         </div>
       </div>
     </div>

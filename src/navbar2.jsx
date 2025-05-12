@@ -44,20 +44,18 @@ const Navbar2 = () => {
           <span />
           <span />
         </button>
-      </div>
-      <div className="navbar-center">
-       
+        <p className="navbar-title">Ruvido</p>
       </div>
       <div className="navbar-right">
-      <div 
-        ref={menuRef}
-        className={`mobile-menu${menuOpen ? " show" : ""}`}
-      >
+        <div 
+          ref={menuRef}
+          className={`mobile-menu${menuOpen ? " show" : ""}`}
+        >
           <Link to="/">Anasayfa</Link>
           <Link to="/products">Ürünler</Link>
           <Link to="/contact">İletişim</Link>
           <Link to="/about">Hakkımızda</Link>
-      </div>
+        </div>
       </div>
     </nav>
   );    
