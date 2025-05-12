@@ -10,8 +10,8 @@
   background: rgba(151, 124, 124, 0.1);
   top: 0;
   left: 0;
-   backdrop-filter: blur(3px); /* Slider içindeki her şeyi biraz bulanıklaştırır */
-  filter: blur(2px); 
+   backdrop-filter: blur(7px); /* Slider içindeki her şeyi biraz bulanıklaştırır */
+  filter: blur(7px);
 }
 
 .slide {

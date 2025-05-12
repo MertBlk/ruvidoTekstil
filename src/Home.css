@@ -33,9 +33,8 @@
 }
 
 .product-card {
-  /* background-color: #fff; KALDIRILDI */
-  /* border: 1px solid var(--border-color); KALDIRILDI */
-  border-radius: 12px; /* Köşe yuvarlaklığı biraz artırıldı */
+  
+  border-radius: 22px; /* Köşe yuvarlaklığı biraz artırıldı */
   /* padding: 24px; KALDIRILDI */
   box-shadow: 0 8px 16px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.08); /* Daha yumuşak ve katmanlı gölge */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Geçiş yumuşatıldı */
@@ -206,14 +205,14 @@
     justify-content: flex-start;
   }
   .front-text {
-    font-size: 3.5rem;
-    left: 1rem;
-    top: 10px;
+    font-size: 1.1rem; /* Küçültüldü (önceki 3.5rem) */
+    left: 0.5rem; /* Ayarlandı */
+    top: 8px;    /* Ayarlandı */
   }
   .front-text-sub {
-    font-size: 1.3rem;
-    left: 5rem;
-    top: 30px;
+    font-size: 0.8rem; /* Küçültüldü (önceki 1.3rem) */
+    left: 2.5rem;  /* Ayarlandı */
+    top: 10px;   /* Ayarlandı */
   }
   .front-page-right {
     width: 100%;
@@ -255,13 +254,14 @@
     padding-left: 0.5rem;
   }
   .front-text {
-    font-size: 2.2rem;
-    left: 0.5rem;
+    font-size: 0.9rem; /* Küçültüldü (önceki 2.2rem) */
+    left: 0.3rem;  /* Ayarlandı */
+    top: 5px;     /* Ayarlandı */
   }
   .front-text-sub {
-    font-size: 1rem;
-    left: 3.2rem;
-    top: 18px;
+    font-size: 0.7rem; /* Küçültüldü (önceki 1rem) */
+    left: 2rem;    /* Ayarlandı */
+    top: 8px;     /* Ayarlandı */
   }
   .front-page-right {
     height: 140px;
