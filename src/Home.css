@@ -203,16 +203,17 @@
     padding-left: 1rem;
     align-items: flex-start;
     justify-content: flex-start;
+    position: relative; /* Mutlak konumlandırılmış çocuklar için referans noktası */
   }
   .front-text {
     font-size: 1.1rem; /* Küçültüldü (önceki 3.5rem) */
     left: 0.5rem; /* Ayarlandı */
-    top: 8px;    /* Ayarlandı */
+    top: 20px;    /* Değiştirildi: 8px -> 20px */
   }
   .front-text-sub {
     font-size: 0.8rem; /* Küçültüldü (önceki 1.3rem) */
     left: 2.5rem;  /* Ayarlandı */
-    top: 10px;   /* Ayarlandı */
+    top: 20px;   /* Değiştirildi: 10px -> 20px */
   }
   .front-page-right {
     width: 100%;
@@ -256,12 +257,12 @@
   .front-text {
     font-size: 0.9rem; /* Küçültüldü (önceki 2.2rem) */
     left: 0.3rem;  /* Ayarlandı */
-    top: 5px;     /* Ayarlandı */
+    top: 15px;     /* Değiştirildi: 5px -> 15px */
   }
   .front-text-sub {
     font-size: 0.7rem; /* Küçültüldü (önceki 1rem) */
     left: 2rem;    /* Ayarlandı */
-    top: 8px;     /* Ayarlandı */
+    top: 15px;     /* Değiştirildi: 8px -> 15px */
   }
   .front-page-right {
     height: 140px;
