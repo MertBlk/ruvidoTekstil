@@ -11,7 +11,7 @@
   left: 0;
   right: 0;
   width: 100%;
-  z-index: 2000;                        
+  z-index: 20; /* Mobil görünümde logonun altında kalacak şekilde azaltıldı */                        
 }
 .navbar-title {
   font-family: 'Inter', sans-serif;
@@ -146,6 +146,7 @@
   .zara-navbar {
     min-height: 64px;
     padding: 0 0.5rem;
+    z-index: 20;
   }
 }
 

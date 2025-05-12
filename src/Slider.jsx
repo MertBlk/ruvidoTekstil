@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './Slider.css';
 import { Link } from 'react-router-dom'; // Link bileşenini import et
 
 const initialSlidesData = [
-
   {
     image: '/slider.png',
-    mobileImage: '/sliderMobil.jpeg',
+    mobileImage: '/slider.png', // PNG uzantısı kullandık
     // buttonText: 'Hakkımızda',
     // buttonLink: '/about'
   },
@@ -16,6 +15,7 @@ const initialSlidesData = [
 const Slider = () => {
   const [current, setCurrent] = useState(0);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [imageErrors, setImageErrors] = useState({});
 
   useEffect(() => {
     const handleResize = () => {
@@ -38,8 +38,6 @@ const Slider = () => {
   const imageUrl = isMobile && currentSlideData.mobileImage
     ? currentSlideData.mobileImage
     : currentSlideData.image;
-
-
 
   return (
     <div className="slider">

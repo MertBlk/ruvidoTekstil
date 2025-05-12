@@ -141,6 +141,7 @@
   height: 100vh;
   display: flex;
   position: relative;
+  overflow: hidden; /* Taşan içeriği gizle */
 }
 
 .front-page-left {
@@ -150,6 +151,7 @@
   display: flex;
   align-items: center;
   padding-left: 2rem;
+  min-width: 100px; /* Minimum genişlik ekledim */
 }
 
 .front-text {
@@ -195,29 +197,48 @@
     flex-direction: column;
     height: auto;
     min-height: 100vh;
-    padding: 0;
+    width: 100%;
+    display: flex;
+    position: relative;
+    margin-top: 0; /* Navbar'ın altında değil üstünde olacak */
   }
   .front-page-left {
     width: 100%;
-    height: 120px;
-    padding-left: 1rem;
-    align-items: flex-start;
-    justify-content: flex-start;
-    position: relative; /* Mutlak konumlandırılmış çocuklar için referans noktası */
+    height: 60px;
+    padding: 0;
+    background-color: #EFFFE2; /* Yeşil arkaplan kalıyor */
+    z-index: 10;
+    position: absolute;
+    top: 0; /* En üstte görünmesi için */
+    left: 0;
+    display: flex;
+    align-items: center;
   }
   .front-text {
-    font-size: 1.1rem; /* Küçültüldü (önceki 3.5rem) */
-    left: 0.5rem; /* Ayarlandı */
-    top: 20px;    /* Değiştirildi: 8px -> 20px */
+    font-size: 1.6rem;
+    left: 10px;
+    top: 10px;
+    color: #333;
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-weight: 800;
+    display: block;
   }
   .front-text-sub {
-    font-size: 0.8rem; /* Küçültüldü (önceki 1.3rem) */
-    left: 2.5rem;  /* Ayarlandı */
-    top: 20px;   /* Değiştirildi: 10px -> 20px */
+    font-size: 0.7rem;
+    left: 10px;
+    top: 35px;
+    color: #333;
+    writing-mode: horizontal-tb;
+    transform: none;
+    letter-spacing: 1px;
+    display: block;
   }
   .front-page-right {
     width: 100%;
-    height: 250px;
+    height: auto;
+    min-height: 350px;
+    margin-top: 60px; /* Sadece logo yüksekliği kadar (60px) */
   }
   .products-grid {
     flex-direction: column;
@@ -249,39 +270,104 @@
   }
 }
 
+
+
 @media (max-width: 480px) {
-  .front-page-left {
-    height: 90px;
-    padding-left: 0.5rem;
+  .front-page.mobile-view .front-text {
+    
+    font-size: 1.7rem;
+    left: 2.3rem;
   }
-  .front-text {
-    font-size: 0.9rem; /* Küçültüldü (önceki 2.2rem) */
-    left: 0.3rem;  /* Ayarlandı */
-    top: 15px;     /* Değiştirildi: 5px -> 15px */
+  
+  .front-page.mobile-view .front-text-sub {
+    font-size: 1rem;
+    left: 2.2rem;
+    top: 90px;
   }
-  .front-text-sub {
-    font-size: 0.7rem; /* Küçültüldü (önceki 1rem) */
-    left: 2rem;    /* Ayarlandı */
-    top: 15px;     /* Değiştirildi: 8px -> 15px */
+  .front-page.mobile-view .front-page-left {
+    z-index: 1;
   }
-  .front-page-right {
-    height: 140px;
+}
+
+.front-page.mobile-view .front-page-left {
+  z-index: 1;
+  flex: 0.5;
+  background-color: #EFFFE2;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+  min-width: 100px; /* Minimum genişlik ekledim */
+}
+
+/* Mobile view için özel sınıf */
+.front-page.mobile-view {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  min-height: 350px;
+  overflow: visible;
+  position: relative;
+  margin-top: 80px; /* Navbar'ın yüksekliği kadar margin */
+}
+
+.front-page.mobile-view .front-page-left {
+  width: 100%;
+  height: 135px;
+  padding: 0;
+  background-color: #EFFFE2;
+  position: absolute;
+  top: -80px; /* Navbar'ın üzerinde görünmesi için */
+  left: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+}
+
+.front-page.mobile-view .front-text {
+  position: absolute;
+  font-size: 1.6rem;
+  left: 10px;
+  top: 10px;
+  color: #333;
+  writing-mode: horizontal-tb;
+  transform: none;
+  font-weight: 800;
+  z-index: 2;
+}
+
+.front-page.mobile-view .front-text-sub {
+  position: absolute;
+  font-size: 0.7rem;
+  left: 10px;
+  top: 35px;
+  color: #333;
+  writing-mode: horizontal-tb;
+  transform: none;
+  letter-spacing: 1px;
+  z-index: 2;
+}
+
+.front-page.mobile-view .front-page-right {
+  width: 100%;
+  height: auto;
+  min-height: 350px;
+  position: relative;
+  margin-top: 95px; /* Logo yüksekliğine göre ayarlandı */
+}
+
+@media (max-width: 480px) {
+  .front-page.mobile-view .front-text {
+    top: 60px;
+    font-size: 2.7rem;
+    left: 2rem;
   }
-  .product-card {
-    min-height: 280px !important; /* En küçük ekranlar için yükseklik */
-    /* padding: 8px; KALDIRILDI */
-  }
-   .product-overlay {
-    padding: 12px; /* En küçük ekranlar için padding */
-  }
-  .product-card h3 {
-    font-size: 1.2rem; /* En küçük ekranlar için font boyutu */
-  }
-  .product-category {
-    font-size: 0.9rem; /* En küçük ekranlar için font boyutu */
-  }
-  .product-description {
-    font-size: 0.9rem; /* En küçük ekranlar için font boyutu */
+  
+  .front-page.mobile-view .front-text-sub {
+    font-size: 1rem;
+    left: 2rem;
+    top: 105px;
   }
 }
 

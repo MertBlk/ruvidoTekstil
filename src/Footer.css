@@ -90,7 +90,7 @@
   margin: 1.5rem 0 0 0;
   padding: 0.8rem 0;
   font-size: 0.9rem;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: var(--footer-bg);
 }
 
 .footer-bottom p {

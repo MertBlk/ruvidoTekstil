@@ -1,20 +1,32 @@
 import './Home.css';
-
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Slider from './Slider';
 
 const Home = () => {
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+    
     useEffect(() => {
         document.body.classList.add('home');
+        
+        // Mobil cihazları tespit et
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+        
+        // Başlangıçta ve pencere boyutu değiştiğinde kontrol et
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        
         return () => {
             document.body.classList.remove('home');
+            window.removeEventListener('resize', handleResize);
         };
     }, []);
 
     return (
         <div className="home-container">
-            <div className="front-page">
+            <div className={`front-page ${isMobile ? 'mobile-view' : ''}`}>
                 <div className="front-page-left">
                     <span className="front-text">RUVIDO</span>
                     <span className="front-text-sub">TEKSTİL</span>

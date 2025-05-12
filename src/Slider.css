@@ -10,8 +10,8 @@
   background: rgba(151, 124, 124, 0.1);
   top: 0;
   left: 0;
-   backdrop-filter: blur(7px); /* Slider içindeki her şeyi biraz bulanıklaştırır */
-  filter: blur(7px);
+   /* backdrop-filter: blur(7px); /* Slider içindeki her şeyi biraz bulanıklaştırır */
+  /* filter: blur(7px); /* Slider içindeki her şeyi biraz bulanıklaştırır */  
 }
 
 .slide {
@@ -150,6 +150,48 @@
   .slider-button-link {
     padding: 10px 22px; /* Mobil için buton padding'i */
     font-size: 0.9rem; /* Mobil için buton font boyutu */
+  }
+}
+
+/* Mobil cihazlar için slider özelleştirmeleri */
+@media screen and (max-width: 768px) {
+  .slider {
+    height: 350px;
+    min-height: 350px;
+    padding-top: 0;
+    margin-top: 0;
+  }
+  
+  .slide {
+    height: 350px;
+    min-height: 350px;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .slide::before {
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+  }
+  
+  .slide-content {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+/* Çok küçük ekranlar için ek ayarlar */
+@media screen and (max-width: 480px) {
+  .slider {
+    height: 250px;
+    min-height: 250px;
+  }
+  
+  .slide {
+    height: 250px;
+    min-height: 250px;
   }
 }
 
