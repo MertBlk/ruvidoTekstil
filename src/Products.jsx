@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'; // useEffect ve useRef kaldırıldı
 import { Link } from 'react-router-dom';
 import './Products.css';
 
@@ -101,6 +101,8 @@ const Products = () => {
         setSearchTerm(event.target.value);
     };
 
+    // gridRef ve useEffect hook'u kaldırıldı. Dinamik boyutlandırma mantığı da kaldırıldı.
+
     return (
         <div className="products-container">
             <div className="filter-bar">
@@ -130,18 +132,42 @@ const Products = () => {
                 />
             </div>
             <div className="products-grid">
+
                 {/* Ürün listesi (filteredProducts kullanılıyor) */}
                 {filteredProducts.length > 0 ? (
-                    filteredProducts.map((product) => (
-                        <div key={product.id} className={`product-card`}>
-                            <Link to={`/products/${product.id}`} className="product-link">
-                                <img src={product.images[0]} alt={`${product.name} - ${product.category}`} className="product-image" />
-                                <h3>{product.name}</h3>
-                                <p>Kategori: {product.category}</p>
-                                <p className="product-description">{product.description}</p>
-                            </Link>
-                        </div>
-                    ))
+                    filteredProducts.map((product, index) => {
+                        let cardClassName = "product-card card";
+                        // Sağda ve solda uzun, ortada kısa kart düzeni için (3'lü döngü)
+                        const patternIndex = index % 3;
+
+                        if (patternIndex === 0) { // Sol kart (uzun)
+                            cardClassName += " tall";
+                        } else if (patternIndex === 1) { // Orta kart (kısa)
+                            // Varsayılan (kısa) kalır, ekstra sınıf gerekmez
+                        } else if (patternIndex === 2) { // Sağ kart (uzun)
+                            cardClassName += " tall";
+                        }
+                        
+                        return (
+                            <div key={product.id} className={cardClassName}>
+                                <Link to={`/products/${product.id}`} className="product-link">
+                                    <div className="product-image-container">
+                                        <img 
+                                            src={product.images[0]} 
+                                            alt={`${product.name} - ${product.category}`} 
+                                            className="product-image" 
+                                            // onLoad olayı kaldırıldı
+                                        />
+                                        <div className="product-overlay">
+                                            <h3>{product.name}</h3>
+                                            <p className="product-category">{product.category}</p>
+                                            <p className="product-description">{product.description}</p>
+                                        </div>
+                                    </div>
+                                </Link>
+                            </div>
+                        );
+                    })
                 ) : (
                     <p className="no-results">Aramanızla eşleşen ürün bulunamadı.</p> // Eşleşme olmadığında mesaj
                 )}
