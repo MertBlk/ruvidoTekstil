@@ -1,10 +1,13 @@
-import React, { useState } from 'react'; // useEffect ve useRef kaldırıldı
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './Products.css';
 
 const Products = () => {
     const [filter, setFilter] = useState('');
-    const [searchTerm, setSearchTerm] = useState(''); // Arama terimi için state eklendi
+    const [searchTerm, setSearchTerm] = useState('');
+    
+    // visibleProductIndex'i takip etmek için bir ref oluşturuyoruz
+    const visibleProductIndexRef = useRef(0);
 
     const products = [
         { id: 51, name: 'Saç Bandı', category: 'Saç Bandı', images: ['/sac.jpeg'],
@@ -57,10 +60,11 @@ const Products = () => {
         // Çanta Ürünleri
         { id: 33, name: 'Siyah Çanta', category: 'Çanta', images: ['/siyahCanta.jpeg', '/siyahCanta2.jpeg'],
           description: 'Dayanıklı ve şık tasarımlı siyah çanta.' },
-        { id: 35, name: 'Baskılı Çanta', category: 'Çanta', images: ['/cantaBaski.jpeg'],
-          description: 'Özel baskı teknikleriyle tasarlanmış çanta.' },
-        { id: 36, name: 'İpli Çanta', category: 'Çanta', images: ['/ipliCanta.jpeg'],
+            { id: 36, name: 'İpli Çanta', category: 'Çanta', images: ['/ipliCanta.jpeg'],
           description: 'Pratik ipli tasarıma sahip kullanışlı çanta.' },
+        { id: 35, name: 'Baskılı Çanta', category: 'Çanta', images: ['/baskiliCanta.jpeg'],
+          description: 'Özel baskı teknikleriyle tasarlanmış çanta.' },
+      
         // İpli Ürünler
         { id: 46, name: 'İpli Model 2', category: 'Çanta', images: ['/ipli2.jpeg'],
           description: 'Kullanışlı ipli çanta tasarımı.' },
@@ -74,7 +78,7 @@ const Products = () => {
           description: 'Renkli detaylarla zenginleştirilmiş ipli çanta.' },
         
         // Şapka Ürünleri
-        { id: 37, name: 'Siyah Şapka', category: 'Şapka', images: ['/siyahSapka.jpeg', '/duzSiyahSapka.jpeg'],
+        { id: 37, name: 'Siyah Şapka', category: 'Şapka', images: ['/siyahSapka.png', '/siyahSapka2.png'],
           description: 'Şık siyah şapka, her stile uyum sağlar.' },
         { id: 38, name: 'Düz Beyaz Şapka', category: 'Şapka', images: ['/duzBeyazSpka.jpeg'],
           description: 'Sade tasarımlı beyaz şapka modeli.' },
@@ -101,7 +105,8 @@ const Products = () => {
         setSearchTerm(event.target.value);
     };
 
-    // gridRef ve useEffect hook'u kaldırıldı. Dinamik boyutlandırma mantığı da kaldırıldı.
+    // Render öncesi sayacı sıfırlıyoruz
+    visibleProductIndexRef.current = 0;
 
     return (
         <div className="products-container">
@@ -133,21 +138,19 @@ const Products = () => {
             </div>
             <div className="products-grid">
 
-                {/* Ürün listesi (filteredProducts kullanılıyor) */}
                 {filteredProducts.length > 0 ? (
-                    filteredProducts.map((product, index) => {
+                    filteredProducts.map((product) => {
+                        // Her bir ürün için visibleProductIndexRef'in değerini kullanıp sonra artırıyoruz
+                        const patternIndex = visibleProductIndexRef.current % 3;
                         let cardClassName = "product-card card";
-                        // Sağda ve solda uzun, ortada kısa kart düzeni için (3'lü döngü)
-                        const patternIndex = index % 3;
 
-                        if (patternIndex === 0) { // Sol kart (uzun)
-                            cardClassName += " tall";
-                        } else if (patternIndex === 1) { // Orta kart (kısa)
-                            // Varsayılan (kısa) kalır, ekstra sınıf gerekmez
-                        } else if (patternIndex === 2) { // Sağ kart (uzun)
+                        if (patternIndex === 0 || patternIndex === 2) { // Sol ve sağ kartlar uzun
                             cardClassName += " tall";
                         }
                         
+                        // Sonraki ürün için sayacı artır
+                        visibleProductIndexRef.current++;
+
                         return (
                             <div key={product.id} className={cardClassName}>
                                 <Link to={`/products/${product.id}`} className="product-link">
@@ -155,8 +158,7 @@ const Products = () => {
                                         <img 
                                             src={product.images[0]} 
                                             alt={`${product.name} - ${product.category}`} 
-                                            className="product-image" 
-                                            // onLoad olayı kaldırıldı
+                                            className="product-image"
                                         />
                                         <div className="product-overlay">
                                             <h3>{product.name}</h3>
@@ -169,7 +171,7 @@ const Products = () => {
                         );
                     })
                 ) : (
-                    <p className="no-results">Aramanızla eşleşen ürün bulunamadı.</p> // Eşleşme olmadığında mesaj
+                    <p className="no-results">Aramanızla eşleşen ürün bulunamadı.</p>
                 )}
             </div>
         </div>

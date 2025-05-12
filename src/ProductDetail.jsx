@@ -101,7 +101,7 @@ const products = [
         customization: 'Logo baskısı ve kurumsal renklerle üretilebilir'
       }
     },
-    { id: 35, name: 'Çanta Baskı', category: 'Aksesuar', images: ['/cantaBaski.jpeg'], 
+    { id: 35, name: 'Çanta Baskı', category: 'Aksesuar', images: ['/baskiliCanta.jpeg'], 
       description: 'Özel baskı teknikleriyle kişiselleştirilebilen promosyon çantası.',
       details: {
         customization: 'Tam renkli baskı ve logo uygulamaları yapılabilir'
@@ -115,7 +115,7 @@ const products = [
     },
     
     // Şapka Ürünleri
-    { id: 37, name: 'Siyah Şapka', category: 'Aksesuar', images: ['/siyahSapka.jpeg', '/duzSiyahSapka.jpeg'], 
+    { id: 37, name: 'Siyah Şapka', category: 'Aksesuar', images: ['/siyahSapka.png', '/siyahSapka2.png'],
       description: 'Şık ve dayanıklı siyah şapka, kurumsal etkinlik ve promosyon amaçlı kullanım için uygundur.',
       details: {
         customization: 'Logo nakışı ve özel etiketleme yapılabilir'
@@ -127,9 +127,9 @@ const products = [
         customization: 'Logo nakışı ve baskı seçenekleri mevcuttur'
       }
     },
-    { id: 39, name: 'Düz Siyah Şapka', category: 'Aksesuar', images: ['/duzSiyahSapka.jpeg', '/siyahSapka.jpeg'], 
+    { id: 39, name: 'Düz Siyah Şapka', category: 'Aksesuar', images: ['/duzSiyahSapka.jpeg', ], 
       description: 'Standart siyah şapka, her ortama uyum sağlayan tasarımıyla dikkat çeker.',
-      details: {
+            details: {
         customization: 'Özel logo ve tasarım uygulamaları yapılabilir'
       }
     },
