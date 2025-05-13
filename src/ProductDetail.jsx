@@ -14,7 +14,7 @@ const products = [
       }
     },
     { id: 12, name: 'Gri Polo T-Shirt Model-2', category: 'Giyim', images: ['/griPolo.jpeg', '/griPolo2.jpeg'],
-      description: 'Profesyonel görünüm için tasarlanmış %50 Pamuk / %50 Viskon Polo T-shirt. Kurumsal kimliğinizi tamamlayacak şık bir seçenek. ',
+      description: 'Giyim Profesyonel görünüm için tasarlanmış %50 Pamuk / %50 Viskon Polo T-shirt. Kurumsal kimliğinizi tamamlayacak şık bir seçenek.',
       details: {
         customization: 'İşletmenizin kimliğini yansıtan havlularla fark yaratın. Logo, slogan ve kurumsal  istediğiniz renk seçenekleri ve uyumlu tasarımlar sayesinde, markanız her detayda ön plana çıkar. Geniş materyal seçenekleri ve kişiselleştirilebilir üretim anlayışımızla, ihtiyaçlarınıza özel çözümler sunuyoruz.'
       }
@@ -44,24 +44,13 @@ const products = [
         customization: 'İşletmenizin kimliğini yansıtan havlularla fark yaratın. Logo, slogan ve kurumsal renklerinize uyumlu tasarımlar sayesinde, markanız her detayda ön plana çıkar. Geniş materyal seçenekleri ve kişiselleştirilebilir üretim anlayışımızla, ihtiyaçlarınıza özel çözümler sunuyoruz.'
       }
     },
-    { id: 21, name: 'Polo T-Shirt Model-2', category: 'Giyim', images: ['/tbej.jpeg', '/tbej2.jpeg'], 
-      description: 'Profesyonel görünüm için tasarlanmış %50 Pamuk / %50 Viskon Polo T-shirt. Kurumsal kimliğinizi tamamlayacak şık bir seçenek.',
+    { id: 21, name: 'Polo T-Shirt Model-2', category: 'Giyim', images: ['/tbej.jpeg', '/tbej2.jpeg'],
+      description: 'Giyim Profesyonel görünüm için tasarlanmış %50 Pamuk / %50 Viskon Polo T-shirt. Kurumsal kimliğinizi tamamlayacak şık bir seçenek.',
       details: {
         customization: 'İşletmenizin kimliğini yansıtan havlularla fark yaratın. Logo, slogan ve kurumsal renklerinize uyumlu tasarımlar sayesinde, markanız her detayda ön plana çıkar. Geniş materyal seçenekleri ve kişiselleştirilebilir üretim anlayışımızla, ihtiyaçlarınıza özel çözümler sunuyoruz.'
       }
     },
-    { id: 23, name: 'Polo T-Shirt Model-3', category: 'Giyim', images: ['/sTisort.jpeg'], 
-      description: 'Profesyonel görünüm için tasarlanmış  %70 Pamuk / %30 Polyester\'den üretilmiş  Polo T-shirt.',
-      details: {
-        customization: 'İşletmenizin kimliğini yansıtan havlularla fark yaratın. Logo, slogan ve kurumsal renklerinize uyumlu tasarımlar sayesinde, markanız her detayda ön plana çıkar. Geniş materyal seçenekleri ve kişiselleştirilebilir üretim anlayışımızla, ihtiyaçlarınıza özel çözümler sunuyoruz.'
-      }
-    },
-    { id: 24, name: ' Polo T-Shirt Model-1', category: 'Giyim', images: ['/tısortler.jpeg'], 
-      description: 'Kurumsal giyim koleksiyonları için tasarlanmış, %100 pamuklu  Polo Yaka T-shirt. Toptan alıma uygundur',
-      details: {
-        customization: 'İşletmenizin kimliğini yansıtan havlularla fark yaratın. Logo, slogan ve kurumsal renklerinize uyumlu tasarımlar sayesinde, markanız her detayda ön plana çıkar. Geniş materyal seçenekleri ve kişiselleştirilebilir üretim anlayışımızla, ihtiyaçlarınıza özel çözümler sunuyoruz.'
-      }
-    },
+  
     
     // Düz Ürünler,
     { id: 30, name: 'T-Shirt Model-1', category: 'Tekstil', images: ['/kırmızıDuz.jpeg'], 
@@ -144,19 +133,14 @@ const products = [
         customization: 'Logo baskısı ve özel renk  seçenekleri'
       }
     },
-    { id: 43, name: 'Boyun Yastığı Özel', category: 'Ev Ürünleri', images: ['/bYastık.jpeg'], 
-      description: 'Özel tasarlanmış, anatomik yapıya uygun premium boyun yastığı.',
-      details: {
-        customization: 'Özel logo ve kılıf seçenekleri sunulmaktadır'
-      }
-    },
-    { id: 44, name: 'Boyun Yastığı Mavi', category: 'Ev Ürünleri', images: ['/bYastıkMavi.jpeg'], 
+    
+    { id: 44, name: 'Boyun Yastığı Model-2', category: 'Ev Ürünleri', images: ['/bYastıkMavi.jpeg'], 
       description: 'Ferahlatıcı mavi rengiyle dinlendirici bir etki yaratan konforlu boyun yastığı.',
       details: {
         customization: 'Logo ve kurumsal renk uygulamaları yapılabilir'
       }
     },
-    { id: 45, name: 'Boyun Yastığı Yeni Model', category: 'Ev Ürünleri', images: ['/bYastikY.jpeg'], 
+    { id: 45, name: 'Boyun Yastığı Model-2', category: 'Ev Ürünleri', images: ['/bYastikY.jpeg'], 
       description: 'En son teknoloji ile geliştirilen, maksimum konfor sağlayan yeni nesil boyun yastığı.',
       details: {
         customization: 'Özel tasarım ve logo uygulamaları mümkündür'

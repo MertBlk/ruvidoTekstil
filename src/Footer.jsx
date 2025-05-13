@@ -12,7 +12,7 @@ const Footer = () => {
 
           <div className="footer-section">
             <h3>Sosyal Medya</h3>
-            <p><a href="https://www.instagram.com/ruvido.tr">Instagram</a></p>
+            <p><a href="https://www.instagram.com/ruvidotekstil">Instagram</a></p>
           </div>
 
           <div className="footer-section">

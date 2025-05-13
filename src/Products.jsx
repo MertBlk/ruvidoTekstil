@@ -15,15 +15,27 @@ const Products = () => {
         //Boyun Yastığı Ürünleri
         { id: 40, name: 'Boyun Yastığı', category: 'Boyun Yastığı', images: ['/byastik.jpeg', '/byastik2.jpeg'],
           description: 'Gabardin dış yüzey, elyaf dolgulu iç yapı ile premium konfor.' },
-        { id: 42, name: 'Boyun Yastığı Model-2', category: 'Boyun Yastığı', images: ['/bYastik3.jpeg', '/bYastık.jpeg', '/bYastıkMavi.jpeg','/bYastikY.jpeg'],
+        { id: 42, name: 'Boyun Yastığı Model-2', category: 'Boyun Yastığı', images: ['/bYastik3.jpeg', '/bYastık.jpeg', ],
           description: 'Dışı polar, içi yün dolgu ile konforlu ve kaliteli tasarım.' },
+          { id: 44, name: 'Boyun Yastığı Model-2', category: 'Ev Ürünleri', images: ['/bYastıkMavi.jpeg'], 
+      description: 'Ferahlatıcı mavi rengiyle dinlendirici bir etki yaratan konforlu boyun yastığı.',
+      details: {
+        customization: 'Logo ve kurumsal renk uygulamaları yapılabilir'
+      }
+    },
+    { id: 45, name: 'Boyun Yastığı Model-2', category: 'Ev Ürünleri', images: ['/bYastikY.jpeg'], 
+      description: 'En son teknoloji ile geliştirilen, maksimum konfor sağlayan yeni nesil boyun yastığı.',
+      details: {
+        customization: 'Özel tasarım ve logo uygulamaları mümkündür'
+      }
+    },
        
 
         // HAvlu Ürünleri
         { id: 1, name: 'Havlu Model-1', category: 'Havlu', images: ['/havluBeyaz.jpeg', '/havluBeyaz2.jpeg', '/HavluBeyaz3.jpeg'],
           description: '%100 Pamuk Yumuşak dokusu ve yüksek emiciliği ile doğal pamuk konforu.' },
         { id: 4, name: 'Havlu Model-2', category: 'Havlu', images: ['/havluMor.jpeg'],
-          description: '%50 Pamuk / %50 Viskon: Pamuk doğallığı ile viskonun hafifliği ve parlaklığı bir arada.' },
+          description: '' },
         { id: 5, name: 'Havlu Model-3', category: 'Havlu', images: ['/havluSari.jpeg'],
           description: '%100 Bambu: Doğal antibakteriyel özellik ve ekstra yumuşaklık.' },
         { id: 6, name: 'Klasik Havlu', category: 'Havlu', images: ['/havlu.jpeg', '/havlu2.jpeg', '/havlu3.jpeg'],
