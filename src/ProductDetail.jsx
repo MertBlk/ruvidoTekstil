@@ -121,13 +121,13 @@ const products = [
         customization: 'Logo nakışı ve özel etiketleme yapılabilir'
       }
     },
-    { id: 38, name: 'Düz Beyaz Şapka', category: 'Aksesuar', images: ['/duzBeyazSpka.jpeg'], 
+    { id: 38, name: 'Düz Beyaz Şapka', category: 'Aksesuar', images: ['/duzBeyazS.png', '/duzBeyazS2.png'], 
       description: 'Klasik beyaz şapka, promosyon ve etkinlikler için ideal bir seçenek.',
       details: {
         customization: 'Logo nakışı ve baskı seçenekleri mevcuttur'
       }
     },
-    { id: 39, name: 'Düz Siyah Şapka', category: 'Aksesuar', images: ['/duzSiyahSapka.jpeg', ], 
+    { id: 39, name: 'Düz Siyah Şapka', category: 'Aksesuar', images: ['/duzSiyah.png','/duzSiyah2.png' ], 
       description: 'Standart siyah şapka, her ortama uyum sağlayan tasarımıyla dikkat çeker.',
             details: {
         customization: 'Özel logo ve tasarım uygulamaları yapılabilir'

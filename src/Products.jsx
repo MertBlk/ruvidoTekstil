@@ -77,9 +77,9 @@ const Products = () => {
         // Şapka Ürünleri
         { id: 37, name: 'Siyah Şapka', category: 'Şapka', images: ['/siyahSapka.png', '/siyahSapka2.png'],
           description: 'Şık siyah şapka, her stile uyum sağlar.' },
-        { id: 38, name: 'Düz Beyaz Şapka', category: 'Şapka', images: ['/duzBeyazSpka.jpeg'],
+        { id: 38, name: 'Düz Beyaz Şapka', category: 'Şapka', images: ['/duzBeyazS2.png','/duzBeyazS.png'],
           description: 'Sade tasarımlı beyaz şapka modeli.' },
-        { id: 39, name: 'Düz Siyah Şapka', category: 'Şapka', images: ['/duzSiyahSapka.jpeg', '/siyahSapka.jpeg'],
+        { id: 39, name: 'Düz Siyah Şapka', category: 'Şapka', images: ['/duzSiyah2.png', ],
           description: 'Klasik siyah şapka, günlük kullanıma uygun.' },
         //Şal
         { id: 53, name: 'Şal', category: 'Şal', images: ['/sal.jpeg', ],
