@@ -2,6 +2,8 @@ import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import './ProductDetail.css';
 
+const isMobile = () => window.innerWidth <= 768;
+
 // Ürün listesinden price, minOrder ve deliveryTime özelliklerini kaldırıyorum
 const products = [
     // T-Shirt Ürünleri
@@ -348,6 +350,7 @@ const products = [
 const ProductDetail = () => {
     const { id } = useParams();
     const [mainImageIndex, setMainImageIndex] = useState(0);
+    const [showModal, setShowModal] = useState(false);
 
     const product = useMemo(() => products.find(p => p.id === parseInt(id)), [id]);
 
@@ -364,6 +367,7 @@ const ProductDetail = () => {
     // Ana görsel değiştirme fonksiyonu
     const handleImageChange = useCallback((idx) => {
         setMainImageIndex(idx);
+        if (isMobile()) setShowModal(true);
     }, []);
 
     useEffect(() => {
@@ -419,6 +423,8 @@ const ProductDetail = () => {
                             src={product.images[mainImageIndex]} 
                             alt={product.name} 
                             className="gallery-main-image-vertical" 
+                            onClick={() => isMobile() && setShowModal(true)}
+                            style={{ cursor: isMobile() ? 'zoom-in' : 'default' }}
                         />
                     ) : (
                         <div className="no-image">Görsel Mevcut Değil</div>
@@ -447,6 +453,16 @@ const ProductDetail = () => {
                     </div>
                 </div>
             </div>
+            {/* Modal for mobile image zoom */}
+            {showModal && (
+                <div className="image-modal" onClick={() => setShowModal(false)}>
+                    <img
+                        src={product.images[mainImageIndex]}
+                        alt={product.name}
+                        className="image-modal-img"
+                    />
+                </div>
+            )}
             <div className="suggested-products-section">
                 <h2>Bu ürünler de ilginizi çekebilir</h2>
                 <div className="suggested-products">
