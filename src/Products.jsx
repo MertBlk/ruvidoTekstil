@@ -7,7 +7,7 @@ const Products = () => {
     const [searchTerm, setSearchTerm] = useState('');
     
     const products = [
-        { id: 51, name: 'Saç Bandı', category: 'Saç Bandı', images: ['/sac.jpeg'],
+        { id: 51, name: 'Saç Bandı', category: 'Saç Bandı', images: ['/sac.jpeg', '/sacBandi2.jpeg'],
           description: 'Pratik ve kullanışlı saç bandı, Cırtsız.' },
         { id: 52, name: 'Spa ve Güzellik Merkezi İçin Saç Bandı', category: 'Saç Bandı', images: ['/sacBandi.jpeg'],
         description: 'Özel tasarım saç bandı.' },
