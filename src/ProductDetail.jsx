@@ -37,13 +37,7 @@ const products = [
         customization: 'İşletmenizin kimliğini yansıtan havlularla fark yaratın. Logo, slogan ve kurumsal renklerinize uyumlu tasarımlar sayesinde, markanız her detayda ön plana çıkar. Geniş materyal seçenekleri ve kişiselleştirilebilir üretim anlayışımızla, ihtiyaçlarınıza özel çözümler sunuyoruz.'
       }
     },
-    { id: 17, name: 'Renkli Polo T-Shirt Model-3', category: 'Giyim', images: ['/renklipolo2.jpeg', '/renkliPolo.jpeg'], 
-      description: 'Profesyonel görünüm için tasarlanmış  %70 Pamuk / %30 Polyester\'den üretilmiş  Polo T-shirt. ',
-      details: {
-        
-        customization: 'İşletmenizin kimliğini yansıtan havlularla fark yaratın. Logo, slogan ve kurumsal renklerinize uyumlu tasarımlar sayesinde, markanız her detayda ön plana çıkar. Geniş materyal seçenekleri ve kişiselleştirilebilir üretim anlayışımızla, ihtiyaçlarınıza özel çözümler sunuyoruz.'
-      }
-    },
+   
     { id: 20, name: 'Polo T-Shirt Model-1', category: 'Giyim', images: ['/tbeyaz.jpeg'], 
       description: 'Kurumsal giyim koleksiyonları için tasarlanmış, %100 pamuklu Polo Yaka T-shirt. Toptan alıma uygundur',
       details: {
