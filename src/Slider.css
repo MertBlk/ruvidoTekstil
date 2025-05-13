@@ -117,6 +117,8 @@
     margin: 0;
     padding: 0;
     top: 0;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
   }
   .slide {
     height: 100vh !important;
@@ -124,6 +126,8 @@
     width: 100%;
     margin-top: 0;
     padding-top: 0;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
   }
 }
 @media (max-width: 768px) {
@@ -160,6 +164,8 @@
     min-height: 350px;
     padding-top: 0;
     margin-top: 0;
+    padding-top: 0 !important;
+    margin-top: 0 !important;
   }
   
   .slide {
@@ -167,6 +173,8 @@
     min-height: 350px;
     background-size: cover;
     background-position: center;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
   }
   
   .slide::before {

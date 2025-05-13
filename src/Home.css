@@ -314,7 +314,7 @@
 
 .front-page.mobile-view .front-page-left {
   width: 100%;
-  height: 135px;
+  height: 145px;
   padding: 0;
   background-color: #EFFFE2;
   position: absolute;
@@ -354,7 +354,7 @@
   height: auto;
   min-height: 350px;
   position: relative;
-  margin-top: 95px; /* Logo yüksekliğine göre ayarlandı */
+  margin-top: px; /* Logo yüksekliğine göre ayarlandı */
 }
 
 @media (max-width: 480px) {
