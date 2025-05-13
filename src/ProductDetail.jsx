@@ -261,7 +261,7 @@ const products = [
     
     // Diğer Ürünler
     { id: 51, name: 'Saç Bandı', category: 'Aksesuar', images: ['/sac.jpeg','/sacBandi2.jpeg'], 
-      description: 'Esnek yapısıyla her saç tipine uygundur.',
+      description: 'Esnek yapısı ve cırt özelliği ile kafa yapısına göre ayarlanabilir kullanım sağlanabilir..',
       details: {
         customization: 'Renk ve logo özelleştirmesi yapılabilir'
       }
