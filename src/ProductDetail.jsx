@@ -121,7 +121,7 @@ const products = [
     
     // Yastık Ürünleri
     { id: 40, name: 'Boyun Yastığı', category: 'Ev Ürünleri', images: ['/byastik.jpeg', '/byastik2.jpeg'], 
-      description: 'Seyahat ve ofis kullanımı için ergonomik destek sağlayan boyun yastığı. Kurumsal promosyon ürünü olarak ideal.',
+      description: 'Dışı gabardin, içi yün dolgu ile konforlu ve kaliteli tasarım.',
       details: {
         customization: 'Logo baskısı ve renk seçimi ile özelleştirilebilir 10 renk seçeneği ile'
       }
